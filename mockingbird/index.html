@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockingjay · Case Arena — 嘲笑鸟 · 案例竞技场</title>
+<style>
+  :root{
+    --navy:#0F1D33; --navy-2:#152741; --navy-3:#1B3153;
+    --gold:#C9A869; --gold-soft:#E3CD9F; --ink:#E8E4DA; --ink-dim:#9FA8B8;
+    --line:rgba(201,168,105,.25);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--navy);color:var(--ink);font-family:"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+  .zh{color:rgba(159,168,184,.78);font-size:.8em;font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif}
+  button .zh,.btn .zh{font-size:.76em;opacity:.7;letter-spacing:.02em}
+  .cfoot .zh{font-size:10px;opacity:.8}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  section{padding:84px 0;border-top:1px solid var(--line)}
+  .kicker{color:var(--gold);letter-spacing:.35em;text-transform:uppercase;font-size:12px;margin-bottom:14px}
+  h1,h2,h3{font-family:Georgia,"Times New Roman","Songti SC",serif;font-weight:600}
+  h2{font-size:34px;color:var(--gold-soft);margin-bottom:6px}
+  h2 .zh{display:block;font-size:15px;margin-top:4px}
+  .lead{max-width:760px;margin-top:18px;color:var(--ink)}
+
+  /* HERO */
+  header.hero{min-height:92vh;display:flex;align-items:center;
+    background:linear-gradient(90deg,rgba(15,29,51,.97) 0%,rgba(15,29,51,.88) 45%,rgba(15,29,51,.55) 100%),
+    url("hero-art.jpg") center/cover no-repeat,var(--navy)}
+  .hero .brand{font-size:13px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:26px}
+  header.hero{position:relative;overflow:hidden}
+  .hero-rings{position:absolute;right:-180px;top:50%;transform:translateY(-50%);opacity:.16;pointer-events:none}
+  .hero-pin{position:absolute;right:60px;bottom:70px;opacity:.5;pointer-events:none}
+  @media(max-width:860px){.hero-rings{display:none}.hero-pin{display:none}}
+  .hero h1{font-size:56px;line-height:1.15;color:#F4EFE3}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero .tagline{margin-top:26px;font-size:19px;max-width:720px;color:var(--ink)}
+  .hero .slogan{margin-top:34px;padding:20px 26px;border-left:3px solid var(--gold);background:rgba(201,168,105,.07);max-width:720px}
+  .hero .slogan p:first-child{font-family:Georgia,serif;font-size:21px;color:var(--gold-soft)}
+  .hero .meta{margin-top:40px;font-size:13px;color:var(--ink-dim);letter-spacing:.08em}
+  .hero .meta b{color:var(--gold);font-weight:600}
+
+  /* PAIN */
+  .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px}
+  .pain-card{background:var(--navy-2);border:1px solid var(--line);padding:30px}
+  .pain-card h3{color:var(--gold-soft);font-size:19px;margin-bottom:10px}
+  .pain-card p{font-size:15px}
+  .verdict{margin-top:36px;text-align:center;font-family:Georgia,serif;font-size:24px;color:var(--gold-soft)}
+  .verdict span{display:block;font-family:inherit}
+
+  /* LADDER */
+  .tiers{margin-top:44px;display:flex;flex-direction:column;gap:34px}
+  .tier-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:16px}
+  .tier-head .no{font-family:Georgia,serif;font-size:30px;color:var(--gold)}
+  .tier-head h3{font-size:20px;color:var(--gold-soft)}
+  .tier-head .range{margin-left:auto;font-size:12px;color:var(--ink-dim);letter-spacing:.1em}
+  .cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+  .case{background:var(--navy-2);border:1px solid rgba(201,168,105,.14);padding:12px 14px;font-size:13px;transition:border-color .2s;display:flex;flex-direction:column}
+  .case .cfoot{margin-top:auto;padding-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .case:hover{border-color:var(--gold)}
+  .case .cid{color:var(--gold);font-family:Georgia,serif;margin-right:8px}
+  .case .cname{color:var(--ink)}
+  .case .ctag{display:inline-block;font-size:11px;color:var(--ink-dim);border:1px solid rgba(201,168,105,.2);padding:0 6px;border-radius:2px}
+  .filter-bar{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap}
+  .filter-bar button{background:transparent;border:1px solid var(--line);color:var(--ink-dim);padding:6px 16px;font-size:12px;letter-spacing:.1em;cursor:pointer}
+  .filter-bar button.on{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+
+  /* LOOP */
+  .loop-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:36px 0 28px}
+  .loop-steps button{background:var(--navy-2);border:1px solid var(--line);color:var(--ink);padding:18px 14px;text-align:left;cursor:pointer}
+  .loop-steps button.on{border-color:var(--gold);background:var(--navy-3)}
+  .loop-steps .sn{font-family:Georgia,serif;font-size:24px;color:var(--gold);display:block}
+  .loop-steps .st{font-size:14px;font-weight:600;margin-top:4px;display:block}
+  .loop-steps .sz{font-size:11px;color:rgba(159,168,184,.72)}
+  .loop-panel{background:var(--navy-2);border:1px solid var(--line);padding:34px;min-height:220px}
+  .loop-panel h3{color:var(--gold-soft);font-size:21px;margin-bottom:12px}
+  .loop-panel p{font-size:15px;margin-bottom:10px}
+  .loop-panel .opt{border:1px solid rgba(201,168,105,.2);padding:10px 14px;margin:8px 0;font-size:14px}
+  .loop-panel .opt b{color:var(--gold)}
+  .demo-note{font-size:12px;color:var(--ink-dim);margin-top:16px;letter-spacing:.05em}
+
+  /* SCOREBOARD */
+  .score-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin-top:36px;align-items:start}
+  .chart-card{background:var(--navy-2);border:1px solid var(--line);padding:26px}
+  .chart-card svg{width:100%;height:auto;display:block}
+  .stats{display:flex;flex-direction:column;gap:14px}
+  .stat{background:var(--navy-2);border:1px solid var(--line);padding:18px 22px}
+  .stat .v{font-family:Georgia,serif;font-size:30px;color:var(--gold)}
+  .stat .k{font-size:12px;color:var(--ink-dim);letter-spacing:.1em}
+
+  /* MODELS & GOVERNANCE */
+  .models{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px}
+  .seat{background:var(--navy-2);border:1px solid var(--line);padding:18px 14px;text-align:center}
+  .seat .m{font-family:Georgia,serif;color:var(--gold-soft);font-size:16px}
+  .seat .o{font-size:11px;color:var(--ink-dim);margin-top:4px}
+  .seat.us{border-top:2px solid var(--gold)}
+  .seat.cn{border-top:2px dashed var(--gold)}
+  .gov{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+  .gov .pain-card h3{margin-bottom:6px}
+
+  footer{padding:60px 0 80px;border-top:1px solid var(--line);color:var(--ink-dim);font-size:13px}
+  footer .road{margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  footer .road div{border:1px solid var(--line);padding:14px}
+  footer .road b{color:var(--gold-soft);display:block;font-family:Georgia,serif}
+
+  /* ARENA MODAL */
+  .case.live{border-color:var(--gold);cursor:pointer}
+  .case .play{display:inline-block;font-size:11px;color:var(--navy);background:var(--gold);padding:0 8px;border-radius:2px;letter-spacing:.1em}
+  .case .demobadge{display:inline-block;font-size:11px;color:var(--gold);border:1px dashed var(--gold);background:transparent;padding:0 8px;border-radius:2px;letter-spacing:.1em}
+  .case.done{background:rgba(201,168,105,.14);border-color:var(--gold)}
+  .case.done .cname{color:var(--gold-soft)}
+  .case .donebadge{display:inline-block;font-size:11px;color:var(--gold);border:1px solid var(--gold);padding:0 6px;border-radius:2px}
+  .case .lockbadge{display:inline-block;font-size:11px;color:var(--ink-dim);border:1px solid rgba(159,168,184,.35);padding:0 6px;border-radius:2px}
+  .case.locked{cursor:default;border-color:rgba(201,168,105,.14)}
+  .case.locked .cname,.case.locked .cid{color:var(--ink)}
+  .case.soon{border-style:dashed;cursor:default}
+  .case.soon:hover{border-color:rgba(201,168,105,.14)}
+  .case .soonbadge{display:inline-block;font-size:11px;color:rgba(159,168,184,.8);border:1px dashed rgba(159,168,184,.4);padding:0 6px;border-radius:2px}
+  .case.locked:hover{border-color:rgba(201,168,105,.14)}
+  #arena{position:fixed;inset:0;background:rgba(8,14,26,.92);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;z-index:50;padding:48px 16px}
+  #arena.open{display:flex}
+  .arena-box{background:var(--navy);border:1px solid var(--gold);max-width:820px;width:100%;padding:40px 44px;position:relative}
+  .arena-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--ink-dim);font-size:22px;cursor:pointer}
+  .arena-kicker{color:var(--gold);letter-spacing:.3em;font-size:11px;text-transform:uppercase}
+  .arena-box h3{font-family:Georgia,serif;color:var(--gold-soft);font-size:24px;margin:8px 0 4px}
+  .arena-prog{display:flex;gap:8px;margin:18px 0 22px}
+  .arena-prog span{flex:1;height:3px;background:var(--navy-3)}
+  .arena-prog span.done{background:var(--gold)}
+  .q{margin:18px 0}
+  .q .qt{font-weight:600;margin-bottom:8px}
+  .q .opt{border:1px solid rgba(201,168,105,.25);padding:10px 14px;margin:8px 0;cursor:pointer;font-size:14px}
+  .q .opt:hover{border-color:var(--gold)}
+  .q .opt.right{border-color:var(--gold);background:rgba(201,168,105,.12)}
+  .q .opt.wrong{border-color:#8a4b4b;color:var(--ink-dim)}
+  .hint{display:none;font-size:13px;color:var(--gold-soft);margin:4px 0 10px}
+  .btn{background:var(--gold);color:var(--navy);border:none;padding:12px 34px;font-size:14px;letter-spacing:.15em;cursor:pointer;font-weight:600}
+  .btn[disabled]{opacity:.35;cursor:not-allowed}
+  .slider-row{display:flex;align-items:center;gap:16px;margin:14px 0}
+  input[type=range]{flex:1;accent-color:var(--gold)}
+  .conf-v{font-family:Georgia,serif;color:var(--gold);font-size:22px;min-width:64px;text-align:right}
+  .score-big{font-family:Georgia,serif;font-size:56px;color:var(--gold);line-height:1}
+  .arena-box p{font-size:15px;margin-bottom:10px}
+  .arena-box .zh{display:block}
+  .reader-btn{background:transparent;border:1px solid var(--line);color:var(--ink-dim);padding:5px 14px;font-size:12px;letter-spacing:.1em;cursor:pointer;margin-top:12px}
+  .reader-btn:hover{border-color:var(--gold);color:var(--gold-soft)}
+  .reader{display:none;margin-top:12px;border:1px solid var(--line);background:#0a1424}
+  .reader.open{display:block}
+  .reader iframe{width:100%;height:62vh;border:0;display:block}
+  .reader.pages{max-height:62vh;overflow:auto;padding:14px;text-align:center}
+  .reader.pages img{width:100%;max-width:760px;display:block;margin:0 auto 12px;box-shadow:0 2px 14px rgba(0,0,0,.45)}
+  .zoombar{display:flex;gap:8px;align-items:center;margin:4px 0 10px}
+  .zoombar button{background:var(--navy-2);border:1px solid var(--line);color:var(--gold-soft);width:36px;height:30px;font-size:16px;cursor:pointer;border-radius:2px}
+  .zoombar button:hover{border-color:var(--gold)}
+  .zoombar .zlvl{font-size:12px;color:var(--ink-dim);min-width:52px}
+  #arenaNav{display:none;gap:8px;margin-top:22px;border-top:1px solid var(--line);padding-top:14px;flex-wrap:wrap}
+  #arenaNav.show{display:flex}
+  #arenaNav button{background:transparent;border:1px solid var(--line);color:var(--ink-dim);padding:6px 13px;font-size:12px;cursor:pointer;letter-spacing:.05em}
+  #arenaNav button.on{border-color:var(--gold);color:var(--gold)}
+  #arenaNav button[disabled]{opacity:.3;cursor:not-allowed}
+  #arenaNav button:not([disabled]):hover{border-color:var(--gold);color:var(--gold-soft)}
+  .backlink{display:inline-block;margin-top:14px;font-size:12.5px;color:var(--ink-dim);cursor:pointer;border:none;background:none;padding:0;text-decoration:underline;text-underline-offset:3px}
+  .backlink:hover{color:var(--gold-soft)}
+  @media(max-width:860px){
+    body{overflow-x:hidden}
+    #arena{padding:16px 10px}
+    .arena-box{padding:26px 20px}
+    .arena-box h3{font-size:20px;line-height:1.35}
+    .reader iframe{height:56vh}
+    .reader.pages{max-height:56vh;padding:8px}
+    #arenaNav button{padding:5px 9px;font-size:11px}
+    .score-big{font-size:44px}
+    .hero h1{font-size:38px}
+    .pain-grid,.score-grid,.gov{grid-template-columns:1fr}
+    .loop-steps{grid-template-columns:repeat(2,1fr)}
+    .models{grid-template-columns:repeat(2,1fr)}
+    footer .road{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">Mockingjay · Case Arena</div>
+    <h1>The Second Opinion,<br>Judged by <em>Data</em>.<br>
+      <span class="zh" style="font-size:17px">嘲笑鸟 · 案例竞技场 —— 用数据给出第二意见</span></h1>
+    <p class="tagline">Yidan Wang — <b style="color:var(--gold)">Business Management × Computer Science × AI</b><br>
+      Driving Business Decisions with Data.<br>
+      <span class="zh">王怡丹 —— 商业管理 × 计算机 × AI，用数据驱动商业决策。</span></p>
+    <div class="slogan">
+      <p>“Case teaching gives you the first opinion. I use data to deliver the second.”</p>
+      <p class="zh" style="margin-top:6px">“案例教学给的是第一意见，我用数据给出第二意见。”</p>
+    </div>
+    <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap">
+      <button class="btn" id="quickPlay" style="font-size:15px">▶ ENTER THE ARENA</button>
+      <button class="btn" id="quickScore" style="background:transparent;border:1px solid var(--gold);color:var(--gold)">SCOREBOARD</button>
+    </div>
+    <p class="meta">IVEY CASE METHOD × 120 CASES × AI AS REFEREE<br>
+      <span class="zh">Ivey 案例方法 × 120 个真实案例 × AI 当裁判 · 案例在 <b>2028.09</b> 进 Ivey 前全部跑完</span></p>
+  </div>
+</header>
+
+<section id="pain">
+  <div class="wrap">
+    <div class="kicker">The Only Pain Point <span class="zh">唯一痛点</span></div>
+    <h2>Case Teaching Has No Referee.<span class="zh">案例教学没有裁判</span></h2>
+    <p class="lead">Read the case → write the analysis → discuss in class → professor comments → class ends. Across hundreds of cases, a student never once hears “you were right” or “you were wrong.” Practice without feedback does not improve — this product fixes exactly that one link.<br>
+      <span class="zh">读案例 → 写分析 → 课堂讨论 → 教授点评 → 下课。几百个案例讨论下来，从没有人告诉她“你对了／你错了”。没有反馈的练习不会进步——这个产品只补这一环。</span></p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <h3>What the case method gives <span class="zh">案例教学给的</span></h3>
+        <p>A simulation of reality. Many possible answers, no stated conclusion — inference as the primary skill.<br><span class="zh">对真实情况的模拟：答案不唯一、案例不给结论，推理是第一技能。</span></p>
+      </div>
+      <div class="pain-card">
+        <h3>What it never gives <span class="zh">它永远不给的</span></h3>
+        <p>What happened next in the real world. Whether the decision actually worked. A verdict.<br><span class="zh">真实世界里这个决策后来怎么样了；当年做没做对；一个裁决。</span></p>
+      </div>
+    </div>
+    <p class="verdict">She decides. Data referees.<span class="zh">她做决策，数据当裁判。</span></p>
+  </div>
+</section>
+
+<section id="ladder">
+  <div class="wrap">
+    <div class="kicker">The Ladder <span class="zh">案例阶梯</span></div>
+    <h2>120 Cases, One Arena.<span class="zh">120 案 · 一条阶梯</span></h2>
+    <p class="lead">Easy first: bilingual cases, familiar brands, single decision points lead; industry distance, data complexity and ambiguity rise tier by tier. One case per week in term time, two per week over the long summer and reading breaks — all 120 cleared before Ivey, September 2028.<br>
+      <span class="zh">简单的排前面：中英对照、熟悉品牌、决策点单一者先行；行业陌生度、数据复杂度、决策模糊度逐层上升。学期中每周一案，暑假（5–8 月）与阅读周每周两案，2028 年 9 月进 Ivey 前全部跑完。</span></p>
+    <div class="filter-bar" id="filterBar">
+      <button data-f="all" class="on">All</button>
+      <button data-f="中文/双语">Bilingual</button>
+      <button data-f="英文">English</button>
+    </div>
+    <div class="tiers" id="tiers"></div>
+  </div>
+</section>
+
+<section id="loop">
+  <div class="wrap">
+    <div class="kicker">The Referee Loop <span class="zh">裁判循环</span></div>
+    <h2>Same Loop, Every Case.<span class="zh">每案同一个循环</span></h2>
+    <p class="lead">Demonstrated with Case 000 — <i>Tim Hortons: Bringing an Iconic Canadian Coffee to China</i>. Step through the loop as a player would, or play it live on the ladder wall.<br>
+      <span class="zh">以第 000 案《蒂姆·霍顿斯：把加拿大国民咖啡带到中国》为例演示。点击四个步骤速览，或到阶梯墙里真打一局。</span></p>
+    <div class="loop-steps" id="loopSteps"></div>
+    <div class="loop-panel" id="loopPanel"></div>
+    <p class="demo-note">DEMO WITH PUBLIC RECORDS ONLY <span class="zh">演示仅使用公开记录（SEC 文件、公开报道），案例原文不分发。</span></p>
+  </div>
+</section>
+
+<section id="scoreboard">
+  <div class="wrap">
+    <div class="kicker">Scoreboard <span class="zh">记分牌</span></div>
+    <h2>The Odds Curve Is the Transcript of Judgment.<span class="zh">胜率曲线，就是判断力的成绩单</span></h2>
+    <p class="lead">The scoreboard is not a feature — it is a by-product. Every case that completes the loop writes one entry; 120 cases over two years compound into her decision-accuracy curve.<br>
+      <span class="zh">记分牌不是功能，是副产品：循环每跑一案记一笔，120 案 × 两年自然攒出她的判断准确率曲线。</span></p>
+    <div class="score-grid">
+      <div class="chart-card">
+        <svg viewBox="0 0 640 300" id="oddsChart" role="img" aria-label="odds curve"></svg>
+        <p class="demo-note" id="chartNote">SAMPLE TRAJECTORY <span class="zh">示意轨迹（真实曲线自第 001 案起跑后生成）</span></p>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn" id="exportRec" style="padding:9px 20px;font-size:12px;background:transparent;border:1px solid var(--gold);color:var(--gold)">EXPORT JSON</button>
+        </div>
+        <p class="zh" style="font-size:12px;color:var(--ink-dim);margin-top:8px">记录含每案的选择、把握度、训练分、用时与完成时间。</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="v" id="statDone">0 / 120</div><div class="k">CASES CLEARED <span class="zh">已完成案数</span></div></div>
+        <div class="stat"><div class="v">1–12</div><div class="k">TRAINING SCORE PER CASE <span class="zh">每案训练分</span></div></div>
+        <div class="stat"><div class="v">&lt; 60 min</div><div class="k">PER ROUND <span class="zh">每局全程上限（阅读≤30分钟）</span></div></div>
+        <div class="stat"><div class="v">Self only</div><div class="k">THE ONLY OPPONENT <span class="zh">只跟上一案的自己比</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="models">
+  <div class="wrap">
+    <div class="kicker">Behind the Curtain <span class="zh">后台方法</span></div>
+    <h2>AI Behind the Curtain, Phased In.<span class="zh">AI 后台裁判 · 分阶段上场</span></h2>
+    <p class="lead">Early cases need only one strong model behind the referee. As the ladder climbs, cross-validation kicks in — ChatGPT, Claude and the leading Chinese models debate in rounds, disagreements go deep, and “Option D: defer the decision” always stays a legal answer. All backstage, invisible to the user.<br>
+      <span class="zh">前期案例只需一个强模型当裁判；阶梯往上走，再上交叉验证——ChatGPT、Claude 与中国领先大模型分立场辩论，分歧点深挖，“选项 D：暂不决策”永远是合法答案。全部藏在后台，界面不可见。</span></p>
+    <div class="models">
+      <div class="seat us"><div class="m">ChatGPT</div><div class="o">OpenAI <span class="zh">现阶段主力</span> · Phase 1</div></div>
+      <div class="seat cn"><div class="m">Claude</div><div class="o">Anthropic <span class="zh">后期交叉辩论</span> · Phase 2+</div></div>
+      <div class="seat cn"><div class="m">Gemini</div><div class="o">Google <span class="zh">动态席</span> · Phase 2+</div></div>
+      <div class="seat cn"><div class="m">China's Top LLM</div><div class="o"><span class="zh">中国领先大模型 · 动态席</span> · Phase 2+</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="kicker">Roadmap <span class="zh">里程碑</span></div>
+    <p style="font-size:14px;margin-bottom:6px">Four parts, like the films — she grows from tribute to Mockingjay.<br>
+    <span class="zh">像电影一样分部曲：从贡品长成嘲笑鸟。</span></p>
+    <div class="road">
+      <div><b>Part I · The Hunger Games<br><span class="zh">饥饿游戏 · 2026 秋</span></b>Site shell + ladder + first cases through the full loop.<br><span class="zh">进入竞技场：网站壳＋阶梯骨架＋首批案例跑通裁判循环</span></div>
+      <div><b>Part II · Catching Fire<br><span class="zh">星火燎原 · 2027 春</span></b>Semi-automated evidence pipeline; real scoreboard goes live.<br><span class="zh">数据验证管线半自动化；真实记分牌点燃，胜率曲线逐案生成</span></div>
+      <div><b>Part III · Mockingjay I<br><span class="zh">嘲笑鸟 · 上 · 2027–28</span></b>All 120 cases cleared; odds curve goes public.<br><span class="zh">120 案铺满；判断准确率曲线公开上墙</span></div>
+      <div><b>Part IV · Mockingjay II<br><span class="zh">嘲笑鸟 · 下 · 2028–29</span></b>The final chapter — judgment, fully proven.<br><span class="zh">终章：判断力完全成型，曲线即证据</span></div>
+    </div>
+    <p style="margin-top:26px">Mockingjay · Case Arena · “May the odds be ever in your favor.”</p>
+    <p style="margin-top:14px;font-size:11px;line-height:1.7;color:rgba(159,168,184,.6);letter-spacing:.03em">LEGAL NOTICE — This is a personal, non-commercial study project. All case texts remain the copyrighted property of Ivey Publishing / their respective publishers and are never reproduced or distributed on this site; full texts are read only from legally purchased copies in the owner's private offline pack. Quiz content is original commentary for personal learning. No affiliation with or endorsement by Ivey Publishing, Western University, or any case provider is implied. If you are a rights holder with any concern, please contact the site owner and the material will be removed promptly.<br><span style="opacity:.75">免责声明 — 本站为个人非商业学习项目。所有案例原文版权归 Ivey Publishing 等出版方所有，本站不复制、不分发任何案例原文；原文仅由本人凭合法购买的副本在本地离线包中阅读。站内问答为个人学习目的的原创评述，与任何出版方无隶属或背书关系。如权利人存有任何异议，请联系站长，相关内容将立即移除。</span></p>
+  </div>
+</footer>
+
+<div id="gate" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:120;background:rgba(15,29,51,.88);backdrop-filter:blur(4px)">
+  <div style="max-width:420px;margin:18vh auto 0;background:#16263f;border:1px solid #C9A869;padding:34px 30px;text-align:center">
+    <div style="color:#C9A869;letter-spacing:.3em;font-size:11px;margin-bottom:10px">TRAINING AREA <span class="zh">训练区入口</span></div>
+    <h3 style="color:#F2EBDD;margin:0 0 8px;font-size:19px">Enter your training passcode<br><span style="font-size:13px;color:#9FA8B8">请输入训练密码</span></h3>
+    <p style="color:#9FA8B8;font-size:12.5px;margin:6px 0 16px">The arena (Cases 001–120) is passcode-gated. Demo case 000 is open to everyone.<br>训练区（第 001–120 案）只对她开放；演示案 000 免密可玩。</p>
+    <input id="gatePwd" type="password" inputmode="numeric" placeholder="Passcode" style="width:220px;padding:11px 14px;font-size:16px;text-align:center;letter-spacing:.3em;background:#0F1D33;color:#F2EBDD;border:1px solid #9FA8B8;outline:none">
+    <div style="margin-top:14px"><button id="gateGo" class="btn">ENTER</button>
+    <button id="gateCancel" style="background:transparent;border:none;color:#9FA8B8;cursor:pointer;margin-left:14px;font-size:13px">CANCEL</button></div>
+    <p id="gateMsg" style="color:#E07A5F;font-size:12.5px;min-height:16px;margin-top:10px"></p>
+  </div>
+</div>
+
+<div id="arena" role="dialog" aria-modal="true">
+  <div class="arena-box">
+    <button class="arena-close" id="arenaClose" aria-label="Close">×</button>
+    <div id="arenaBody"></div>
+    <div id="arenaNav"></div>
+  </div>
+</div>
+
+<script src="cases.js"></script>
+<script src="playable.js"></script>
+<script>
+(function(){
+  // ---- Ladder ----
+  var TIERS=[
+    {key:'训练中心',en:'Tier I · Training Center',zh:'训练中心 —— 熟悉品牌 · 中英对照先行'},
+    {key:'资格赛',en:'Tier II · Qualifiers',zh:'资格赛 —— 行业渐生 · 数据渐密'},
+    {key:'主竞技场',en:'Tier III · Main Arena',zh:'主竞技场 —— 决策模糊度上升'},
+    {key:'冠军区',en:'Tier IV · Champions\u2019 Circle',zh:'冠军区 —— 硬仗：金融 · 治理 · 危机'}
+  ];
+  var tiersEl=document.getElementById('tiers');
+  function isLive(id){return !!(window.PLAYABLE&&PLAYABLE[id]);}
+  function isDemo(id){return isLive(id)&&!!PLAYABLE[id].demo;}
+  function isUnlocked(id,doneRecs){
+    if(isDemo(id))return true;
+    var n=parseInt(id,10);
+    if(n<=1)return true;
+    return !!doneRecs[('00'+(n-1)).slice(-3)];
+  }
+  function cardHTML(c,doneRecs){
+    var live=isLive(c.id),demo=isDemo(c.id),done=demo?null:doneRecs[c.id];
+    var unlocked=live&&isUnlocked(c.id,doneRecs);
+    return '<div class="case'+(unlocked?' live':'')+(done?' done':'')+(live&&!unlocked?' locked':'')+(!live?' soon':'')+'" data-id="'+c.id+'"><span class="cid">'+c.id+'</span><span class="cname">'+c.name+'</span>'+
+       '<div class="cfoot">'+(done?'<span class="donebadge">✓ DONE '+done.score+'/12</span>':(demo?'<span class="demobadge">★ DEMO</span>':(unlocked?'<span class="play">▶ PLAYABLE</span>':(live?'<span class="lockbadge">🔒 LOCKED</span>':'<span class="soonbadge">··· SOON</span>'))))+
+       '<span class="ctag">'+(c.lang==='中文/双语'?'Bilingual':'English')+'</span></div></div>';
+  }
+  function render(filter){
+    tiersEl.innerHTML='';
+    var doneRecs={};getRecs().forEach(function(r){doneRecs[r.id]=r;});
+    // 公开演示案 000 单独陈列，不占正式 30 案席位
+    var demoCase=window.CASES.find(function(c){return isDemo(c.id);});
+    if(demoCase&&(filter==='all'||demoCase.lang===filter)){
+      var ddiv=document.createElement('div');
+      ddiv.innerHTML='<div class="tier-head"><span class="no">OPEN DEMO</span>'+
+        '<h3>The Demo Case <span class="zh">公开演示案</span><br><span class="zh">免密可玩 · 人人可试 · 成绩不计入战绩</span></h3></div>'+
+        '<div class="cases">'+cardHTML(demoCase,doneRecs)+'</div>';
+      tiersEl.appendChild(ddiv);
+    }
+    TIERS.forEach(function(t){
+      var list=window.CASES.filter(function(c){return c.tier===t.key&&!isDemo(c.id)&&(filter==='all'||c.lang===filter);});
+      if(!list.length)return;
+      var div=document.createElement('div');
+      var h='<div class="tier-head"><span class="no">'+t.en.split('·')[0].trim()+'</span>'+
+        '<h3>'+t.en.split('·')[1].trim()+'<br><span class="zh">'+t.zh+'</span></h3>'+
+        '<span class="range">'+list.length+' CASES</span></div><div class="cases">';
+      list.forEach(function(c){h+=cardHTML(c,doneRecs);});
+      div.innerHTML=h+'</div>';
+      tiersEl.appendChild(div);
+    });
+  }
+  render('all');
+  // ---- Passcode gate (001–120) ----
+  var GATE_PWD='080719';
+  function gated(id,cb){
+    if(isDemo(id)||sessionStorage.getItem('mj_gate')==='1'){cb();return;}
+    var g=document.getElementById('gate'),pwd=document.getElementById('gatePwd'),msg=document.getElementById('gateMsg');
+    g.style.display='block';pwd.value='';msg.textContent='';
+    setTimeout(function(){pwd.focus();},80);
+    function close(){g.style.display='none';document.getElementById('gateGo').onclick=null;document.getElementById('gateCancel').onclick=null;pwd.onkeydown=null;}
+    function tryGo(){
+      if(pwd.value===GATE_PWD){sessionStorage.setItem('mj_gate','1');close();cb();}
+      else{msg.textContent='Wrong passcode 密码不对';pwd.value='';pwd.focus();}
+    }
+    document.getElementById('gateGo').onclick=tryGo;
+    pwd.onkeydown=function(e){if(e.key==='Enter')tryGo();if(e.key==='Escape')close();};
+    document.getElementById('gateCancel').onclick=close;
+  }
+  document.getElementById('quickPlay').onclick=function(){
+    document.getElementById('ladder').scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){
+      var done={};getRecs().forEach(function(r){done[r.id]=1;});
+      var next=null;
+      for(var i=1;i<=120;i++){
+        var id=('00'+i).slice(-3);
+        if(isLive(id)&&!done[id]){next=id;break;}
+      }
+      if(!next){for(var j=1;j<=120;j++){var id2=('00'+j).slice(-3);if(isLive(id2)){next=id2;break;}}}
+      if(next)gated(next,function(){openArena(next);});
+    },650);
+  };
+  document.getElementById('quickScore').onclick=function(){
+    document.getElementById('scoreboard').scrollIntoView({behavior:'smooth'});
+  };
+  document.getElementById('filterBar').addEventListener('click',function(e){
+    if(e.target.tagName!=='BUTTON')return;
+    this.querySelectorAll('button').forEach(function(b){b.classList.remove('on');});
+    e.target.classList.add('on');render(e.target.dataset.f);
+  });
+
+  // ---- Referee loop demo (Case 001, Tim Hortons) ----
+  var LOOP=[
+    {t:'Guided Reading',z:'点选式读案',h:'Step 0 · Read by tapping, not typing 点选闯关读案',
+     b:'<p>Who is the protagonist? → <b style="color:var(--gold)">Yongchen Lu, CEO of Tims China 蒂姆斯中国CEO卢永臣</b></p>'+
+       '<p>By when must he decide what? → <b style="color:var(--gold)">As a late entrant, how to position and expand in China 后进者如何定位与扩张</b></p>'+
+       '<p>Which data matters most? → <b style="color:var(--gold)">¥40 Starbucks vs. ¥20 Luckin price bands; instant coffee still dominant 价格带与市场结构</b></p>'+
+       '<p class="zh">几分钟闯完一关，案例骨架自动收拢成一张案例卡——全程零打字。</p>'},
+    {t:'Her Decision',z:'她的决断',h:'Step 1 · “I am the protagonist. I decide…” 我是主人公，我决定',
+     b:'<div class="opt"><b>A</b> · Premium “third place” like Starbucks 对标星巴克高端第三空间</div>'+
+       '<div class="opt"><b>B</b> · Luckin playbook — subsidies and burn cash for scale 瑞幸打法：补贴烧钱换规模</div>'+
+       '<div class="opt"><b>C</b> · Mid-price “coffee + fresh food” differentiation 中端“咖啡＋暖食”差异化</div>'+
+       '<div class="opt"><b>D</b> · Defer — always a legal answer 暂不决策（永远是合法答案）</div>'+
+       '<p class="zh">点选方案＋把握度五档区间；想多说可语音。</p>'},
+    {t:'The Reveal',z:'裁判揭晓',h:'Step 2 · What really happened 真实世界的执行结果',
+     b:'<p>Tims China chose <b style="color:var(--gold)">C</b>: “coffee + warm food” differentiation, SPAC-listed on NASDAQ (THCH) in Sep 2022 at a $1.4B valuation, 1,000th store by Oct 2024 — yet never profitable: 2024 revenue ¥1.391B with a ¥410M net loss, market cap down to ~$249M as the ¥9.9 price war crushed the middle.</p>'+
+       '<p class="zh">蒂姆斯中国选了 C：中端“咖啡＋暖食”差异化、2022.9 纳斯达克上市（估值 14 亿美元）、2024.10 千店——但始终未盈利：2024 年营收 13.91 亿、净亏 4.1 亿，9.9 价格战碾碎中端，市值跌至约 2.49 亿美元。</p>'},
+    {t:'The Verdict',z:'裁判打分',h:'Step 3 · Where her judgment met reality 判断与结局对表',
+     b:'<p>Choosing <b style="color:var(--gold)">C</b> matches what management actually did — right direction, but the ending reveals a second layer: right positioning ≠ profitability; the middle is the most fragile band in a price war. Training Score 1–12 goes to the scoreboard, calibration note included.</p>'+
+       '<p class="zh">对了，对在哪；错了，错在哪个假设上；把握度是否校准也一并点评。训练分计入记分牌——这一案闭环。</p>'}
+  ];
+  var stepsEl=document.getElementById('loopSteps'),panel=document.getElementById('loopPanel');
+  LOOP.forEach(function(s,i){
+    var b=document.createElement('button');
+    b.innerHTML='<span class="sn">'+i+'</span><span class="st">'+s.t+'</span><span class="sz">'+s.z+'</span>';
+    b.onclick=function(){
+      stepsEl.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');panel.innerHTML='<h3>'+s.h+'</h3>'+s.b;
+    };
+    stepsEl.appendChild(b);
+  });
+  stepsEl.children[0].click();
+
+  // ---- Odds curve ----
+  var SAMPLE=[50,55,52,58,61,57,63,66,62,68,70,67,72,74,71,75,77,74,78,80,79,82,84,85];
+  // 旧版 key 里混有测试/演示成绩，一次性废弃
+  try{if(localStorage.getItem('mj_records')!==null)localStorage.removeItem('mj_records');}catch(e){}
+  function getRecs(){try{return JSON.parse(localStorage.getItem('mj_records_v2')||'[]');}catch(e){return[];}}
+  function renderScoreboard(){
+    var recs=getRecs(),data,note;
+    if(recs.length){
+      data=recs.map(function(r){return Math.round(r.score/12*100);});
+      note='REAL RECORD <span class="zh">真实战绩：已完成 '+recs.length+' / 120 案（最近：'+recs[recs.length-1].ts.slice(0,10)+'）</span>';
+    }else{
+      data=SAMPLE;note='SAMPLE TRAJECTORY <span class="zh">示意轨迹（真实曲线自第 001 案起跑后生成）</span>';
+    }
+    drawCurve(data,recs.length);
+    document.getElementById('chartNote').innerHTML=note;
+    var dn=document.getElementById('statDone');
+    if(dn)dn.textContent=recs.length+' / 120';
+  }
+  document.getElementById('exportRec').onclick=function(){
+    var recs=getRecs();
+    if(!recs.length){this.textContent='NO RECORDS YET';var b=this;setTimeout(function(){b.textContent='EXPORT JSON';},2000);return;}
+    var blob=new Blob([JSON.stringify({owner:'Yidan Wang',product:'Mockingjay Case Arena',exportedAt:new Date().toISOString(),records:recs},null,2)],{type:'application/json'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download='mockingjay_records_'+new Date().toISOString().slice(0,10)+'.json';a.click();
+  };
+  function drawCurve(data,realN){
+  var W=640,H=300,P=36;
+  var svg=document.getElementById('oddsChart'),ns='http://www.w3.org/2000/svg';
+  svg.innerHTML='';
+  function X(i){return data.length===1?W/2:P+i*(W-2*P)/(data.length-1);}
+  function Y(v){return H-P-(v-40)/(100-40)*(H-2*P);}
+  [40,60,80,100].forEach(function(g){
+    var l=document.createElementNS(ns,'line');
+    l.setAttribute('x1',P);l.setAttribute('x2',W-P);l.setAttribute('y1',Y(g));l.setAttribute('y2',Y(g));
+    l.setAttribute('stroke','rgba(201,168,105,.15)');l.setAttribute('stroke-dasharray','3 5');svg.appendChild(l);
+    var t=document.createElementNS(ns,'text');
+    t.setAttribute('x',8);t.setAttribute('y',Y(g)+4);t.setAttribute('fill','#9FA8B8');t.setAttribute('font-size','11');
+    t.textContent=g+'%';svg.appendChild(t);
+  });
+  var pts=data.map(function(v,i){return X(i)+','+Y(v);}).join(' ');
+  var pl=document.createElementNS(ns,'polyline');
+  pl.setAttribute('points',pts);pl.setAttribute('fill','none');pl.setAttribute('stroke','#C9A869');pl.setAttribute('stroke-width','2.5');
+  svg.appendChild(pl);
+  data.forEach(function(v,i){
+    var c=document.createElementNS(ns,'circle');
+    c.setAttribute('cx',X(i));c.setAttribute('cy',Y(v));c.setAttribute('r','3');
+    c.setAttribute('fill',i===data.length-1?'#E3CD9F':'#0F1D33');c.setAttribute('stroke','#C9A869');c.setAttribute('stroke-width','1.5');
+    svg.appendChild(c);
+  });
+  var cap=document.createElementNS(ns,'text');
+  cap.setAttribute('x',W-P);cap.setAttribute('y',Y(85)-12);cap.setAttribute('fill','#E3CD9F');
+  cap.setAttribute('font-size','12');cap.setAttribute('text-anchor','end');cap.setAttribute('font-family','Georgia,serif');
+  cap.textContent='Odds 胜率 → '+data[data.length-1]+'%';svg.appendChild(cap);
+  var xl=document.createElementNS(ns,'text');
+  xl.setAttribute('x',P);xl.setAttribute('y',H-10);xl.setAttribute('fill','#9FA8B8');xl.setAttribute('font-size','11');
+  xl.textContent='Case 001';svg.appendChild(xl);
+  var xr=document.createElementNS(ns,'text');
+  xr.setAttribute('x',W-P);xr.setAttribute('y',H-10);xr.setAttribute('fill','#9FA8B8');xr.setAttribute('font-size','11');xr.setAttribute('text-anchor','end');
+  xr.textContent=realN?'Case '+String(realN).padStart(3,'0'):'Case 024';svg.appendChild(xr);
+  }
+  renderScoreboard();
+
+  // ================= Arena engine — data-driven referee loop =================
+  // 案例数据全部在 playable.js（window.PLAYABLE），001 为公开演示案（demo:true）
+  var A=null;
+  var arena=document.getElementById('arena'),body=document.getElementById('arenaBody'),nav=document.getElementById('arenaNav');
+  var st={};
+  var STEPS=['Guide','Read','Quiz','Your Call','Reveal'];
+  function prog(n){
+    var h='<div class="arena-prog">';
+    for(var i=0;i<5;i++)h+='<span class="'+(i<=n?'done':'')+'"></span>';
+    return h+'</div>';
+  }
+  function head(kick){
+    kick=zhWrap(kick);
+    return '<div class="arena-kicker">'+kick+'</div><h3>'+A.title+'</h3><span class="zh">'+A.zh+'</span>'+
+      (A.demo?'<p style="margin-top:8px;font-size:12px;color:var(--gold);letter-spacing:.12em">★ PUBLIC DEMO — this playthrough is not recorded. <span class="zh">公开演示案 · 不计入战绩</span></p>':'');
+  }
+  function zhWrap(t){
+    return t.replace(/([\u4e00-\u9fff][\u4e00-\u9fff0-9A-Za-z ·、，。：「」——·（）？]*)/g,'<span class="zh">$1</span>');
+  }
+  function back(n,label){
+    return '<button class="backlink" data-go="'+n+'">← '+(label||'BACK')+'</button>';
+  }
+  function bindBack(){
+    body.querySelectorAll('.backlink').forEach(function(b){
+      b.onclick=function(){go(+b.dataset.go);};
+    });
+  }
+  function renderNav(){
+    var h='';
+    STEPS.forEach(function(t,i){
+      var locked=i>st.maxStep;
+      h+='<button data-i="'+i+'"'+(locked?' disabled':'')+(i===st.cur?' class="on"':'')+'>'+(i+1)+'. '+t+'</button>';
+    });
+    nav.innerHTML=h;
+    nav.classList.add('show');
+    nav.querySelectorAll('button').forEach(function(b){
+      b.onclick=function(){if(!b.disabled)go(+b.dataset.i);};
+    });
+  }
+  function setStep(n){st.cur=n;st.maxStep=Math.max(st.maxStep,n);renderNav();}
+  // 1. 读法引导（训练中心 000–030 案标配）
+  var GUIDE=[
+    {t:'Reading a case is hunting the decision, not the story <span class="zh">读案不是读故事，是找决策</span>',b:'Every case you read answers exactly three questions: <b style="color:var(--gold)">Who is the protagonist? What must they decide, and by when? What are their options?</b> Thinking is the point, not reading — reading is the means; finding the decision point is the goal.<br><span class="zh">你读任何一个案例，只为回答三件事：谁是主人公？他必须在什么时间前做什么决定？他有哪几条路可选？关键是思考，而非阅读。</span>'},
+    {t:'Scan the skeleton in 2 minutes, then read <span class="zh">先花 2 分钟扫结构，再细读</span>',b:'Don\u2019t chew from the first word to the last. Read the <b style="color:var(--gold)">opening paragraph</b> (the decision scene usually lives here) → skim the <b style="color:var(--gold)">exhibits</b> (the hard numbers are all there) → read the <b style="color:var(--gold)">final paragraph</b> (the decision question often hides here). Skeleton first, then fill in the flesh.<br><span class="zh">先看开头第一段 → 翻图表 → 读最后一段。骨架有了，再回头填肉。</span>'},
+    {t:'Cases contain noise — on purpose <span class="zh">案例里有噪音，这是故意的</span>',b:'Background and industry history are largely distractions — just like real life. Lock onto <b style="color:var(--gold)">numbers, quotes, and contrasts</b>; skim everything else. Some information is deliberately withheld and you must infer it — that too is part of the training.<br><span class="zh">盯住数字、引语、对比，其余扫一眼就过。有些信息故意不给，需要你自己推断。</span>'},
+    {t:'Read the body with three questions <span class="zh">带着三个问题读正文</span>',b:'1) Who is the protagonist? <span class="zh">谁是主人公？</span> 2) What must they decide, and by when? <span class="zh">他必须在什么时间前做什么决定？</span> 3) Which data set matters most? <span class="zh">哪组数据最关键？</span> The <b style="color:var(--gold)">10-minute timer</b> on the reading page is only there to make sure you really read — wrong answers in the quiz trigger hints, and hints walk you back into the text; the nav bar below always takes you back to the case.<br><span class="zh">阅读页的 10 分钟倒计时只是保证你真读——闯关答错时会出提示，提示会带你回原文找答案；底部导航条随时能切回原文。</span>'},
+    {t:'Five speed-reading moves — read any case in ≤30 minutes <span class="zh">快速阅读五招 · 读原文不超过 30 分钟</span>',b:'1) <b style="color:var(--gold)">Read the first 3 + last 3 paragraphs</b> — the opening sets the person and stakes, the ending hides the decision; 2) Lock the same <b style="color:var(--gold)">three questions</b> — who decides, what challenge, by when — plus one more: why now? 3) <b style="color:var(--gold)">Skim every exhibit and appendix</b> — the hard numbers live there; 4) Skim the subheadings to build the skeleton; 5) Read the body asking "if it were me, when must I call it?" Reading past 30 minutes means you\u2019re reading a story, not hunting a decision. Quiz, your call and the reveal take another ~20 minutes — a full round stays under an hour.<br><span class="zh">前 3 段＋后 3 段定处境；同样锁定那三个问题，外加一问「为什么是现在」；扫图表抓数字；扫副标题搭骨架；带着「如果是我何时拍板」读正文。读原文不超过 30 分钟，加上闯关、决断、裁判揭晓约 20 分钟——完整一局在一小时内。</span>'}
+  ];
+  function stepGuide(gi){
+    setStep(0);
+    var g=GUIDE[gi];
+    body.innerHTML=head('HOW TO READ A CASE 读法引导 '+(gi+1)+'/'+GUIDE.length)+prog(0)+
+      '<div class="q"><div class="qt" style="font-size:17px">'+g.t+'</div><p>'+g.b+'</p></div>'+
+      '<button class="btn" id="gNext">'+(gi<GUIDE.length-1?'NEXT →':'TO THE CASE →')+'</button>'+
+      (gi>0?back(0,'BACK').replace('data-go="0"','data-back="'+(gi-1)+'"'):'')+
+      '<p class="zh" style="margin-top:14px;font-size:12px;color:var(--ink-dim)">Every Training Center case (000–030) opens with this guided reading; higher up the ladder the scaffolding falls away until the method is simply you.<br>训练中心每案都带读法引导；阶梯往上，支架逐级撤掉，直到你自己就是方法。</p>';
+    document.getElementById('gNext').onclick=function(){
+      if(gi<GUIDE.length-1)stepGuide(gi+1);else stepRead();
+    };
+    body.querySelectorAll('[data-back]').forEach(function(b){b.onclick=function(){stepGuide(+b.dataset.back);};});
+  }
+  // 2. 阅读原文：原版 PDF 原样呈现
+  var ZOOMS=[0.7,0.85,1,1.3,1.6,2];
+  function stepRead(){
+    setStep(1);
+    if(st.zoom===undefined)st.zoom=2;
+    body.innerHTML=head('READ THE CASE 阅读原文 · 原版原样')+prog(1)+
+      '<p class="zh" style="font-size:13px">Read with three questions: Who is the protagonist? What must they decide? Which data set matters most? <b>(Local study only — do not share. 本地学习用，不外传)</b></p>'+
+      '<div class="zoombar"><button id="zOut">−</button><span class="zlvl" id="zLvl"></span><button id="zIn">＋</button>'+
+      (A.pagesZh?'<span style="margin-left:12px;border:1px solid rgba(201,168,105,.35);border-radius:2px;overflow:hidden;display:inline-flex">'+
+        '<button id="langEn" style="background:var(--gold);color:var(--navy);border:none;padding:2px 12px;font-size:12px;cursor:pointer;letter-spacing:.08em">EN</button>'+
+        '<button id="langZh" style="background:transparent;color:var(--ink-dim);border:none;padding:2px 12px;font-size:12px;cursor:pointer">CN</button></span>':'')+
+      '<span class="zh" style="font-size:12px;color:var(--ink-dim)">Zoom in, then scroll sideways for detail 放大后可左右滑动看细节</span></div>'+
+      '<div id="readFallback" style="display:none" class="card zh"><b>Case text in the offline pack only 原文离线可见</b><br><br>The Ivey case text is copyright-protected and ships only with the offline pack — it is never shown online. Open the offline version (unzip mockingjay-arena.zip, double-click index.html) to read Case '+st.id+'. Every other step (quiz, your call, the reveal) works right here.<br><br><span style="color:var(--ink-dim)">Ivey 案例原文受版权保护，只随离线包提供，不在线上版展示。其余步骤在线上版照常可玩。</span></div>'+
+      '<div class="reader pages open" id="readerBox" style="margin-top:0"></div>'+
+      '<div style="margin-top:16px"><button class="btn" id="rDone" disabled>READING…</button> '+back(0,'BACK TO GUIDE')+'</div>';
+    // 双语案例：默认英文，可切中文（中文页在 zh/ 子目录）
+    if(!st.readLang)st.readLang='en';
+    function renderPages(){
+      var isZh=st.readLang==='zh'&&A.pagesZh;
+      var n=isZh?A.pagesZh:A.pages;
+      var dir='cases/'+st.id+'_pages/'+(isZh?'zh/':'');
+      var s='';
+      for(var i=1;i<=n;i++){s+='<img src="'+dir+'p'+('0'+i).slice(-2)+'.jpg" alt="case page '+i+'" loading="lazy" onerror="window.__readErr&&window.__readErr()">';}
+      document.getElementById('readerBox').innerHTML=s;
+      var bE=document.getElementById('langEn'),bZ=document.getElementById('langZh');
+      if(bE&&bZ){
+        bE.style.background=isZh?'transparent':'var(--gold)';bE.style.color=isZh?'var(--ink-dim)':'var(--navy)';
+        bZ.style.background=isZh?'var(--gold)':'transparent';bZ.style.color=isZh?'var(--navy)':'var(--ink-dim)';
+      }
+      applyZoom();
+    }
+    // 真读门槛：倒计时结束才解锁闯关——演示案免等（READ_MIN=0），正式案 10 分钟
+    var READ_MIN=A.demo?0:10;
+    if(!st.readUnlockAt)st.readUnlockAt=Date.now()+READ_MIN*60000;
+    if(!st.readAt)st.readAt=Date.now();
+    var rBtn=document.getElementById('rDone');
+    // 在线版无原文文件：第一张图加载失败即切换为提示卡，隐藏缩放条
+    window.__readErr=function(){
+      var fb=document.getElementById('readFallback'),rb=document.getElementById('readerBox');
+      if(fb&&rb){fb.style.display='block';rb.style.display='none';
+        var zb=document.querySelector('.zoombar');if(zb)zb.style.display='none';}
+    };
+    function tick(){
+      var left=st.readUnlockAt-Date.now();
+      if(left<=0){
+        rBtn.disabled=false;rBtn.innerHTML='I\u2019M DONE READING →';
+        if(st.timer)clearInterval(st.timer);
+      }else{
+        var m=Math.floor(left/60000),sec=Math.floor(left%60000/1000);
+        rBtn.innerHTML='READING… unlocks in '+m+':'+('0'+sec).slice(-2);
+      }
+    }
+    if(st.timer)clearInterval(st.timer);
+    st.timer=setInterval(function(){
+      if(!document.getElementById('rDone')){clearInterval(st.timer);return;}
+      tick();
+    },1000);
+    tick();
+    function applyZoom(){
+      var z=ZOOMS[st.zoom];
+      document.getElementById('zLvl').textContent=Math.round(z*100)+'%';
+      document.getElementById('readerBox').querySelectorAll('img').forEach(function(im){
+        im.style.width=Math.round(760*z)+'px';im.style.maxWidth=z<=1?'100%':'none';
+      });
+      document.getElementById('zIn').disabled=st.zoom>=ZOOMS.length-1;
+      document.getElementById('zOut').disabled=st.zoom<=0;
+    }
+    document.getElementById('zIn').onclick=function(){if(st.zoom<ZOOMS.length-1){st.zoom++;applyZoom();}};
+    document.getElementById('zOut').onclick=function(){if(st.zoom>0){st.zoom--;applyZoom();}};
+    if(document.getElementById('langEn')){
+      document.getElementById('langEn').onclick=function(){st.readLang='en';renderPages();};
+      document.getElementById('langZh').onclick=function(){st.readLang='zh';renderPages();};
+    }
+    renderPages();
+    document.getElementById('rDone').onclick=function(){
+      if(!st.readDoneAt)st.readDoneAt=Date.now();
+      step0(0);
+    };
+    bindBack();
+  }
+  // 3. 点选闯关
+  function step0(qi){
+    if(qi===undefined)qi=st.quizPos||0;
+    st.quizPos=qi;setStep(2);
+    if(qi>=A.quiz.length){
+      body.innerHTML=head('STEP 0 · CASE CARD 案例卡')+prog(2)+
+        '<p>Case skeleton locked in. <span class="zh">案例骨架已收拢：</span></p>'+
+        '<div class="q">'+A.card.map(function(c2){return '<div class="opt right">'+zhWrap(c2)+'</div>';}).join('')+'</div>'+
+        '<button class="btn" id="aNext">LOCK IN →</button> '+back(1,'BACK TO TEXT');
+      document.getElementById('aNext').onclick=function(){step1();};
+      bindBack();
+      return;
+    }
+    var q=A.quiz[qi];
+    var h=head('STEP 0 · GUIDED READING '+(qi+1)+'/3 点选读案')+prog(2);
+    h+='<p class="zh" style="font-size:12.5px;color:var(--ink-dim);margin-bottom:4px">Stuck? Jump back to 「2. Read 原文」anytime for evidence. 卡住了随时回原文找证据。</p>';
+    h+='<div class="q"><div class="qt">'+zhWrap(q.q)+'</div>';
+    q.opts.forEach(function(o,i){
+      h+='<div class="opt" data-i="'+i+'">'+zhWrap(o)+'</div>';
+    });
+    h+='<div class="hint" id="hint">'+q.hint+'</div></div>'+back(1,'BACK TO TEXT');
+    body.innerHTML=h;
+    bindBack();
+    body.querySelectorAll('.opt').forEach(function(el){
+      el.onclick=function(){
+        var i=+el.dataset.i;
+        if(i===q.right){
+          el.classList.add('right');
+          setTimeout(function(){step0(qi+1);},450);
+        }else{
+          el.classList.add('wrong');
+          document.getElementById('hint').style.display='block';
+        }
+      };
+    });
+  }
+  // 4. 我的决断
+  function step1(){
+    setStep(3);
+    var h=head('STEP 1 · YOUR CALL 你的决断')+prog(3)+
+      '<p>'+A.scene+'</p><div class="q">';
+    A.options.forEach(function(o){
+      h+='<div class="opt" data-k="'+o.k+'"><b>'+o.k+'</b> · '+zhWrap(o.en)+(o.zh?'<br><span class="zh">'+o.zh+'</span>':'')+'</div>';
+    });
+    var BANDS=[['Just guessing','纯猜的',10],['Not sure','不太确定',30],['Fifty-fifty','五五开',50],['Fairly confident','比较有把握',70],['Very confident','非常确定',90]];
+    h+='</div><p style="font-size:13px;color:var(--ink-dim);margin-bottom:2px">Confidence <span class="zh">把握度 · 选一个区间就好</span></p><div class="q" style="margin-top:6px">';
+    BANDS.forEach(function(b2){
+      h+='<div class="opt band" data-v="'+b2[2]+'" style="display:inline-block;margin:0 8px 8px 0;padding:8px 14px"><b>'+b2[0]+'</b> <span class="zh">'+b2[1]+'</span></div>';
+    });
+    h+='</div>'+
+      '<p class="zh" style="font-size:12.5px;color:var(--ink-dim)">The referee uses it to test your calibration: confident-and-wrong is overconfidence, lucky-and-unsure is unexplained intuition. Over time it draws your confidence-vs-accuracy curve.<br>裁判用它检验校准度：高把握犯错是过度自信，低把握蒙对是直觉未明；长期画出你的校准曲线。</p>'+
+      '<button class="btn" id="aDecide" disabled>COMMIT</button> '+back(2,'BACK');
+    body.innerHTML=h;
+    bindBack();
+    var btn=document.getElementById('aDecide');
+    function maybeEnable(){btn.disabled=!(st.choice&&st.conf);}
+    body.querySelectorAll('.band').forEach(function(el){
+      el.onclick=function(){
+        body.querySelectorAll('.band').forEach(function(x){x.classList.remove('right');});
+        el.classList.add('right');st.conf=+el.dataset.v;maybeEnable();
+      };
+    });
+    body.querySelectorAll('.opt:not(.band)').forEach(function(el){
+      el.onclick=function(){
+        body.querySelectorAll('.opt:not(.band)').forEach(function(x){x.classList.remove('right');});
+        el.classList.add('right');st.choice=el.dataset.k;maybeEnable();
+      };
+    });
+    btn.onclick=function(){step2();};
+  }
+  // 5. 裁判揭晓
+  function step2(){
+    setStep(4);
+    body.innerHTML=head('STEP 2 · THE REVEAL 裁判揭晓')+prog(4)+A.reveal+
+      '<button class="btn" id="aScore">SEE MY SCORE →</button>';
+    document.getElementById('aScore').onclick=function(){step3();};
+  }
+  // 裁判打分（与揭晓同属第 5 站）
+  function step3(){
+    setStep(4);
+    var v=A.verdict[st.choice];
+    body.innerHTML=head('STEP 3 · THE VERDICT 裁判打分')+prog(4)+
+      '<div style="display:flex;gap:34px;align-items:center;margin:14px 0">'+
+      '<div class="score-big">'+v.s+'<span style="font-size:22px;color:var(--ink-dim)">/12</span></div>'+
+      '<div style="font-size:13px;color:var(--ink-dim)">TRAINING SCORE <span class="zh">训练分</span><br>Your call <span class="zh">你的选择</span>: <b style="color:var(--gold)">'+st.choice+'</b> · Confidence <span class="zh">把握度</span>: '+(st.conf<=10?'Just guessing <span class="zh">纯猜的</span>':st.conf<=30?'Not sure <span class="zh">不太确定</span>':st.conf<=50?'Fifty-fifty <span class="zh">五五开</span>':st.conf<=70?'Fairly confident <span class="zh">比较有把握</span>':'Very confident <span class="zh">非常确定</span>')+'</div></div>'+
+      '<p>'+(v.en?v.en+'<br><span class="zh">'+v.t+'</span>':v.t)+'</p>'+
+      '<p style="font-size:13.5px;color:var(--gold-soft)">CALIBRATION <span class="zh">校准点评</span> · '+(function(){
+        var good=v.s>=8;
+        if(good&&st.conf>=70)return 'Right call with high confidence — judgment matches conviction, the best state to be in. <span class="zh">选对了且把握度高，判断与自信匹配。</span>';
+        if(good&&st.conf<50)return 'Right call, low confidence — intuition landed but the reasoning is unproven. Next case, spell out "why I was right" and turn luck into skill. <span class="zh">选对了但把握度不高，下一案试着说清“我为什么对”。</span>';
+        if(!good&&st.conf>=70)return 'Wrong with high confidence — overconfidence is the most expensive error in decision-making. Review: which assumption made you so sure? <span class="zh">错了且把握度很高，复盘哪个假设让你这么笃定。</span>';
+        if(!good)return 'Wrong, but you doubted yourself — that doubt was correct, and it marks exactly where to re-read the text. <span class="zh">错了但把握度不高，存疑点正是要回原文重读的地方。</span>';
+        return 'Mid confidence, near the right answer — well calibrated, keep going. <span class="zh">把握度中等，判断接近正确答案，校准不错。</span>';
+      })()+'</p>'+
+      (A.demo?'<p class="zh">Demo complete — <b>this playthrough is not recorded</b>. Real standings accumulate from Case 001 onward (passcode required). May the odds be ever in your favor.<br>演示案试玩结束，本局不写入记分牌；正式战绩从第 001 案开始累积。</p>':'<p class="zh">This case is now on your local scoreboard (stored only in your own browser). May the odds be ever in your favor.<br>这一案已写入你的本地记分牌（只存在你自己的浏览器里）。</p>')+
+      '<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">'+
+      '<button class="btn" id="aAgain">REPLAY</button>'+
+      '<button class="btn" id="aFinish" style="background:transparent;border:1px solid var(--gold);color:var(--gold)">FINISH ✕</button>'+
+      '<button class="btn" id="aGPT">ASK CHATGPT</button>'+
+      back(2,'BACK TO REVEAL').replace('data-go="2"','data-go="4"')+'</div>'+
+      '<p class="zh" style="margin-top:10px;font-size:12px;color:var(--ink-dim)">One click copies the referee prompt — paste it to ChatGPT for a second opinion (your early-stage referee). 点一下复制提示词，粘贴给 ChatGPT 拿第二意见。</p>'+
+      (v.s>=8?'<div style="margin-top:16px;border:1px dashed var(--gold);padding:14px 18px;background:rgba(201,168,105,.06)">'+
+        '<div style="color:var(--gold);letter-spacing:.25em;font-size:11px;margin-bottom:6px">SPONSOR GIFT <span class="zh">赞助礼包掉落</span></div>'+
+        '<p style="font-size:13.5px;margin:0">'+(A.giftEn||'')+'<br><span class="zh">'+(A.gift||'')+'</span></p></div>':'');
+    if(!st.saved&&!A.demo){
+      st.saved=true;
+      try{
+        var recs=JSON.parse(localStorage.getItem('mj_records_v2')||'[]');
+        recs=recs.filter(function(r){return r.id!==st.id;});
+        recs.push({id:st.id,name:A.title,choice:st.choice,conf:st.conf,score:v.s,
+          minutes:Math.max(1,Math.round((Date.now()-st.t0)/60000)),
+          readSeconds:st.readAt?Math.round((st.readDoneAt||Date.now()-0)/1000)-Math.round(st.readAt/1000):null,
+          ts:new Date().toISOString()});
+        localStorage.setItem('mj_records_v2',JSON.stringify(recs));
+      }catch(e){}
+      renderScoreboard();
+    }
+    document.getElementById('aAgain').onclick=function(){openArena(st.id);};
+    document.getElementById('aFinish').onclick=function(){
+      arena.classList.remove('open');document.body.style.overflow='';
+      var on=document.querySelector('#filterBar button.on');
+      render(on?on.dataset.f:'all');
+      document.getElementById('ladder').scrollIntoView({behavior:'smooth'});
+    };
+    var gbtn=document.getElementById('aGPT');
+    gbtn.onclick=function(){
+      var optA=A.options.filter(function(o){return o.k===st.choice;})[0];
+      var prompt='你是案例教学法的数据裁判。我刚学完 Ivey 案例 '+A.gpt.caseId+'。\n\n'+
+        '【案例决策点】'+A.gpt.dp+'\n\n'+
+        '【我的决策】选项 '+st.choice+'：'+optA.en+'（'+ (optA.zh||'暂不决策') +'）\n'+
+        '【我的把握度】'+(st.conf<=10?'纯猜的':st.conf<=30?'不太确定':st.conf<=50?'五五开':st.conf<=70?'比较有把握':'非常确定')+'\n\n'+
+        '请你：1) 用 '+A.gpt.year+' 年时可得的信息评价我的推理质量，指出我赖以成立的关键假设；2) 结合真实结局（'+A.gpt.out+'）给我打训练分（1–12 分）并说明对错在哪个假设上；3) 给一条能帮我下一案做得更好的阅读/分析建议。请用中文回答，简洁。';
+      function done(){gbtn.innerHTML='COPIED ✓';setTimeout(function(){gbtn.innerHTML='ASK CHATGPT';},2500);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(prompt).then(done,function(){fallback();});
+      }else fallback();
+      function fallback(){
+        var ta=document.createElement('textarea');ta.value=prompt;document.body.appendChild(ta);
+        ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();
+      }
+    };
+    bindBack();
+  }
+  function go(n){
+    if(n===0)stepGuide(0);
+    else if(n===1)stepRead();
+    else if(n===2)step0();
+    else if(n===3)step1();
+    else step2();
+  }
+  function openArena(id){
+    if(!isLive(id))return;
+    A=PLAYABLE[id];
+    st={id:id,cur:0,maxStep:0,t0:Date.now(),saved:false};
+    arena.classList.add('open');
+    document.body.style.overflow='hidden';
+    stepGuide(0);
+  }
+  document.getElementById('arenaClose').onclick=function(){
+    arena.classList.remove('open');document.body.style.overflow='';
+  };
+  arena.onclick=function(e){if(e.target===arena){arena.classList.remove('open');document.body.style.overflow='';}};
+  tiersEl.addEventListener('click',function(e){
+    var c=e.target.closest('.case.live');
+    if(!c)return;
+    var id=c.dataset.id;
+    gated(id,function(){openArena(id);});
+  });
+})();
+</script>
+</body>
+</html>
