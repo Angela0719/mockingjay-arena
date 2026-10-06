@@ -26,6 +26,8 @@
     var language = view.querySelector('[data-player-language]');
     var chinese = Array.from(video.textTracks).find(function(track){ return /^zh/i.test(track.language); });
     var nativeScreen = false;
+    // Older cached HTML has native subtitle tracks but no external caption UI.
+    if (subtitleBand && language) {
     function drawCue(){
       if(!chinese || subtitleBand.hidden)return;
       subtitleBand.textContent = Array.from(chinese.activeCues || []).map(function(cue){return cue.text;}).join('\n');
@@ -52,6 +54,7 @@
       if(chinese&&chinese.mode==='showing'){chinese.mode='hidden';language.value='zh';}
       subtitleBand.hidden=language.value!=='zh';drawCue();
     });
+    }
     function message(text) { status.textContent = text; }
     function pausedLabel() { button.textContent = video.ended ? '重新播放' : '播放影片'; }
 
