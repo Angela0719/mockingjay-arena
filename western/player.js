@@ -8,7 +8,7 @@
     for (var i = 0; i < video.textTracks.length; i++) {
       var track = video.textTracks[i];
       if (track.kind === 'subtitles' && /^zh/i.test(track.language)) {
-        track.mode = 'showing';
+        track.mode = view.querySelector('[data-player-cue]') ? 'hidden' : 'showing';
         view.dataset.captionsSet = 'true';
         return;
       }
@@ -22,6 +22,36 @@
     var button = view.querySelector('[data-player-toggle]');
     var status = view.querySelector('[data-player-status]');
     var captionStatus = view.querySelector('[data-caption-status]');
+    var subtitleBand = view.querySelector('[data-player-cue]');
+    var language = view.querySelector('[data-player-language]');
+    var chinese = Array.from(video.textTracks).find(function(track){ return /^zh/i.test(track.language); });
+    var nativeScreen = false;
+    function drawCue(){
+      if(!chinese || subtitleBand.hidden)return;
+      subtitleBand.textContent = Array.from(chinese.activeCues || []).map(function(cue){return cue.text;}).join('\n');
+    }
+    function selectLanguage(){
+      view.dataset.captionsSet = 'true';
+      Array.from(video.textTracks).forEach(function(track){
+        track.mode = track.language === language.value ? (track === chinese && !nativeScreen ? 'hidden' : 'showing') : 'disabled';
+      });
+      subtitleBand.hidden = nativeScreen || language.value !== 'zh';drawCue();
+    }
+    language.addEventListener('change',selectLanguage);
+    if(chinese)chinese.addEventListener('cuechange',drawCue);
+    video.addEventListener('timeupdate',drawCue);
+    video.addEventListener('seeked',drawCue);
+    function fullscreenCaptions(active){nativeScreen=active;selectLanguage();}
+    video.addEventListener('webkitbeginfullscreen',function(){fullscreenCaptions(true);});
+    video.addEventListener('webkitendfullscreen',function(){fullscreenCaptions(false);});
+    document.addEventListener('fullscreenchange',function(){fullscreenCaptions(document.fullscreenElement === video);});
+    video.textTracks.addEventListener('change',function(){
+      if(nativeScreen)return;
+      var english=Array.from(video.textTracks).some(function(track){return track.language==='en'&&track.mode==='showing';});
+      if(english){language.value='en';subtitleBand.hidden=true;return;}
+      if(chinese&&chinese.mode==='showing'){chinese.mode='hidden';language.value='zh';}
+      subtitleBand.hidden=language.value!=='zh';drawCue();
+    });
     function message(text) { status.textContent = text; }
     function pausedLabel() { button.textContent = video.ended ? '重新播放' : '播放影片'; }
 
@@ -59,6 +89,7 @@
       var root = view.closest('.screen');
       video.pause();
       view.hidden = true;
+      history.replaceState(null, '', location.pathname + location.search);
       root.querySelector(view.dataset.overview).hidden = false;
       if (typeof window.scrollWesternTop === 'function') window.scrollWesternTop();
       var trigger = triggers.get(view);
@@ -74,6 +105,7 @@
     var oldDetail = root.querySelector(view.dataset.detail);
     if (oldDetail) oldDetail.hidden = true;
     view.hidden = false;
+    history.replaceState(null, '', location.pathname + location.search + '#video=' + (root.id === 'sL9' ? 'story' : 'allin'));
     chineseCaptions(view, view.querySelector('video'));
     // Opening the cover is navigation; the visible native/player button plays.
     if (typeof window.scrollWesternTop === 'function') window.scrollWesternTop();
@@ -82,7 +114,7 @@
   document.querySelectorAll('[data-western-player]').forEach(bind);
   window.WesternVideoPlayer = { open: open };
   if (document.body.classList.contains('western-player-page')) {
-    var requested = new URLSearchParams(window.location.search).get('film');
+    var requested = document.body.dataset.film || new URLSearchParams(window.location.search).get('film');
     var film = requested === 'story' ? 'story' : 'allin';
     document.querySelectorAll('[data-western-player]').forEach(function (view) {
       view.hidden = view.dataset.film !== film;
@@ -93,4 +125,3 @@
     });
   }
 })();
-
