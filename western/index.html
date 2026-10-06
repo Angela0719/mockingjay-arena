@@ -716,6 +716,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 .screen :is(a,p,td,th){overflow-wrap:break-word;}
 .screen a{overflow-wrap:anywhere;}
 .screen button{touch-action:manipulation;}
+#sL3 .job-goals [data-goal="either"],#sL5 .options-goals [data-goal="either"]{white-space:nowrap;}
+#sL2 .allin-start{display:block;width:100%;min-height:44px;margin:10px 0 0;border:0;border-radius:10px;background:#4f2683;color:#fff;font-family:inherit;font-size:15px;font-weight:600;line-height:1.5;padding:10px;}
+#sL2 .allin-status{font-size:12px;line-height:1.6;color:#756781;margin:8px 0;}
+#sL2 :is(.allin-start,.allin-status)[hidden]{display:none!important;}
 .screen :is(button,a,input,select,textarea,summary):focus-visible{outline:2px solid #7a4fb0;outline-offset:3px;}
 @media(max-width:640px){
  .wrap{width:100%;padding:16px max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));}
@@ -877,11 +881,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
       <button type="button" class="school-next western-page-next" onclick="go('sL3')">学校认可，第 3 站 →</button>
     </div>
     <div class="school-detail" hidden><button type="button" class="school-back western-detail-back">← 返回 Western 是谁</button><div class="school-detail-content"></div></div>
-    <template data-school-template="video"><h2>Western 官方宣传片 · All in</h2><video controls preload="metadata" playsinline webkit-playsinline poster="videos/poster_allin.jpg" style="width:100%;border-radius:12px;display:block;background:#000;" ondblclick="if(this.requestFullscreen)this.requestFullscreen()">
-      <source src="videos/Western_All_in_mobile.mp4" type="video/mp4">
+    <template data-school-template="video"><h2>Western 官方宣传片 · All in</h2><video src="videos/Western_All_in_mobile.mp4?v=20261007-1" controls preload="metadata" playsinline webkit-playsinline width="1280" height="720" poster="videos/poster_allin.jpg" style="width:100%;height:auto;aspect-ratio:16/9;border-radius:12px;display:block;background:#000;" ondblclick="if(this.requestFullscreen)this.requestFullscreen()">
       <track kind="subtitles" srclang="zh" label="中文字幕" default src="videos/Western_All_in.zh-CN.vtt">
       <track kind="subtitles" srclang="en" label="English" src="videos/Western_All_in.en-CA.vtt">
-    </video><p class="school-source">Western 官方品牌宣传片《All in——为加拿大与世界的宏大协作》（720p · 2 分 06 秒 · 已配中文字幕。来源：Western 官方品牌中心 brand.westernu.ca）</p><p class="school-source">若内嵌播放器无法播放，<a href="videos/Western_All_in_mobile.mp4" target="_blank" rel="noopener">直接打开影片</a>。</p></template>
+    </video><button type="button" class="allin-start" data-allin-play>播放影片</button><p class="allin-status" data-allin-status role="status" aria-live="polite">轻点“播放影片”开始观看。</p><p class="school-source">Western 官方品牌宣传片《All in——为加拿大与世界的宏大协作》（720p · 2 分 06 秒 · 已配中文字幕。来源：Western 官方品牌中心 brand.westernu.ca）</p><p class="school-source">若内嵌播放器无法播放，<a href="videos/Western_All_in_mobile.mp4?v=20261007-1" target="_blank" rel="noopener">直接打开影片</a>。</p></template>
     <template data-school-template="research"><h2>商科研究影响力：加拿大第 1</h2><p>Financial Times 2025 Research Insights 排名：Ivey 加拿大第 1、全球第 25。这是商科研究影响力排名。</p><p class="school-source">出处：<a href="https://news.westernu.ca/2025/11/ivey-business-school-financial-times-ranking/" target="_blank" rel="noopener noreferrer">Western 官方新闻 · 2025 年 11 月</a></p></template>
     <template data-school-template="mba"><h2>Ivey MBA：加拿大第 1</h2><p>Bloomberg Businessweek 2026 排名。Ivey 官方于 2026 年 9 月 15 日公布；评价维度包括薪酬、学习、人脉和创业。这是 MBA 项目排名。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/news/news-ivey/2026/september/ivey-earns-top-spot-in-canada-in-bloomberg-businessweek-ranking/" target="_blank" rel="noopener noreferrer">Ivey 官方排名公告</a></p></template>
     <template data-school-template="hba"><h2>HBA：毕业 3 个月内获 offer</h2><p>Ivey 官网引用 2024 届全职就业报告：求职学生中，89% 在毕业后 3 个月内收到就业 offer。这是收到录用通知的数据。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/" target="_blank" rel="noopener noreferrer">Ivey 官方 · 就业数据与报告年份</a></p></template>
@@ -991,7 +994,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
    <div class="options-goals" aria-label="毕业发展方向">
     <button type="button" data-goal="stay" aria-pressed="false">留在加拿大 /<br>北美工作</button>
     <button type="button" data-goal="back" aria-pressed="false">准备回国</button>
-    <button type="button" data-goal="either" aria-pressed="false">都可以，<br>看机会</button>
+    <button type="button" data-goal="either" aria-pressed="false">都可以，看机会</button>
    </div>
    <p class="options-note">政策查阅于 2026 年 9 月。上述加拿大路径均须满足申请条件；申请时再核对届时规则。</p>
    <button type="button" class="options-next western-page-next" onclick="go('sL6')">选择明白，第 6 站 →</button>
@@ -1321,11 +1324,31 @@ go('sPain');
  root.querySelectorAll('[data-school-view]').forEach(button=>button.addEventListener('click',()=>{
    const template=root.querySelector('[data-school-template="'+button.dataset.schoolView+'"]');
    trigger=button;content.replaceChildren(template.content.cloneNode(true));
-   overview.hidden=true;detail.hidden=false;scrollWesternTop();back.focus({preventScroll:true});
+   overview.hidden=true;detail.hidden=false;
    if(button.dataset.schoolView==='video'){
      const video=content.querySelector('video');
-     if(video&&typeof video.play==='function')video.play().catch(()=>{});
+     const playButton=content.querySelector('[data-allin-play]');
+     const status=content.querySelector('[data-allin-status]');
+     function showStatus(text){status.textContent=text;status.hidden=false;playButton.hidden=false;}
+     function play(){
+       if(video.error)video.load();
+       if(video.ended)video.currentTime=0;
+       showStatus('正在加载影片，请稍候…');
+       const result=video.play();
+       if(result&&typeof result.catch==='function')result.catch(error=>{
+         showStatus(error.name==='NotAllowedError'?'请轻点“播放影片”开始观看。':'影片暂时无法播放，请重试或直接打开影片。');
+       });
+     }
+     playButton.addEventListener('click',play);
+     video.addEventListener('playing',()=>{playButton.hidden=true;status.hidden=true;});
+     video.addEventListener('pause',()=>{playButton.hidden=false;});
+     video.addEventListener('ended',()=>{playButton.textContent='重新播放';playButton.hidden=false;});
+     video.addEventListener('waiting',()=>showStatus('正在缓冲，请稍候…'));
+     video.addEventListener('error',()=>showStatus('影片暂时无法加载，请重试或直接打开影片。'));
+     video.load();
+     play();
    }
+   scrollWesternTop();back.focus({preventScroll:true});
  }));
  function close(){content.querySelectorAll('video').forEach(video=>video.pause());detail.hidden=true;overview.hidden=false;scrollWesternTop();if(trigger)trigger.focus({preventScroll:true});}
  back.addEventListener('click',close);
@@ -1402,7 +1425,7 @@ go('sPain');
 (()=>{const root=document.getElementById('sL8');const overview=root.querySelector('.food-overview'),detail=root.querySelector('.food-detail'),content=root.querySelector('.food-detail-content');root.querySelectorAll('[data-food]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-food-panel="'+button.dataset.food+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();}));root.querySelector('.food-back').addEventListener('click',()=>{detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
 </script>
 <script>
-(()=>{const root=document.getElementById('sL9');const overview=root.querySelector('.study-overview'),detail=root.querySelector('.study-detail'),content=root.querySelector('.study-detail-content');root.querySelectorAll('[data-study]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-study-panel="'+button.dataset.study+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();if(button.dataset.study==='video'){const video=content.querySelector('video');if(video&&typeof video.play==='function')video.play().catch(()=>{});}}));root.querySelector('.study-back').addEventListener('click',()=>{content.querySelectorAll('video').forEach(video=>video.pause());detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
+(()=>{const root=document.getElementById('sL9');const overview=root.querySelector('.study-overview'),detail=root.querySelector('.study-detail'),content=root.querySelector('.study-detail-content');root.querySelectorAll('[data-study]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-study-panel="'+button.dataset.study+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;detail.querySelector('.study-next').hidden=button.dataset.study==='video';scrollWesternTop();if(button.dataset.study==='video'){const video=content.querySelector('video');if(video&&typeof video.play==='function')video.play().catch(()=>{});}}));root.querySelector('.study-back').addEventListener('click',()=>{content.querySelectorAll('video').forEach(video=>video.pause());detail.hidden=true;overview.hidden=false;detail.querySelector('.study-next').hidden=false;scrollWesternTop();});})();
 </script>
 <script>
 (()=>{const root=document.getElementById('sL10');const overview=root.querySelector('.arrival-overview'),detail=root.querySelector('.arrival-detail'),content=root.querySelector('.arrival-detail-content');root.querySelectorAll('[data-arrival]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-arrival-panel="'+button.dataset.arrival+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();}));root.querySelector('.arrival-back').addEventListener('click',()=>{detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
