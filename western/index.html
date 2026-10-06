@@ -2,8 +2,11 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Western 值不值 ｜ 用数据驱动教育决策</title>
+<meta name="description" content="在校生王怡丹的分享｜用数据驱动教育决策，看看 200 万读 Western 值不值。">
+<meta property="og:title" content="Western 值不值">
+<meta property="og:description" content="在校生王怡丹的分享">
 <style>
 :root{--purple:#4F2683;--purple-d:#3b1c64;--purple-l:#7a4fb0;--gold:#C9A869;--bg:#f6f2fb;--ink:#221633;--green:#2e7d32;--amber:#b26a00;--red:#b03030;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -102,464 +105,1493 @@ details p{margin-top:6px;line-height:1.7;}
 .vidslot .vtag{position:absolute;top:10px;left:10px;font-size:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:2px 10px;}
 /* 时间轴行 */
 .yrline{margin-top:12px;background:#fdf9f0;border:1.5px solid var(--gold);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.8;color:#6b5320;}
+/* 第一页：经确认的文案与排版调整，仅作用于首页 */
+#sPain .hero{padding:24px 0 6px!important;}
+#sPain h1{font-size:clamp(22px,6.2vw,30px);line-height:1.55;margin:16px 0 8px;}
+#sPain .price{font-size:1.2em;font-weight:800;white-space:nowrap;}
+#sPain .slogan{font-size:14px;line-height:1.8;}
+#sPain .identity{margin-top:12px;color:#756781;font-size:12.5px;line-height:1.8;font-weight:400;}
+#sPain .card{padding:20px;margin-top:18px;}
+#sPain .home-copy{font-size:15px;line-height:1.95;color:#443366;}
+#sPain .btn{margin-top:20px;min-height:50px;line-height:1.5;}
+#sPain .btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+#sPain .foot{margin-top:18px;color:#756781;font-size:12px;}
+@media(max-width:360px){#sPain .card{padding:18px;}#sPain .home-copy{font-size:14.5px;}}
+#sHabit .seg button{min-height:48px;line-height:1.6;}
+#sHabit .seg button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+#sHabit .fact{line-height:1.85;}
+/* 扫码阅读：随手机宽度排版，并保留屏幕安全边距 */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+.wrap{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right));padding-bottom:max(60px,env(safe-area-inset-bottom));}
+button{touch-action:manipulation;}
+#sHabit .seg button{width:100%;min-width:0;white-space:normal;}
+#sHabit .fact{overflow-wrap:break-word;}
+
+#sL1{padding:12px 0;}
+#sL1 .destination-page{box-sizing:border-box;width:100%;max-width:440px;margin:0 auto;padding:24px 18px 36px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;}
+#sL1 .destination-hero{text-align:center;padding:26px 0 6px;}
+#sL1 .destination-badge{display:inline-block;background:#4f2683;color:#fff;font-size:11px;padding:4px 12px;border-radius:999px;letter-spacing:2px;line-height:normal;}
+#sL1 h1{font-size:22px;font-weight:700;line-height:1.5;margin:12px 0 4px;color:#4f2683;}
+#sL1 .destination-slogan{margin:0;color:#7a4fb0;font-size:13px;line-height:1.8;}
+#sL1 .destination-card{box-sizing:border-box;background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 24px rgba(79,38,131,.08);margin-top:16px;}
+#sL1 .destination-intro{margin:0;font-size:14px;line-height:1.85;color:#443366;}
+#sL1 .destination-intro b{color:#3b1c64;}
+#sL1 h2{font-size:17px;font-weight:700;line-height:1.6;margin:18px 0 6px;color:#3b1c64;}
+#sL1 .destination-card>h2:first-child{margin-top:0;}
+#sL1 .destination-caption{font-size:12px;line-height:1.8;color:#756781;margin:0 0 12px;}
+#sL1 .destination-list{display:grid;gap:12px;}
+#sL1 .destination-item{background:#f6f1fd;border-radius:12px;padding:0;min-width:0;}
+#sL1 .destination-heading{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 10px;}
+#sL1 h3{font-size:16px;font-weight:700;line-height:1.6;margin:0;color:#3b1c64;}
+#sL1 .destination-value{font-size:17px;font-weight:700;line-height:1.6;color:#4f2683;}
+#sL1 .destination-route{font-size:12px;line-height:1.8;color:#756781;margin:3px 0 7px;}
+#sL1 .destination-detail{font-size:13.5px;line-height:1.8;color:#443366;margin:0;overflow-wrap:break-word;}
+#sL1 .destination-source{font-size:12px;line-height:1.8;color:#756781;margin:9px 0 0;overflow-wrap:break-word;}
+#sL1 .destination-source a{display:inline-block;color:#4f2683;text-decoration:underline;text-underline-offset:3px;padding:4px 0;}
+#sL1 .destination-source a:focus-visible{outline:2px solid #c9a869;outline-offset:2px;}
+#sL1 .destination-date{margin:14px 0 0;}
+#sL1 .destination-next{margin-top:12px;}
+#sL1 .destination-action{box-sizing:border-box;display:block;width:100%;margin-top:16px;background:#4f2683;color:#fff;border:none;border-radius:12px;padding:15px;font-family:inherit;font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.5;min-height:50px;}
+#sL1 .destination-action:focus-visible{outline:3px solid #c9a869;outline-offset:3px;}
+@media(max-width:360px){#sL1 .destination-card{padding:16px;}#sL1 .destination-item{padding:0;}}
+
+#sL1 .destination-page{padding:0;background:transparent;}
+
+#sL1 .destination-list{gap:8px;}
+#sL1 .destination-summary{display:flex;align-items:center;gap:10px;padding:14px;min-height:52px;box-sizing:border-box;list-style:none;touch-action:manipulation;}
+#sL1 .destination-summary::-webkit-details-marker{display:none;}
+#sL1 .destination-summary::after{content:"⌄";color:#756781;font-size:20px;line-height:1;flex:0 0 14px;text-align:center;}
+#sL1 .destination-item[open]>.destination-summary::after{content:"⌃";}
+#sL1 .destination-summary:focus-visible{outline:2px solid #4f2683;outline-offset:2px;border-radius:12px;}
+#sL1 .destination-summary .destination-heading{flex:1;min-width:0;}
+#sL1 .destination-summary .destination-value{font-size:14px;}
+#sL1 .destination-body{padding:0 14px 14px;}
+@media(max-width:360px){#sL1 .destination-summary{padding:12px;}#sL1 .destination-body{padding:0 12px 12px;}}
+
+#sL1 .destination-page{padding:14px 14px 18px;}
+#sL1 .destination-hero{padding:4px 0 0;}
+#sL1 h1{margin:7px 0 2px;font-size:22px;}
+#sL1 .destination-card{margin-top:12px;padding:14px;}
+#sL1 .destination-intro{font-size:13px;line-height:1.65;}
+#sL1 h2{font-size:16px;margin:12px 0 4px;}
+#sL1 .destination-caption{font-size:11px;line-height:1.6;margin-bottom:9px;}
+#sL1 .destination-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL1 .compact-country{display:flex;flex-direction:column;justify-content:center;gap:4px;width:100%;min-width:0;min-height:60px;text-align:left;padding:9px 10px;background:#f6f1fd;border:0;border-radius:10px;color:#3b1c64;font-family:inherit;touch-action:manipulation;}
+#sL1 .compact-name{display:flex;justify-content:space-between;gap:5px;font-size:14px;font-weight:700;line-height:1.3;}
+#sL1 .compact-name>span{font-size:17px;color:#756781;}
+#sL1 .compact-value{font-size:11.5px;font-weight:500;line-height:1.45;overflow-wrap:break-word;}
+#sL1 .destination-date{margin:10px 0 0;font-size:11px;}
+#sL1 .compact-path{display:block;text-align:left;width:100%;background:#fff;border:0;border-radius:12px;padding:11px 14px;margin-top:10px;font:700 14px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;color:#3b1c64;min-height:50px;touch-action:manipulation;}
+#sL1 .compact-path small{display:block;font-size:11px;font-weight:400;color:#756781;margin-top:2px;}
+#sL1 .destination-action{margin-top:10px;min-height:44px;padding:11px;font-size:15px;}
+#sL1 [hidden]{display:none!important;}
+#sL1 .country-back{border:0;border-radius:10px;background:#4f2683;color:#fff;padding:12px 14px;min-height:44px;font:500 14px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;}
+#sL1 .country-detail-content{background:#fff;border-radius:14px;padding:18px;margin-top:12px;}
+#sL1 .country-detail-content .destination-value{margin:8px 0;font-size:17px;}
+#sL1 .country-detail-content h2{margin:0 0 8px;}
+#sL1 .country-detail-content .destination-detail{margin-top:10px;}
+#sL1 .country-detail-content .destination-source a{padding:7px 0;}
+
+.wrap:has(#sL1.on){padding-top:10px;padding-bottom:max(12px,env(safe-area-inset-bottom));}
+#sL1 .destination-page{padding:0;}
+
+#sL2 .school-page{box-sizing:border-box;max-width:440px;width:100%;margin:auto;padding:14px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+#sL2 .school-hero{text-align:center;}
+#sL2 .school-badge{display:inline-block;font-size:11px;letter-spacing:2px;background:#4f2683;color:white;padding:4px 12px;border-radius:999px;}
+#sL2 h1{font-size:22px;line-height:1.5;color:#4f2683;margin:7px 0 0;}
+#sL2 .school-hero p{font-size:12px;color:#7a4fb0;line-height:1.5;margin:0;}
+#sL2 .school-identity{font-size:12px;line-height:1.65;text-align:center;color:#443366;margin:9px 0;}
+#sL2 button{font-family:inherit;touch-action:manipulation;}
+#sL2 .school-video-entry{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;padding:8px;background:#fff;border-radius:12px;color:#3b1c64;}
+#sL2 .school-video-entry img{width:96px;height:54px;object-fit:cover;border-radius:7px;}
+#sL2 .school-video-entry b{font-size:13px;}
+#sL2 .school-video-entry small{display:block;font-size:11px;color:#756781;margin-top:3px;}
+#sL2 .school-watch{font-size:11px;color:#4f2683;display:block;margin-top:3px;}
+#sL2 .school-story{margin-top:10px;background:#fff;padding:11px 12px;border-radius:12px;}
+#sL2 .school-story p{font-size:12.5px;line-height:1.65;margin:0;color:#443366;}
+#sL2 .school-story p+p{margin-top:7px;}
+#sL2 .school-story b{color:#3b1c64;}
+#sL2 .school-prompt{font-size:14px;color:#3b1c64;margin:10px 0 7px;line-height:1.5;}
+#sL2 .school-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL2 .school-stats button{min-width:0;min-height:70px;text-align:left;background:#fff;border:0;border-radius:10px;padding:9px 11px;color:#3b1c64;}
+#sL2 .school-stats strong{display:block;font-size:19px;line-height:1.4;color:#4f2683;}
+#sL2 .school-stats span{display:block;font-size:11.5px;line-height:1.5;}
+#sL2 .school-stats small{display:block;font-size:11px;line-height:1.5;color:#756781;}
+#sL2 .school-more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:7px;}
+#sL2 .school-more button{font-size:12px;line-height:1.5;min-height:44px;border:0;border-radius:9px;background:#ede4f8;color:#3b1c64;padding:8px 5px;}
+#sL2 .school-note{font-size:11px;line-height:1.5;color:#756781;margin:6px 0;text-align:center;}
+#sL2 .school-next,#sL2 .school-back{border:0;border-radius:10px;background:#4f2683;color:#fff;font-size:15px;line-height:1.5;padding:11px;min-height:44px;}
+#sL2 .school-next{width:100%;}
+#sL2 [hidden]{display:none!important;}
+#sL2 .school-detail-content{background:#fff;border-radius:14px;padding:18px;margin-top:12px;font-size:14px;line-height:1.8;color:#443366;}
+#sL2 .school-detail-content h2{font-size:18px;color:#3b1c64;margin:0 0 10px;line-height:1.5;}
+#sL2 .school-detail-content p{margin:10px 0;}
+#sL2 .school-detail-content video,#sL2 .school-detail-content img{width:100%;border-radius:10px;display:block;}
+#sL2 .school-source{font-size:12px;line-height:1.8;overflow-wrap:break-word;}
+#sL2 .school-source a{color:#4f2683;display:inline-block;padding:7px 0;}
+
+#sL2 .school-page{padding:0;}
+.wrap:has(#sL2.on){padding-top:10px;padding-bottom:max(12px,env(safe-area-inset-bottom));}
+#sL2 .school-identity{text-align:left;font-size:12.5px;line-height:1.65;}
+#sL2 .school-transition{font-size:13px;line-height:1.6;color:#3b1c64;margin:9px 0 0;}
+#sL2 .school-story{margin-top:6px;}
+
+
+#sL3 .school-page{box-sizing:border-box;max-width:440px;width:100%;margin:auto;padding:14px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+#sL3 .school-hero{text-align:center;}
+#sL3 .school-badge{display:inline-block;font-size:11px;letter-spacing:2px;background:#4f2683;color:white;padding:4px 12px;border-radius:999px;}
+#sL3 h1{font-size:22px;line-height:1.5;color:#4f2683;margin:7px 0 0;}
+#sL3 .school-hero p{font-size:12px;color:#7a4fb0;line-height:1.5;margin:0;}
+#sL3 .school-identity{font-size:12px;line-height:1.65;text-align:center;color:#443366;margin:9px 0;}
+#sL3 button{font-family:inherit;touch-action:manipulation;}
+#sL3 .school-video-entry{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;padding:8px;background:#fff;border-radius:12px;color:#3b1c64;}
+#sL3 .school-video-entry img{width:96px;height:54px;object-fit:cover;border-radius:7px;}
+#sL3 .school-video-entry b{font-size:13px;}
+#sL3 .school-video-entry small{display:block;font-size:11px;color:#756781;margin-top:3px;}
+#sL3 .school-watch{font-size:11px;color:#4f2683;display:block;margin-top:3px;}
+#sL3 .school-story{margin-top:10px;background:#fff;padding:11px 12px;border-radius:12px;}
+#sL3 .school-story p{font-size:12.5px;line-height:1.65;margin:0;color:#443366;}
+#sL3 .school-story p+p{margin-top:7px;}
+#sL3 .school-story b{color:#3b1c64;}
+#sL3 .school-prompt{font-size:14px;color:#3b1c64;margin:10px 0 7px;line-height:1.5;}
+#sL3 .school-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL3 .school-stats button{min-width:0;min-height:70px;text-align:left;background:#fff;border:0;border-radius:10px;padding:9px 11px;color:#3b1c64;}
+#sL3 .school-stats strong{display:block;font-size:19px;line-height:1.4;color:#4f2683;}
+#sL3 .school-stats span{display:block;font-size:11.5px;line-height:1.5;}
+#sL3 .school-stats small{display:block;font-size:11px;line-height:1.5;color:#756781;}
+#sL3 .school-more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:7px;}
+#sL3 .school-more button{font-size:12px;line-height:1.5;min-height:44px;border:0;border-radius:9px;background:#ede4f8;color:#3b1c64;padding:8px 5px;}
+#sL3 .school-note{font-size:11px;line-height:1.5;color:#756781;margin:6px 0;text-align:center;}
+#sL3 .school-next,#sL3 .school-back{border:0;border-radius:10px;background:#4f2683;color:#fff;font-size:15px;line-height:1.5;padding:11px;min-height:44px;}
+#sL3 .school-next{width:100%;}
+#sL3 [hidden]{display:none!important;}
+#sL3 .school-detail-content{background:#fff;border-radius:14px;padding:18px;margin-top:12px;font-size:14px;line-height:1.8;color:#443366;}
+#sL3 .school-detail-content h2{font-size:18px;color:#3b1c64;margin:0 0 10px;line-height:1.5;}
+#sL3 .school-detail-content p{margin:10px 0;}
+#sL3 .school-detail-content video,#sL3 .school-detail-content img{width:100%;border-radius:10px;display:block;}
+#sL3 .school-source{font-size:12px;line-height:1.8;overflow-wrap:break-word;}
+#sL3 .school-source a{color:#4f2683;display:inline-block;padding:7px 0;}
+#sL3 .school-identity{text-align:left;font-size:12.5px;line-height:1.65;}
+#sL3 .school-transition{font-size:13px;line-height:1.6;color:#3b1c64;margin:9px 0 0;}
+#sL3 .school-story{margin-top:6px;}
+
+#sL3 .job-intro{font-size:13px;line-height:1.7;color:#443366;margin:13px 0 9px;}
+#sL3 .job-quote{background:#fff;border-radius:12px;padding:12px;margin-top:10px;font-size:13px;line-height:1.75;color:#443366;}
+#sL3 .job-quote b{color:#3b1c64;}
+#sL3 .job-links{display:grid;gap:6px;margin-top:10px;}
+#sL3 .job-links button{width:100%;text-align:left;border:0;border-radius:10px;padding:10px 12px;background:#ede4f8;color:#3b1c64;min-height:52px;}
+#sL3 .job-links b{display:block;font-size:13px;line-height:1.5;}
+#sL3 .job-links span{display:block;font-size:11px;line-height:1.5;color:#756781;margin-top:2px;}
+#sL3 .job-goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}
+#sL3 .job-goals button{min-width:0;min-height:48px;background:#fff;border:1px solid #e6dcf5;border-radius:10px;padding:8px 5px;color:#3b1c64;font-size:12px;line-height:1.5;}
+#sL3 .job-goals button[aria-pressed="true"]{background:#4f2683;color:#fff;}
+#sL3 .job-next{margin-top:12px;}
+#sL3 .job-context{font-size:12px;line-height:1.65;color:#756781;}
+#sL3 .job-school{margin-top:12px;padding:10px 0;border-top:1px solid #e6dcf5;}
+#sL3 .job-school h3{font-size:14px;line-height:1.5;color:#3b1c64;margin:0 0 5px;}
+#sL3 .job-school p{font-size:13px;line-height:1.7;margin:4px 0;}
+#sL3 .job-school a{font-size:12px;line-height:1.7;color:#4f2683;display:inline-block;padding:6px 0;}
+
+#sL3 .school-page{padding:0;}
+.wrap:has(#sL3.on){padding-top:10px;padding-bottom:max(12px,env(safe-area-inset-bottom));}
+
+
+#sL3 .school-page{box-sizing:border-box;max-width:440px;width:100%;margin:auto;padding:14px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+#sL3 .school-hero{text-align:center;}
+#sL3 .school-badge{display:inline-block;font-size:11px;letter-spacing:2px;background:#4f2683;color:white;padding:4px 12px;border-radius:999px;}
+#sL3 h1{font-size:22px;line-height:1.5;color:#4f2683;margin:7px 0 0;}
+#sL3 .school-hero p{font-size:12px;color:#7a4fb0;line-height:1.5;margin:0;}
+#sL3 .school-identity{font-size:12px;line-height:1.65;text-align:center;color:#443366;margin:9px 0;}
+#sL3 button{font-family:inherit;touch-action:manipulation;}
+#sL3 .school-video-entry{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;padding:8px;background:#fff;border-radius:12px;color:#3b1c64;}
+#sL3 .school-video-entry img{width:96px;height:54px;object-fit:cover;border-radius:7px;}
+#sL3 .school-video-entry b{font-size:13px;}
+#sL3 .school-video-entry small{display:block;font-size:11px;color:#756781;margin-top:3px;}
+#sL3 .school-watch{font-size:11px;color:#4f2683;display:block;margin-top:3px;}
+#sL3 .school-story{margin-top:10px;background:#fff;padding:11px 12px;border-radius:12px;}
+#sL3 .school-story p{font-size:12.5px;line-height:1.65;margin:0;color:#443366;}
+#sL3 .school-story p+p{margin-top:7px;}
+#sL3 .school-story b{color:#3b1c64;}
+#sL3 .school-prompt{font-size:14px;color:#3b1c64;margin:10px 0 7px;line-height:1.5;}
+#sL3 .school-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL3 .school-stats button{min-width:0;min-height:70px;text-align:left;background:#fff;border:0;border-radius:10px;padding:9px 11px;color:#3b1c64;}
+#sL3 .school-stats strong{display:block;font-size:19px;line-height:1.4;color:#4f2683;}
+#sL3 .school-stats span{display:block;font-size:11.5px;line-height:1.5;}
+#sL3 .school-stats small{display:block;font-size:11px;line-height:1.5;color:#756781;}
+#sL3 .school-more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:7px;}
+#sL3 .school-more button{font-size:12px;line-height:1.5;min-height:44px;border:0;border-radius:9px;background:#ede4f8;color:#3b1c64;padding:8px 5px;}
+#sL3 .school-note{font-size:11px;line-height:1.5;color:#756781;margin:6px 0;text-align:center;}
+#sL3 .school-next,#sL3 .school-back{border:0;border-radius:10px;background:#4f2683;color:#fff;font-size:15px;line-height:1.5;padding:11px;min-height:44px;}
+#sL3 .school-next{width:100%;}
+#sL3 [hidden]{display:none!important;}
+#sL3 .school-detail-content{background:#fff;border-radius:14px;padding:18px;margin-top:12px;font-size:14px;line-height:1.8;color:#443366;}
+#sL3 .school-detail-content h2{font-size:18px;color:#3b1c64;margin:0 0 10px;line-height:1.5;}
+#sL3 .school-detail-content p{margin:10px 0;}
+#sL3 .school-detail-content video,#sL3 .school-detail-content img{width:100%;border-radius:10px;display:block;}
+#sL3 .school-source{font-size:12px;line-height:1.8;overflow-wrap:break-word;}
+#sL3 .school-source a{color:#4f2683;display:inline-block;padding:7px 0;}
+#sL3 .school-identity{text-align:left;font-size:12.5px;line-height:1.65;}
+#sL3 .school-transition{font-size:13px;line-height:1.6;color:#3b1c64;margin:9px 0 0;}
+#sL3 .school-story{margin-top:6px;}
+
+#sL3 .job-intro{font-size:13px;line-height:1.7;color:#443366;margin:13px 0 9px;}
+#sL3 .job-quote{background:#fff;border-radius:12px;padding:12px;margin-top:10px;font-size:13px;line-height:1.75;color:#443366;}
+#sL3 .job-quote b{color:#3b1c64;}
+#sL3 .job-links{display:grid;gap:6px;margin-top:10px;}
+#sL3 .job-links button{width:100%;text-align:left;border:0;border-radius:10px;padding:10px 12px;background:#ede4f8;color:#3b1c64;min-height:52px;}
+#sL3 .job-links b{display:block;font-size:13px;line-height:1.5;}
+#sL3 .job-links span{display:block;font-size:11px;line-height:1.5;color:#756781;margin-top:2px;}
+#sL3 .job-goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}
+#sL3 .job-goals button{min-width:0;min-height:48px;background:#fff;border:1px solid #e6dcf5;border-radius:10px;padding:8px 5px;color:#3b1c64;font-size:12px;line-height:1.5;}
+#sL3 .job-goals button[aria-pressed="true"]{background:#4f2683;color:#fff;}
+#sL3 .job-next{margin-top:12px;}
+#sL3 .job-context{font-size:12px;line-height:1.65;color:#756781;}
+#sL3 .job-school{margin-top:12px;padding:10px 0;border-top:1px solid #e6dcf5;}
+#sL3 .job-school h3{font-size:14px;line-height:1.5;color:#3b1c64;margin:0 0 5px;}
+#sL3 .job-school p{font-size:13px;line-height:1.7;margin:4px 0;}
+#sL3 .job-school a{font-size:12px;line-height:1.7;color:#4f2683;display:inline-block;padding:6px 0;}
+
+
+#sL3 .job-intro{font-size:12px;line-height:1.6;margin:8px 0;}
+#sL3 .school-stats button{min-height:58px;padding:6px 9px;}
+#sL3 .school-stats strong{font-size:17px;line-height:1.35;}
+#sL3 .job-quote{padding:8px 10px;margin-top:7px;font-size:12px;line-height:1.6;}
+#sL3 .job-table-tabs{display:flex;gap:5px;margin-top:9px;}
+#sL3 .job-table-tabs button{flex:1;min-width:0;min-height:44px;padding:6px 3px;border:0;border-radius:8px 8px 0 0;background:#ede4f8;color:#3b1c64;font-size:12px;}
+#sL3 .job-table-tabs button[aria-selected="true"]{background:#4f2683;color:#fff;}
+#sL3 .job-overview-table{width:100%;border-collapse:collapse;background:#fff;font-size:12px;line-height:1.4;table-layout:fixed;}
+#sL3 .job-overview-table th{font-weight:500;text-align:left;color:#756781;padding:5px 6px;font-size:11px;}
+#sL3 .job-overview-table td{padding:5px 6px;border-top:1px solid #eee7f6;vertical-align:middle;overflow-wrap:break-word;}
+#sL3 .job-overview-table th:first-child{width:43%;}
+#sL3 .job-overview-table small{font-size:11px;color:#756781;}
+#sL3 .job-table-source{display:block;width:100%;min-height:44px;border:0;padding:5px 4px;background:transparent;color:#756781;font-size:11px;line-height:1.5;text-align:left;}
+#sL3 .school-prompt{margin:4px 0 5px;}
+#sL3 .job-goals{grid-template-columns:1fr;gap:4px;}
+#sL3 .job-goals button{min-height:44px;padding:7px 10px;text-align:left;}
+#sL3 #employment-china-panel .job-overview-table th:first-child{width:55%;}
+#sL3 #employment-china-panel .job-overview-table th,#sL3 #employment-china-panel .job-overview-table td{text-align:center;padding:7px 6px;}
+#sL3 #employment-china-panel .job-overview-table td:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;font-size:14px;color:#4f2683;}
+#sL3 #employment-china-panel .job-table-source{text-align:center;}
+
+#sL3 .school-page{padding:0;}
+
+
+#sL3 .school-page{box-sizing:border-box;max-width:440px;width:100%;margin:auto;padding:14px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+#sL3 .school-hero{text-align:center;}
+#sL3 .school-badge{display:inline-block;font-size:11px;letter-spacing:2px;background:#4f2683;color:white;padding:4px 12px;border-radius:999px;}
+#sL3 h1{font-size:22px;line-height:1.5;color:#4f2683;margin:7px 0 0;}
+#sL3 .school-hero p{font-size:12px;color:#7a4fb0;line-height:1.5;margin:0;}
+#sL3 .school-identity{font-size:12px;line-height:1.65;text-align:center;color:#443366;margin:9px 0;}
+#sL3 button{font-family:inherit;touch-action:manipulation;}
+#sL3 .school-video-entry{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;padding:8px;background:#fff;border-radius:12px;color:#3b1c64;}
+#sL3 .school-video-entry img{width:96px;height:54px;object-fit:cover;border-radius:7px;}
+#sL3 .school-video-entry b{font-size:13px;}
+#sL3 .school-video-entry small{display:block;font-size:11px;color:#756781;margin-top:3px;}
+#sL3 .school-watch{font-size:11px;color:#4f2683;display:block;margin-top:3px;}
+#sL3 .school-story{margin-top:10px;background:#fff;padding:11px 12px;border-radius:12px;}
+#sL3 .school-story p{font-size:12.5px;line-height:1.65;margin:0;color:#443366;}
+#sL3 .school-story p+p{margin-top:7px;}
+#sL3 .school-story b{color:#3b1c64;}
+#sL3 .school-prompt{font-size:14px;color:#3b1c64;margin:10px 0 7px;line-height:1.5;}
+#sL3 .school-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL3 .school-stats button{min-width:0;min-height:70px;text-align:left;background:#fff;border:0;border-radius:10px;padding:9px 11px;color:#3b1c64;}
+#sL3 .school-stats strong{display:block;font-size:19px;line-height:1.4;color:#4f2683;}
+#sL3 .school-stats span{display:block;font-size:11.5px;line-height:1.5;}
+#sL3 .school-stats small{display:block;font-size:11px;line-height:1.5;color:#756781;}
+#sL3 .school-more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:7px;}
+#sL3 .school-more button{font-size:12px;line-height:1.5;min-height:44px;border:0;border-radius:9px;background:#ede4f8;color:#3b1c64;padding:8px 5px;}
+#sL3 .school-note{font-size:11px;line-height:1.5;color:#756781;margin:6px 0;text-align:center;}
+#sL3 .school-next,#sL3 .school-back{border:0;border-radius:10px;background:#4f2683;color:#fff;font-size:15px;line-height:1.5;padding:11px;min-height:44px;}
+#sL3 .school-next{width:100%;}
+#sL3 [hidden]{display:none!important;}
+#sL3 .school-detail-content{background:#fff;border-radius:14px;padding:18px;margin-top:12px;font-size:14px;line-height:1.8;color:#443366;}
+#sL3 .school-detail-content h2{font-size:18px;color:#3b1c64;margin:0 0 10px;line-height:1.5;}
+#sL3 .school-detail-content p{margin:10px 0;}
+#sL3 .school-detail-content video,#sL3 .school-detail-content img{width:100%;border-radius:10px;display:block;}
+#sL3 .school-source{font-size:12px;line-height:1.8;overflow-wrap:break-word;}
+#sL3 .school-source a{color:#4f2683;display:inline-block;padding:7px 0;}
+#sL3 .school-identity{text-align:left;font-size:12.5px;line-height:1.65;}
+#sL3 .school-transition{font-size:13px;line-height:1.6;color:#3b1c64;margin:9px 0 0;}
+#sL3 .school-story{margin-top:6px;}
+
+#sL3 .job-intro{font-size:13px;line-height:1.7;color:#443366;margin:13px 0 9px;}
+#sL3 .job-quote{background:#fff;border-radius:12px;padding:12px;margin-top:10px;font-size:13px;line-height:1.75;color:#443366;}
+#sL3 .job-quote b{color:#3b1c64;}
+#sL3 .job-links{display:grid;gap:6px;margin-top:10px;}
+#sL3 .job-links button{width:100%;text-align:left;border:0;border-radius:10px;padding:10px 12px;background:#ede4f8;color:#3b1c64;min-height:52px;}
+#sL3 .job-links b{display:block;font-size:13px;line-height:1.5;}
+#sL3 .job-links span{display:block;font-size:11px;line-height:1.5;color:#756781;margin-top:2px;}
+#sL3 .job-goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}
+#sL3 .job-goals button{min-width:0;min-height:48px;background:#fff;border:1px solid #e6dcf5;border-radius:10px;padding:8px 5px;color:#3b1c64;font-size:12px;line-height:1.5;}
+#sL3 .job-goals button[aria-pressed="true"]{background:#4f2683;color:#fff;}
+#sL3 .job-next{margin-top:12px;}
+#sL3 .job-context{font-size:12px;line-height:1.65;color:#756781;}
+#sL3 .job-school{margin-top:12px;padding:10px 0;border-top:1px solid #e6dcf5;}
+#sL3 .job-school h3{font-size:14px;line-height:1.5;color:#3b1c64;margin:0 0 5px;}
+#sL3 .job-school p{font-size:13px;line-height:1.7;margin:4px 0;}
+#sL3 .job-school a{font-size:12px;line-height:1.7;color:#4f2683;display:inline-block;padding:6px 0;}
+
+
+#sL3 .job-intro{font-size:12px;line-height:1.6;margin:8px 0;}
+#sL3 .school-stats button{min-height:58px;padding:6px 9px;}
+#sL3 .school-stats strong{font-size:17px;line-height:1.35;}
+#sL3 .job-quote{padding:8px 10px;margin-top:7px;font-size:12px;line-height:1.6;}
+#sL3 .job-table-tabs{display:flex;gap:5px;margin-top:9px;}
+#sL3 .job-table-tabs button{flex:1;min-width:0;min-height:44px;padding:6px 3px;border:0;border-radius:8px 8px 0 0;background:#ede4f8;color:#3b1c64;font-size:12px;}
+#sL3 .job-table-tabs button[aria-selected="true"]{background:#4f2683;color:#fff;}
+#sL3 .job-overview-table{width:100%;border-collapse:collapse;background:#fff;font-size:12px;line-height:1.4;table-layout:fixed;}
+#sL3 .job-overview-table th{font-weight:500;text-align:left;color:#756781;padding:5px 6px;font-size:11px;}
+#sL3 .job-overview-table td{padding:5px 6px;border-top:1px solid #eee7f6;vertical-align:middle;overflow-wrap:break-word;}
+#sL3 .job-overview-table th:first-child{width:43%;}
+#sL3 .job-overview-table small{font-size:11px;color:#756781;}
+#sL3 .job-table-source{display:block;width:100%;min-height:44px;border:0;padding:5px 4px;background:transparent;color:#756781;font-size:11px;line-height:1.5;text-align:left;}
+#sL3 .school-prompt{margin:4px 0 5px;}
+#sL3 .job-goals{grid-template-columns:1fr;gap:4px;}
+#sL3 .job-goals button{min-height:44px;padding:7px 10px;text-align:left;}
+#sL3 .job-continue{margin-top:8px;}
+#sL3 .job-continue:disabled{opacity:.45;}
+#sL3 #employment-china-panel .job-overview-table th:first-child{width:55%;}
+#sL3 #employment-china-panel .job-overview-table th,#sL3 #employment-china-panel .job-overview-table td{text-align:center;padding:7px 6px;}
+#sL3 #employment-china-panel .job-overview-table td:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;font-size:14px;color:#4f2683;}
+#sL3 #employment-china-panel .job-table-source{text-align:center;}
+
+#sL3 .school-page{padding:0;}
+
+#sL4 .alumni-page{box-sizing:border-box;width:100%;max-width:440px;margin:auto;padding:14px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+#sL4 .alumni-page *{box-sizing:border-box;}
+#sL4 .alumni-hero{text-align:center;}
+#sL4 .alumni-badge{display:inline-block;background:#4f2683;color:#fff;font-size:11px;line-height:1.5;letter-spacing:2px;padding:4px 12px;border-radius:999px;}
+#sL4 h1{font-size:22px;line-height:1.5;color:#4f2683;margin:7px 0 0;}
+#sL4 .alumni-hero p{font-size:12px;line-height:1.5;color:#7a4fb0;margin:0;}
+#sL4 .alumni-card{background:#fff;border-radius:14px;padding:11px;margin-top:9px;}
+#sL4 .alumni-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL4 .alumni-stat{display:block;min-width:0;min-height:44px;background:#f3ecfa;border-radius:10px;padding:8px;text-align:center;text-decoration:none;}
+#sL4 .alumni-stat strong{display:block;font-size:25px;line-height:1.2;color:#4f2683;}
+#sL4 .alumni-stat strong small{font-size:12px;color:#7a4fb0;}
+#sL4 .alumni-stat b{display:block;font-size:12px;line-height:1.5;color:#3b1c64;margin-top:3px;}
+#sL4 .alumni-stat p{font-size:11px;line-height:1.5;color:#756781;margin:2px 0 0;}
+#sL4 .alumni-source-link{display:block;font-size:11px;line-height:1.5;color:#4f2683;text-decoration:underline;margin-top:3px;}
+#sL4 .alumni-wide{grid-column:1/-1;display:flex;align-items:center;gap:10px;text-align:left;}
+#sL4 .alumni-wide strong{white-space:nowrap;font-size:24px;flex-shrink:0;}
+#sL4 .alumni-wide div{min-width:0;}
+#sL4 .alumni-facts{display:grid;gap:6px;margin-top:7px;}
+#sL4 .alumni-facts p{font-size:12.5px;line-height:1.6;color:#443366;background:#f6f1fd;border-radius:9px;padding:8px 10px;margin:0;}
+#sL4 .alumni-facts b{color:#3b1c64;}
+#sL4 .alumni-source-note{font-size:11px;line-height:1.5;color:#756781;margin:7px 0;}
+#sL4 .alumni-next{font-family:inherit;display:block;width:100%;border:0;border-radius:10px;background:#4f2683;color:#fff;font-size:15px;line-height:1.5;padding:11px;min-height:44px;touch-action:manipulation;}
+@media(max-width:360px){#sL4 .alumni-card{padding:9px;}#sL4 .alumni-wide{gap:7px;}}
+
+#sL4 .alumni-page{padding:0;}
+.wrap:has(#sL4.on){padding-top:10px;padding-bottom:max(12px,env(safe-area-inset-bottom));}
+
+#sL4 .alumni-page{box-sizing:border-box;width:100%;max-width:440px;margin:auto;padding:14px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+#sL4 .alumni-page *{box-sizing:border-box;}
+#sL4 .alumni-hero{text-align:center;}
+#sL4 .alumni-badge{display:inline-block;background:#4f2683;color:#fff;font-size:11px;line-height:1.5;letter-spacing:2px;padding:4px 12px;border-radius:999px;}
+#sL4 h1{font-size:22px;line-height:1.5;color:#4f2683;margin:7px 0 0;}
+#sL4 .alumni-hero p{font-size:12px;line-height:1.5;color:#7a4fb0;margin:0;}
+#sL4 .alumni-card{background:#fff;border-radius:14px;padding:11px;margin-top:9px;}
+#sL4 .alumni-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL4 .alumni-stat{display:block;min-width:0;min-height:44px;background:#f3ecfa;border-radius:10px;padding:8px;text-align:center;text-decoration:none;}
+#sL4 .alumni-stat strong{display:block;font-size:25px;line-height:1.2;color:#4f2683;}
+#sL4 .alumni-stat strong small{font-size:12px;color:#7a4fb0;}
+#sL4 .alumni-stat b{display:block;font-size:12px;line-height:1.5;color:#3b1c64;margin-top:3px;}
+#sL4 .alumni-stat p{font-size:11px;line-height:1.5;color:#756781;margin:2px 0 0;}
+#sL4 .alumni-source-link{display:block;font-size:11px;line-height:1.5;color:#4f2683;text-decoration:underline;margin-top:3px;}
+#sL4 .alumni-wide{grid-column:1/-1;display:flex;align-items:center;gap:10px;text-align:left;}
+#sL4 .alumni-wide strong{white-space:nowrap;font-size:24px;flex-shrink:0;}
+#sL4 .alumni-wide div{min-width:0;}
+#sL4 .alumni-facts{display:grid;gap:6px;margin-top:7px;}
+#sL4 .alumni-facts p{font-size:12.5px;line-height:1.6;color:#443366;background:#f6f1fd;border-radius:9px;padding:8px 10px;margin:0;}
+#sL4 .alumni-facts b{color:#3b1c64;}
+#sL4 .alumni-inline-sources{display:flex;gap:12px;flex-wrap:wrap;margin-top:2px;}
+#sL4 .alumni-inline-sources a{display:inline-flex;align-items:center;min-height:44px;font-size:11px;color:#4f2683;}
+#sL4 .alumni-source-note{font-size:11px;line-height:1.5;color:#756781;margin:7px 0;}
+#sL4 .alumni-next{font-family:inherit;display:block;width:100%;border:0;border-radius:10px;background:#4f2683;color:#fff;font-size:15px;line-height:1.5;padding:11px;min-height:44px;touch-action:manipulation;}
+@media(max-width:360px){#sL4 .alumni-card{padding:9px;}#sL4 .alumni-wide{gap:7px;}}
+
+#sL4 .alumni-page{padding:0;}
+
+#sL5 .options-page{box-sizing:border-box;width:100%;max-width:440px;margin:auto;padding:14px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+#sL5 .options-page *{box-sizing:border-box;}
+#sL5 .options-hero{text-align:center;}
+#sL5 .options-badge{display:inline-block;background:#4f2683;color:#fff;font-size:11px;line-height:1.5;padding:4px 12px;letter-spacing:2px;border-radius:999px;}
+#sL5 h1{font-size:22px;line-height:1.5;margin:7px 0 0;color:#4f2683;}
+#sL5 .options-hero p{font-size:12px;line-height:1.5;color:#7a4fb0;margin:0;}
+#sL5 .options-intro{font-size:13px;line-height:1.65;color:#443366;margin:10px 0;}
+#sL5 h2{font-size:13px;line-height:1.6;color:#3b1c64;margin:8px 0 6px;}
+#sL5 button{font-family:inherit;touch-action:manipulation;}
+#sL5 .options-countries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL5 .options-countries button{min-width:0;min-height:56px;background:#fff;border:1px solid #e6dcf5;border-radius:9px;text-align:left;padding:7px 9px;color:#3b1c64;}
+#sL5 .options-countries b{display:block;font-size:13px;line-height:1.5;}
+#sL5 .options-countries b span{float:right;}
+#sL5 .options-countries small{display:block;font-size:11px;line-height:1.5;margin-top:2px;color:#756781;}
+#sL5 .options-note{font-size:11px;line-height:1.5;color:#756781;margin:6px 0;}
+#sL5 .options-path{display:block;width:100%;min-height:44px;background:#ede4f8;border:0;border-radius:10px;text-align:left;color:#3b1c64;padding:9px 10px;}
+#sL5 .options-path b{display:block;font-size:12.5px;line-height:1.5;}
+#sL5 .options-path small{display:block;font-size:11px;line-height:1.6;color:#756781;margin-top:2px;}
+#sL5 .options-return{background:#fff;border-radius:10px;padding:9px 10px;margin-top:7px;color:#443366;}
+#sL5 .options-return b{font-size:12.5px;line-height:1.5;color:#3b1c64;}
+#sL5 .options-return p{font-size:12px;line-height:1.6;margin:4px 0 0;}
+#sL5 .options-next,#sL5 .options-back{display:block;width:100%;min-height:44px;background:#4f2683;color:#fff;border:0;border-radius:10px;padding:11px;font-size:15px;line-height:1.5;}
+#sL5 [hidden]{display:none!important;}
+#sL5 .options-detail-content{background:#fff;border-radius:12px;padding:15px;margin-top:10px;font-size:14px;line-height:1.8;color:#443366;}
+#sL5 .options-detail-content h2{font-size:18px;line-height:1.5;margin:0 0 8px;}
+#sL5 .options-detail-content p{margin:9px 0;}
+#sL5 .options-source{font-size:12px;line-height:1.7;}
+#sL5 .options-source a{display:block;min-height:44px;padding:8px 0;color:#4f2683;overflow-wrap:break-word;}
+
+#sL5 .options-page{padding:0;}
+.wrap:has(#sL5.on){padding-top:10px;padding-bottom:max(12px,env(safe-area-inset-bottom));}
+
+#sL5 .options-page{box-sizing:border-box;width:100%;max-width:440px;margin:auto;padding:14px;background:#f6f2fb;color:#221633;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+#sL5 .options-page *{box-sizing:border-box;}
+#sL5 .options-hero{text-align:center;}
+#sL5 .options-badge{display:inline-block;background:#4f2683;color:#fff;font-size:11px;line-height:1.5;padding:4px 12px;letter-spacing:2px;border-radius:999px;}
+#sL5 h1{font-size:22px;line-height:1.5;margin:7px 0 0;color:#4f2683;}
+#sL5 .options-hero p{font-size:12px;line-height:1.5;color:#7a4fb0;margin:0;}
+#sL5 .options-intro{font-size:13px;line-height:1.65;color:#443366;margin:10px 0;}
+#sL5 h2{font-size:13px;line-height:1.6;color:#3b1c64;margin:8px 0 6px;}
+#sL5 button{font-family:inherit;touch-action:manipulation;}
+#sL5 .options-countries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#sL5 .options-countries button{min-width:0;min-height:56px;background:#fff;border:1px solid #e6dcf5;border-radius:9px;text-align:left;padding:7px 9px;color:#3b1c64;}
+#sL5 .options-countries b{display:block;font-size:13px;line-height:1.5;}
+#sL5 .options-countries b span{float:right;}
+#sL5 .options-countries small{display:block;font-size:11px;line-height:1.5;margin-top:2px;color:#756781;}
+#sL5 .options-note{font-size:11px;line-height:1.5;color:#756781;margin:6px 0;}
+#sL5 .options-path{display:block;width:100%;min-height:44px;background:#ede4f8;border:0;border-radius:10px;text-align:left;color:#3b1c64;padding:9px 10px;}
+#sL5 .options-path b{display:block;font-size:12.5px;line-height:1.5;}
+#sL5 .options-path small{display:block;font-size:11px;line-height:1.6;color:#756781;margin-top:2px;}
+#sL5 .options-return{background:#fff;border-radius:10px;padding:9px 10px;margin-top:7px;color:#443366;}
+#sL5 .options-return b{font-size:12.5px;line-height:1.5;color:#3b1c64;}
+#sL5 .options-return p{font-size:12px;line-height:1.6;margin:4px 0 0;}
+#sL5 .options-goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}
+#sL5 .options-goals button{min-width:0;min-height:48px;background:#fff;border:1px solid #e6dcf5;border-radius:9px;padding:7px 4px;color:#3b1c64;font-size:12px;line-height:1.5;}
+#sL5 .options-goals button[aria-pressed="true"]{background:#4f2683;color:#fff;}
+#sL5 .options-next,#sL5 .options-back{display:block;width:100%;min-height:44px;background:#4f2683;color:#fff;border:0;border-radius:10px;padding:11px;font-size:15px;line-height:1.5;}
+#sL5 [hidden]{display:none!important;}
+#sL5 .options-detail-content{background:#fff;border-radius:12px;padding:15px;margin-top:10px;font-size:14px;line-height:1.8;color:#443366;}
+#sL5 .options-detail-content h2{font-size:18px;line-height:1.5;margin:0 0 8px;}
+#sL5 .options-detail-content p{margin:9px 0;}
+#sL5 .options-source{font-size:12px;line-height:1.7;}
+#sL5 .options-source a{display:block;min-height:44px;padding:8px 0;color:#4f2683;overflow-wrap:break-word;}
+
+#sL5 .options-page{padding:0;}
+#sL1 .destination-bridge{margin:9px 0;font-size:12px;line-height:1.7;color:#443366;}#sL1 .destination-bridge b{color:#3b1c64;}
+</style>
+<style>
+#sL6{color-scheme:light dark;--cost-bg:light-dark(#faf8f5,#211d27);--cost-ink:light-dark(#302139,#f2eaf5);--cost-muted:light-dark(#635a68,#d0c4d5);--cost-line:light-dark(#dfd7e3,#584b61);--cost-fill:light-dark(#efe8f3,#362b40);--cost-deep:light-dark(#4d2864,#ccb0e0);--cost-on:light-dark(#ffffff,#26162e)}
+#sL6 .cost-page{max-width:440px;margin:0 auto;padding:20px 18px;background:var(--cost-bg);color:var(--cost-ink);font:14px/1.45 "PingFang SC","Microsoft YaHei",sans-serif;box-sizing:border-box}
+#sL6 *{box-sizing:border-box}#sL6 [hidden]{display:none!important}
+#sL6 h1{font-size:22px;line-height:1.5;margin:7px 0 0;font-weight:700;color:var(--cost-deep)}#sL6 h2{font-size:14px;margin:12px 0 5px}#sL6 p{margin:8px 0}#sL6 .cost-badge{font-size:11px;color:var(--cost-muted)}#sL6 .cost-slogan{color:var(--cost-deep);font-weight:600}#sL6 .cost-intro{font-size:13px}
+#sL6 button{font:inherit;color:inherit;cursor:pointer;max-width:100%}#sL6 .cost-budget{display:grid;gap:3px;background:var(--cost-fill);border:0;border-radius:12px;padding:12px;width:100%;text-align:left}#sL6 .cost-budget strong{font-size:26px;color:var(--cost-deep)}#sL6 small{font-size:11px;color:var(--cost-muted)}#sL6 table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}#sL6 th,#sL6 td{padding:7px 4px;border-bottom:1px solid var(--cost-line);text-align:left;overflow-wrap:anywhere}#sL6 th:first-child{width:45%}#sL6 th:last-child,#sL6 td:last-child{text-align:center;font-variant-numeric:tabular-nums}#sL6 .cost-note{font-size:11px;color:var(--cost-muted);margin:6px 0}
+#sL6 .cost-source{display:block;width:100%;min-height:44px;background:transparent;border:0;padding:3px 0;text-align:left;color:var(--cost-deep);font-size:12px}#sL6 .cost-award{font-size:12px;padding:8px 0;border-top:1px solid var(--cost-line);border-bottom:1px solid var(--cost-line)}#sL6 .cost-coop{display:grid;gap:3px;width:100%;text-align:left;border:0;background:var(--cost-fill);border-radius:10px;padding:9px;font-size:12px}#sL6 .cost-next{width:100%;min-height:44px;margin-top:8px;background:var(--cost-deep);color:var(--cost-on);border:0;border-radius:10px;font-weight:600}#sL6 .cost-back{min-height:44px;padding:0;background:transparent;border:0;color:var(--cost-deep)}#sL6 .cost-detail p{font-size:13px}#sL6 a{color:var(--cost-deep);overflow-wrap:anywhere}#sL6 .cost-detail a{display:inline-block;padding:8px 0}
+
+#sL6 .cost-page{padding:0;max-width:440px;}
+</style>
+<style>
+#sL6 .cost-overview>header{text-align:center}#sL6 .cost-advantage{font-size:12px;margin:8px 0}
+#sL6{color-scheme:light dark;--cost-bg:light-dark(#faf8f5,#211d27);--cost-ink:light-dark(#302139,#f2eaf5);--cost-muted:light-dark(#635a68,#d0c4d5);--cost-line:light-dark(#dfd7e3,#584b61);--cost-fill:light-dark(#efe8f3,#362b40);--cost-deep:light-dark(#4d2864,#ccb0e0);--cost-on:light-dark(#ffffff,#26162e)}
+#sL6 .cost-page{max-width:440px;margin:0 auto;padding:20px 18px;background:var(--cost-bg);color:var(--cost-ink);font:14px/1.45 "PingFang SC","Microsoft YaHei",sans-serif;box-sizing:border-box}
+#sL6 *{box-sizing:border-box}#sL6 [hidden]{display:none!important}
+#sL6 h1{font-size:22px;line-height:1.5;margin:7px 0 0;font-weight:700;color:var(--cost-deep)}#sL6 h2{font-size:14px;margin:12px 0 5px}#sL6 p{margin:8px 0}#sL6 .cost-badge{font-size:11px;color:var(--cost-muted)}#sL6 .cost-slogan{color:var(--cost-deep);font-weight:600}#sL6 .cost-intro{font-size:13px}
+#sL6 button{font:inherit;color:inherit;cursor:pointer;max-width:100%}#sL6 .cost-budget{display:grid;gap:3px;background:var(--cost-fill);border:0;border-radius:12px;padding:12px;width:100%;text-align:left}#sL6 .cost-budget strong{font-size:26px;color:var(--cost-deep)}#sL6 small{font-size:11px;color:var(--cost-muted)}#sL6 table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}#sL6 th,#sL6 td{padding:7px 4px;border-bottom:1px solid var(--cost-line);text-align:left;overflow-wrap:anywhere}#sL6 th:first-child{width:45%}#sL6 th:last-child,#sL6 td:last-child{text-align:center;font-variant-numeric:tabular-nums}#sL6 .cost-note{font-size:11px;color:var(--cost-muted);margin:6px 0}
+#sL6 .cost-source{display:block;width:100%;min-height:44px;background:transparent;border:0;padding:3px 0;text-align:left;color:var(--cost-deep);font-size:12px}#sL6 .cost-award{font-size:12px;padding:8px 0;border-top:1px solid var(--cost-line);border-bottom:1px solid var(--cost-line)}#sL6 .cost-coop{display:grid;gap:3px;width:100%;text-align:left;border:0;background:var(--cost-fill);border-radius:10px;padding:9px;font-size:12px}#sL6 .cost-next{width:100%;min-height:44px;margin-top:8px;background:var(--cost-deep);color:var(--cost-on);border:0;border-radius:10px;font-weight:600}#sL6 .cost-back{min-height:44px;padding:0;background:transparent;border:0;color:var(--cost-deep)}#sL6 .cost-detail p{font-size:13px}#sL6 a{color:var(--cost-deep);overflow-wrap:anywhere}#sL6 .cost-detail a{display:inline-block;padding:8px 0}
+
+#sL6 .cost-page{padding:0;}
+</style>
+<style>#sL6 .cost-overview th:first-child{width:55%}</style>
+<style>
+#sL7{color-scheme:light dark;--safe-bg:light-dark(#faf8f5,#211d27);--safe-ink:light-dark(#302139,#f2eaf5);--safe-muted:light-dark(#635a68,#d0c4d5);--safe-fill:light-dark(#efe8f3,#362b40);--safe-deep:light-dark(#4f2683,#ccb0e0);--safe-on:light-dark(#fff,#26162e);--safe-line:light-dark(#ded5e4,#584b61)}
+#sL7 .safety-page{max-width:440px;margin:0 auto;padding:20px 18px;background:var(--safe-bg);color:var(--safe-ink);font:14px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;box-sizing:border-box}#sL7 *{box-sizing:border-box}#sL7 [hidden]{display:none!important}#sL7 header{text-align:center}#sL7 header>span{font-size:11px;color:var(--safe-muted)}#sL7 h1{font-size:22px;line-height:1.5;margin:7px 0 0;color:var(--safe-deep)}#sL7 header p{color:var(--safe-deep);margin:3px 0 12px;font-weight:600}#sL7 h2{font-size:14px;margin:12px 0 7px}#sL7 button{font:inherit;cursor:pointer;color:inherit}#sL7 .safety-country{width:100%;border:0;border-radius:12px;padding:12px;background:var(--safe-fill);display:grid;grid-template-columns:1fr 1fr;gap:5px;text-align:center}#sL7 .safety-rate{display:grid;gap:0}#sL7 .safety-rate b{font-size:28px;color:var(--safe-deep);font-variant-numeric:tabular-nums}#sL7 small{font-size:11px;color:var(--safe-muted)}#sL7 .safety-country small{grid-column:1/-1}#sL7 .safety-note{font-size:11px;color:var(--safe-muted);margin:7px 0}#sL7 .safety-city{border:0;background:transparent;width:100%;padding:5px 0;min-height:44px;text-align:left}#sL7 .safety-bar-row{display:grid;grid-template-columns:84px 1fr 38px;gap:8px;align-items:center;margin:6px 0;font-size:12px}#sL7 .safety-bar-row b{text-align:right;font-variant-numeric:tabular-nums}#sL7 .safety-track{display:block;height:10px;background:var(--safe-fill);border-radius:6px;overflow:hidden}#sL7 .safety-track i{display:block;height:100%;background:var(--safe-deep)}#sL7 .safety-story{font-size:12px;margin:9px 0}#sL7 .safety-services{display:grid;gap:7px}#sL7 .safety-services button{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:3px 8px;border:0;border-radius:9px;background:var(--safe-fill);padding:9px 11px;min-height:44px;text-align:left;font-size:12px}#sL7 .safety-services button span{color:var(--safe-muted)}#sL7 .safety-next{width:100%;min-height:44px;border:0;border-radius:10px;margin-top:9px;background:var(--safe-deep);color:var(--safe-on);font-weight:600}#sL7 .safety-back{border:0;background:transparent;min-height:44px;color:var(--safe-deep);padding:0}#sL7 .safety-detail p{font-size:13px;margin:12px 0}#sL7 a{color:var(--safe-deep);overflow-wrap:anywhere}#sL7 .safety-detail-content>a{display:block;min-height:44px;padding:8px 0;font-size:13px}
+
+#sL7 .safety-page{padding:0;}
+</style>
+<style>
+#sL8{color-scheme:light dark;--food-bg:light-dark(#faf8f5,#211d27);--food-ink:light-dark(#302139,#f2eaf5);--food-muted:light-dark(#635a68,#d0c4d5);--food-fill:light-dark(#efe8f3,#362b40);--food-deep:light-dark(#4f2683,#ccb0e0);--food-on:light-dark(#fff,#26162e);--food-line:light-dark(#ded5e4,#584b61)}#sL8 .food-page{max-width:440px;margin:0 auto;padding:20px 18px;background:var(--food-bg);color:var(--food-ink);font:14px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;box-sizing:border-box}#sL8 *{box-sizing:border-box}#sL8 [hidden]{display:none!important}#sL8 header{text-align:center}#sL8 header>span{font-size:11px;color:var(--food-muted)}#sL8 h1{font-size:22px;line-height:1.5;margin:7px 0 0;color:var(--food-deep)}#sL8 header p{color:var(--food-deep);margin:3px 0 12px;font-weight:600}#sL8 h2{font-size:14px;line-height:1.5;margin:0 0 5px;color:var(--food-deep)}#sL8 .food-story{padding:10px 0;border-bottom:1px solid var(--food-line)}#sL8 .food-story p{font-size:13px;margin:0}#sL8 button{font:inherit;color:inherit;cursor:pointer}#sL8 .food-story button{min-height:44px;border:0;background:transparent;color:var(--food-deep);font-size:12px;text-align:left;padding:5px 0;width:100%}#sL8 .food-note{font-size:11px;color:var(--food-muted);margin:10px 0}#sL8 .food-next{width:100%;min-height:44px;border:0;border-radius:10px;margin-top:5px;background:var(--food-deep);color:var(--food-on);font-weight:600}#sL8 .food-back{min-height:44px;border:0;background:transparent;color:var(--food-deep);padding:0}#sL8 .food-detail p{font-size:13px;margin:12px 0}#sL8 a{color:var(--food-deep);overflow-wrap:anywhere}#sL8 .food-detail-content>a{display:block;min-height:44px;padding:8px 0;font-size:13px}
+
+#sL8 .food-page{padding:0;}
+</style>
+<style>
+#sL9{color-scheme:light dark;--study-bg:light-dark(#faf8f5,#211d27);--study-ink:light-dark(#302139,#f2eaf5);--study-muted:light-dark(#635a68,#d0c4d5);--study-fill:light-dark(#efe8f3,#362b40);--study-deep:light-dark(#4f2683,#ccb0e0);--study-on:light-dark(#fff,#26162e)}#sL9 .study-page{max-width:440px;margin:0 auto;padding:20px 18px;background:var(--study-bg);color:var(--study-ink);font:14px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;box-sizing:border-box}#sL9 *{box-sizing:border-box}#sL9 [hidden]{display:none!important}#sL9 header{text-align:center}#sL9 header>span{font-size:11px;color:var(--study-muted)}#sL9 h1{font-size:22px;margin:7px 0 0;color:var(--study-deep)}#sL9 header p{color:var(--study-deep);margin:3px 0 12px;font-weight:600}#sL9 button{font:inherit;cursor:pointer}#sL9 .study-video{display:block;width:100%;padding:0 0 8px;border:0;border-radius:12px;overflow:hidden;background:var(--study-fill);color:var(--study-deep);text-align:left}#sL9 .study-video img{display:block;width:100%;aspect-ratio:16/7;object-fit:cover}#sL9 .study-video span{display:block;padding:7px 10px 0;font-weight:600}#sL9 .study-video small{display:block;padding:0 10px;font-size:11px;color:var(--study-muted)}#sL9 .study-location{font-size:13px;margin:12px 0}#sL9 .study-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}#sL9 .study-grid button{min-width:0;padding:10px;border:0;border-radius:10px;background:var(--study-fill);color:var(--study-ink);text-align:left}#sL9 .study-grid strong{display:block;font-size:22px;color:var(--study-deep)}#sL9 .study-grid span{display:block;font-size:12px}#sL9 .study-grid small{display:block;font-size:11px;color:var(--study-muted);margin-top:4px}#sL9 .study-gpa{font-size:13px;margin:12px 0}#sL9 .study-note{font-size:11px;color:var(--study-muted);margin:10px 0}#sL9 .study-next{width:100%;min-height:44px;border:0;border-radius:10px;margin-top:5px;background:var(--study-deep);color:var(--study-on);font-weight:600}#sL9 .study-back{min-height:44px;border:0;background:transparent;color:var(--study-deep);padding:0}#sL9 .study-detail p{font-size:13px;margin:12px 0}#sL9 a{display:block;min-height:44px;padding:8px 0;color:var(--study-deep);font-size:13px;overflow-wrap:anywhere}#sL9 video{display:block;width:100%;border-radius:12px;margin-top:12px;background:#000}
+
+#sL9 .study-page{padding:0;max-width:440px;}
+#sL9 .study-detail p.study-video-source{font-size:11px;color:var(--study-muted);line-height:1.6;}
+#sL9 .study-video-source a{display:inline;min-height:0;padding:0;font-size:inherit;}
+</style>
+<style>
+#sL10{color-scheme:light dark;--arrival-bg:light-dark(#faf8f5,#211d27);--arrival-ink:light-dark(#302139,#f2eaf5);--arrival-muted:light-dark(#635a68,#d0c4d5);--arrival-fill:light-dark(#efe8f3,#362b40);--arrival-deep:light-dark(#4f2683,#ccb0e0);--arrival-on:light-dark(#fff,#26162e);--arrival-line:light-dark(#ded5e4,#584b61)}#sL10 .arrival-page{max-width:440px;margin:0 auto;padding:20px 18px;background:var(--arrival-bg);color:var(--arrival-ink);font:14px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;box-sizing:border-box}#sL10 *{box-sizing:border-box}#sL10 [hidden]{display:none!important}#sL10 header{text-align:center}#sL10 header>span{font-size:11px;color:var(--arrival-muted)}#sL10 h1{font-size:22px;margin:7px 0 0;color:var(--arrival-deep)}#sL10 header p{color:var(--arrival-deep);margin:3px 0 12px;font-weight:600}#sL10 h2{font-size:14px;margin:0 0 6px;color:var(--arrival-deep);line-height:1.5}#sL10 p{font-size:13px;margin:0}#sL10 .arrival-experience{padding:9px 0 12px;border-bottom:1px solid var(--arrival-line)}#sL10 .arrival-sample{padding:12px 0 0}#sL10 .arrival-goal{padding:10px;background:var(--arrival-fill);border-radius:10px;margin:8px 0;color:var(--arrival-deep)}#sL10 .arrival-step{display:grid;grid-template-columns:65px 1fr;gap:8px;margin:10px 0}#sL10 .arrival-step>b{font-size:12px;color:var(--arrival-deep)}#sL10 .arrival-later{padding:8px 0;color:var(--arrival-muted);font-size:12px}#sL10 button{font:inherit;cursor:pointer}#sL10 .arrival-route-button{min-height:44px;width:100%;text-align:left;padding:5px 0;border:0;background:transparent;color:var(--arrival-deep);font-size:12px}#sL10 .arrival-note{font-size:11px;color:var(--arrival-muted);margin:8px 0}#sL10 .arrival-method{font-size:13px;color:var(--arrival-deep);margin:9px 0}#sL10 .arrival-next{width:100%;min-height:44px;border:0;border-radius:10px;margin-top:5px;background:var(--arrival-deep);color:var(--arrival-on);font-weight:600;padding:10px}#sL10 .arrival-back{min-height:44px;border:0;background:transparent;color:var(--arrival-deep);padding:0}#sL10 .arrival-route-stage{padding:12px 0;border-bottom:1px solid var(--arrival-line)}#sL10 .arrival-detail-content>h1{margin-bottom:12px}#sL10 a{display:block;min-height:44px;padding:8px 0;font-size:13px;color:var(--arrival-deep);overflow-wrap:anywhere}
+
+#sL10 .arrival-page{padding:0;max-width:440px;}
+</style>
+<style>
+#sL10 .arrival-route-map{list-style:none;padding:0;margin:12px 0 0}#sL10 .arrival-route-map li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;position:relative;padding:0 0 12px}#sL10 .arrival-route-map li:last-child{padding-bottom:0}#sL10 .arrival-stage-label{position:relative;padding:9px 8px;font-size:12px;text-align:center;background:var(--arrival-fill);color:var(--arrival-deep);border-radius:8px;align-self:start;z-index:1}#sL10 .arrival-route-map li:not(:last-child)::before{content:"";position:absolute;left:37px;top:20px;bottom:-12px;width:2px;background:var(--arrival-line)}#sL10 .arrival-route-map li>div{padding:7px 0;min-width:0}#sL10 .arrival-route-map b{display:block;font-size:13px;color:var(--arrival-deep)}#sL10 .arrival-route-map small{display:block;font-size:11px;color:var(--arrival-muted);margin-top:2px}#sL10 .arrival-now .arrival-stage-label{background:var(--arrival-deep);color:var(--arrival-on)}#sL10 .arrival-now .arrival-stage-label small{color:var(--arrival-on)}
+</style>
+<style>
+
+#western-calculator-review{color-scheme:light dark;--d-bg:light-dark(#faf8f5,#211d27);--d-ink:light-dark(#302139,#f2eaf5);--d-muted:light-dark(#635a68,#d0c4d5);--d-fill:light-dark(#efe8f3,#362b40);--d-deep:light-dark(#4f2683,#ccb0e0);--d-on:light-dark(#fff,#26162e);--d-line:light-dark(#ded5e4,#584b61);--d-warn:light-dark(#9a3d2c,#f0b8a1)}#western-calculator-review .decision-page{max-width:440px;margin:0 auto;padding:20px 18px;background:var(--d-bg);color:var(--d-ink);font:14px/1.5 "PingFang SC","Microsoft YaHei",sans-serif}#western-calculator-review *{box-sizing:border-box}#western-calculator-review [hidden]{display:none!important}#western-calculator-review header{text-align:center;margin-bottom:12px}#western-calculator-review header>span{font-size:11px;color:var(--d-muted)}#western-calculator-review h1{font-size:22px;margin:7px 0 0;color:var(--d-deep)}#western-calculator-review header p{font-size:12px;color:var(--d-muted);margin:4px 0}#western-calculator-review label{display:block;font-size:12px;margin:9px 0;color:var(--d-ink)}#western-calculator-review .decision-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}#western-calculator-review select,#western-calculator-review input{width:100%;min-height:44px;min-width:0;padding:8px;border:1px solid var(--d-line);border-radius:8px;color:var(--d-ink);background:var(--d-bg);margin-top:4px;font-family:inherit;font-size:16px}#western-calculator-review label small{display:block;font-size:11px;color:var(--d-muted);margin-top:4px}#western-calculator-review fieldset{border:0;padding:0;margin:8px 0;min-width:0}#western-calculator-review legend{font-size:12px;margin-bottom:4px}#western-calculator-review button{font-family:inherit;cursor:pointer}#western-calculator-review .decision-choices{display:flex;gap:6px}#western-calculator-review .decision-choices button{flex:1;min-height:44px;border:1px solid var(--d-line);border-radius:8px;font-size:12px;background:var(--d-fill);color:var(--d-ink)}#western-calculator-review .decision-choices button[aria-pressed=true]{background:var(--d-deep);color:var(--d-on);border-color:var(--d-deep)}#western-calculator-review .decision-primary{width:100%;min-height:44px;padding:10px;border:0;border-radius:10px;background:var(--d-deep);color:var(--d-on);font-size:14px;font-weight:600;margin-top:6px}#western-calculator-review .decision-footnote{font-size:11px;color:var(--d-muted);margin:8px 0}#western-calculator-review .decision-score{text-align:center;padding:12px 0;background:var(--d-fill);border-radius:12px}#western-calculator-review .decision-score strong{display:block;font-size:48px;color:var(--d-deep);line-height:1.1;font-variant-numeric:tabular-nums}#western-calculator-review .decision-score span{display:block;font-size:12px;margin:4px 0;color:var(--d-muted)}#western-calculator-review .decision-score b{display:block;font-size:14px;color:var(--d-deep)}#western-calculator-review .decision-money{padding:12px 0}#western-calculator-review .decision-money>div{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:5px 0}#western-calculator-review .decision-money p{font-size:12px;color:var(--d-warn);margin:6px 0}#western-calculator-review .decision-breakdown{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}#western-calculator-review .decision-breakdown th:first-child{width:43%;text-align:left}#western-calculator-review .decision-breakdown td:first-child{text-align:left}#western-calculator-review .decision-breakdown th,#western-calculator-review .decision-breakdown td{padding:8px 2px;border-bottom:1px solid var(--d-line);text-align:center;font-variant-numeric:tabular-nums}#western-calculator-review h2{font-size:14px;color:var(--d-deep);margin:12px 0 5px}#western-calculator-review .decision-conclusion p{font-size:13px;margin:0}#western-calculator-review .decision-explain{width:100%;min-height:44px;padding:6px 0;background:transparent;border:0;color:var(--d-deep);text-align:left;font-size:12px}#western-calculator-review [data-view=rules]>p{font-size:13px;margin:8px 0}#western-calculator-review a{display:block;min-height:44px;padding:8px 0;color:var(--d-deep);font-size:13px;overflow-wrap:anywhere}
+
+
+#western-calculator-review [data-copy-text]{display:block;width:100%;padding:10px;font-family:inherit;font-size:16px;border:1px solid var(--d-line);border-radius:8px;background:var(--d-bg);color:var(--d-ink);margin-top:6px;resize:vertical}
+
+
+#western-calculator-review .decision-pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#western-calculator-review label{min-width:0}#western-calculator-review .decision-scenarios{padding:5px 0;border-top:1px solid var(--d-line)}#western-calculator-review .decision-scenarios p{display:flex;justify-content:space-between;gap:8px;margin:6px 0;font-size:11px}#western-calculator-review .decision-scenarios b{font-weight:500}#western-calculator-review [data-cost-scope]{font-size:11px;color:var(--d-muted)}#western-calculator-review .decision-money>div>b{min-width:0;text-align:right}#western-calculator-review [data-score]{font-size:44px}
+
 </style>
 </head>
 <body>
 <div class="wrap">
+<nav class="western-flow-nav" aria-label="页面导航">
+ <button type="button" id="western-flow-back" hidden>← 上一页</button>
+ <span id="western-flow-name">首页</span>
+ <button type="button" id="western-flow-home" hidden>回首页</button>
+</nav>
+<style>
+.western-flow-nav{max-width:440px;margin:0 auto 8px;display:flex;align-items:center;justify-content:space-between;gap:8px;font:12px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;color:var(--purple-d)}
+.western-flow-nav button{min-height:44px;flex-shrink:0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.western-flow-nav span{flex:1;text-align:center}.western-flow-nav [hidden]{display:none!important}
+#western-calculator-review .decision-page{padding-top:6px}#western-calculator-review [data-view]{animation:fade .35s ease}
+#sL3 .job-goals{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;}#sL3 .job-goals button{min-height:48px;padding:6px 4px;text-align:center;font-size:12px;line-height:1.45;}#sL3 .job-intro{margin:6px 0;font-size:12px;line-height:1.6;}#sL3 .job-table-tabs{margin-top:7px;}#sL3 .school-prompt{margin:5px 0;}#sL3 .job-continue{margin-top:7px;}
+/* Shared bottom action sizing across the complete guide. */
+:is(#sPain,#sHabit,#sL1,#sL2,#sL3,#sL4,#sL5,#sL6,#sL7,#sL8,#sL9,#sL10,#sCalc,#sResult) button.western-page-next{
+ display:block;box-sizing:border-box;width:100%;min-height:48px;height:auto;
+ padding:10px 12px;margin:12px 0 0;border:0;border-radius:10px;
+ font-family:inherit;font-size:15px;line-height:1.5;font-weight:600;
+ letter-spacing:0;text-align:center;white-space:normal;overflow-wrap:anywhere;
+ touch-action:manipulation;
+}
+.wrap:has(#sPain.on),.wrap:has(#sHabit.on){padding-bottom:max(16px,env(safe-area-inset-bottom));}
+#sPain .card{padding-bottom:16px;}
+#sPain .foot{margin-top:10px;}
+
+:is(#sPain,#sHabit,#sL1,#sL2,#sL3,#sL4,#sL5,#sL6,#sL7,#sL8,#sL9,#sL10,#sCalc,#sResult) span.western-page-label{
+ display:inline-block;box-sizing:border-box;max-width:100%;padding:4px 12px;
+ border-radius:999px;background:#4f2683;color:#fff;
+ font-family:inherit;font-size:11px;font-weight:500;line-height:1.5;letter-spacing:1px;
+ text-align:center;vertical-align:middle;margin:0;
+}
+:is(#sPain,#sHabit,#sL1,#sL2,#sL3,#sL4,#sL5,#sL6,#sL7,#sL8,#sL9,#sL10,#sCalc,#sResult) button.western-page-next{
+ background:#eee5f8;color:#4f2683;
+}
+:is(#sPain,#sHabit,#sL1,#sL2,#sL3,#sL4,#sL5,#sL6,#sL7,#sL8,#sL9,#sL10,#sCalc,#sResult) button.western-page-next[data-clicked="true"]:not(:disabled){
+ background:#4f2683;color:#fff;
+}
+
+#sL2 .school-video-entry{padding:10px;gap:12px;min-height:104px;}
+#sL2 .school-video-entry .school-video-preview{position:relative;display:block;flex:0 0 44%;overflow:hidden;border-radius:8px;}
+#sL2 .school-video-entry img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px;}
+#sL2 .school-video-entry .school-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;text-shadow:0 1px 8px #3b1c64;}
+#sL2 .school-video-entry>span:last-child{flex:1;min-width:0;}
+#sL2 .school-video-entry b{font-size:14px;line-height:1.5;}
+#sL2 .school-video-entry .school-watch{display:inline-block;margin-top:6px;padding:4px 9px;border-radius:999px;background:#eee5f8;color:#4f2683;font-size:12px;line-height:1.5;}
+
+
+
+/* Consistent secondary return action across all detail pages. */
+:is(#sL1,#sL2,#sL3,#sL5,#sL6,#sL7,#sL8,#sL9,#sL10,#western-calculator-review) button.western-detail-back{
+ display:inline-flex;align-items:center;justify-content:flex-start;width:auto;max-width:100%;min-height:44px;
+ margin:0 0 6px;padding:8px 2px;border:0;border-radius:4px;background:transparent;color:light-dark(#4f2683,#ccb0e0);
+ font-family:inherit;font-size:13px;font-weight:500;line-height:1.5;text-align:left;white-space:normal;
+ box-shadow:none;touch-action:manipulation;
+}
+
+/* Sources remain accessible but are collapsed by default across the guide. */
+.western-source-fold{margin:8px 0;font:12px/1.6 "PingFang SC","Microsoft YaHei",sans-serif;color:inherit;}
+.western-source-fold>summary{display:flex;align-items:center;gap:7px;min-height:44px;padding:5px 0;color:inherit;font-size:12px;font-weight:500;list-style:none;touch-action:manipulation;}
+.western-source-fold>summary::-webkit-details-marker{display:none;}
+.western-source-fold>summary::before{content:"▸";font-size:13px;}
+.western-source-fold[open]>summary::before{content:"▾";}
+.western-source-fold>.western-source-content{padding:2px 10px 8px;border-left:2px solid #b59bd0;}
+.western-source-fold .western-source-content>a{display:block;min-height:44px;padding:8px 0;overflow-wrap:anywhere;font-size:12px;}
+.alumni-source-link{display:none;}
+
+/* Hide the padded calculator shell when none of its pages is active. */
+#western-calculator-review:not(:has(.screen.on)){display:none;}
+
+/* Whole-guide mobile layout: CSS viewport widths, independent of phone brand. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+.screen{min-width:0;}
+.screen :is(img,video,iframe){max-width:100%;}
+.screen :is(button,input,select,textarea){max-width:100%;}
+.screen :is(a,p,td,th){overflow-wrap:break-word;}
+.screen a{overflow-wrap:anywhere;}
+.screen button{touch-action:manipulation;}
+.screen :is(button,a,input,select,textarea,summary):focus-visible{outline:2px solid #7a4fb0;outline-offset:3px;}
+@media(max-width:640px){
+ .wrap{width:100%;padding:16px max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));}
+ #sPain,#sHabit{max-width:440px;margin-inline:auto;}
+ #sL1 .destination-page,#sL2 .school-page,#sL3 .school-page,#sL4 .alumni-page,#sL5 .options-page,#sL6 .cost-page,#sL7 .safety-page,#sL8 .food-page,#sL9 .study-page,#sL10 .arrival-page,#western-calculator-review .decision-page{width:100%;padding:0;}
+ .screen :is(.school-stats,.school-more,.alumni-stats,.destination-list,.options-countries,.study-grid,.kpis,.stats){grid-template-columns:repeat(2,minmax(0,1fr));}
+ .screen :is(.school-stats,.school-more,.alumni-stats,.destination-list,.options-countries,.study-grid,.kpis,.stats)>*{min-width:0;}
+ #sL8 .food-story p,#sL8 .food-detail p,#sL9 .study-location,#sL9 .study-gpa,#sL10 .arrival-experience p,#sL10 .arrival-route-stage p,#western-calculator-review .decision-conclusion p{font-size:14px;line-height:1.65;}
+ #sL8 .food-story button,#sL10 .arrival-route-button{font-size:13px;}
+ #sL3 .job-overview-table,#sL6 table,#western-calculator-review .decision-breakdown{width:100%;table-layout:fixed;}
+ #sL3 .job-overview-table td,#sL3 .job-overview-table th,#sL6 td,#sL6 th,#western-calculator-review .decision-breakdown td,#western-calculator-review .decision-breakdown th{overflow-wrap:anywhere;}
+ #sL3 #employment-china-panel .job-overview-table td:last-child{white-space:normal;}
+ #western-calculator-review .decision-choices{flex-wrap:wrap;}
+ #western-calculator-review .decision-choices button{flex:1 1 85px;min-width:0;padding:8px 6px;line-height:1.5;}
+ #western-calculator-review :is(input,select,textarea){font-size:16px;}
+ #western-calculator-review .decision-money>div{flex-wrap:wrap;}
+ #western-calculator-review .decision-money>div>b{margin-left:auto;}
+ #sL2 .school-video-entry{flex-direction:column;align-items:stretch;padding:10px;gap:8px;}
+ #sL2 .school-video-entry .school-video-preview{flex:0 0 auto;width:100%;}
+ #sL2 .school-video-entry>span:last-child{width:100%;}
+ .western-flow-nav button{padding-inline:6px;}
+}
+@media(max-width:360px){
+ .wrap{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right));}
+ #sPain .card,#sHabit .card{padding:16px;}
+ #sPain h1{font-size:24px;}
+ #western-calculator-review .decision-pair{grid-template-columns:minmax(0,1fr);gap:0;}
+ #sL3 .job-goals,#sL5 .options-goals{grid-template-columns:minmax(0,1fr);}
+ #sL10 .arrival-route-map li{gap:8px;}
+ #sL3 .job-overview-table td,#sL3 .job-overview-table th{padding-inline:4px;}
+}
+@media(prefers-reduced-motion:reduce){.screen,#western-calculator-review [data-view]{animation:none;}}
+
+</style>
+
 
  <!-- 屏 0：痛点 -->
  <div class="screen on" id="sPain">
   <div class="hero" style="padding:34px 0 6px;">
-    <span class="badge">WESTERN 值不值</span>
-    <h1>一个 200 万人民币的决定<br>不该凭感觉</h1>
+    <span class="badge western-page-label">Western 值不值</span>
+    <h1>一个 <span class="price">200 万</span>人民币的决定<br>不该凭感觉</h1>
     <p class="slogan">用数据驱动教育决策</p>
+    <p class="identity">在校生王怡丹的分享<br>已获 Western Ivey 商学院 AEO（有条件预录取）资格</p>
   </div>
   <div class="card">
-    <p style="font-size:14.5px;line-height:2;color:#443366;">
+    <p class="home-copy">
     搜"<b style="color:var(--purple);">西安大略</b>"——出来的是名字误会和过期帖子；<br>
     问中介——有立场；问官网——是广告；问在读学生——只有感受。<br><br>
     <b style="color:var(--purple-d);">重大决定，没有数据，没有依据。</b><br>
     接下来十站，不劝您，只给您看数据——结论您自己推。</p>
-    <button class="btn" onclick="go('sHabit')">第一步 →</button>
+    <button class="btn western-page-next" onclick="go('sHabit')">看看 Western 值不值 →</button>
   </div>
-  <p class="foot">纯中文 · 约 2 分钟 · 数据均注明来源</p>
+  <p class="foot">十站看明白</p>
  </div>
 
  <!-- 习惯起点 -->
  <div class="screen" id="sHabit">
-  <div class="hero"><span class="badge">出发前</span><h1 style="font-size:22px;">给孩子选学校，您最先看什么？</h1></div>
+  <div class="hero"><span class="badge western-page-label">出发前</span><h1 style="font-size:22px;">给孩子选学校，您最先看什么？</h1></div>
   <div class="card">
     <div class="seg" style="flex-direction:column;">
-      <button onclick="habit('country')">先选国家</button>
-      <button onclick="habit('rank')">排名和名气</button>
-      <button onclick="habit('city')">城市喜不喜欢</button>
-      <button onclick="habit('exit')">毕业后的出口</button>
-      <button onclick="habit('none')">还没想过</button>
+      <button data-habit="country" aria-pressed="false" onclick="habit('country')">先选国家</button>
+      <button data-habit="rank" aria-pressed="false" onclick="habit('rank')">排名和名气</button>
+      <button data-habit="city" aria-pressed="false" onclick="habit('city')">城市喜不喜欢</button>
+      <button data-habit="exit" aria-pressed="false" onclick="habit('exit')">毕业后的出口</button>
+      <button data-habit="none" aria-pressed="false" onclick="habit('none')">还没想过</button>
     </div>
     <div id="habitOut" style="display:none;margin-top:14px;">
-      <div class="fact" id="habitFact"></div>
-      <button class="btn" onclick="go('sL1')">有道理——那出发，十站走完 →</button>
+      <div class="fact" id="habitFact" aria-live="polite"></div>
+      <button class="btn western-page-next" onclick="go('sL1')">有道理——那出发，十站走完 →</button>
     </div>
   </div>
  </div>
  <!-- 栏目 1 -->
- <div class="screen" id="sL1">
-  <div class="hero"><span class="badge">第 1 站 · 共 10 站</span><h1 style="font-size:22px;">为什么选加拿大</h1><p class="slogan">先选国家：留不留得下，比排名重要</p></div>
-  <div class="card"><div class="fact"><b>现在家长的第一个反应：安不安全。</b>地缘政治让安全比什么时候都重要——<b>先安全，再稳不稳，然后才是留不留得下</b>。加拿大枪支管制严格、社会对立少、对留学生友好，安全这条它在五路里最稳。</div><div class="fact" style="margin-top:8px;"><b>五路对比：</b>美国留不下（H-1B 拟加收 10.3 万美元天价费，留学生通道被掐死）、英国留不下、澳大利亚留不下、香港有可能——<b>安全过关之后，加拿大又是最适合留下的国家</b>。</div>
-    <div class="stats">
-      <div class="stat"><div class="n">3<small> 年</small></div><div class="d">毕业工签（PGWP）</div><div class="s">四年制本科毕业即获，无需雇主担保</div></div>
-      <div class="stat"><div class="n">EE</div><div class="d">快速通道 → PR</div><div class="s">学历＋语言＋本地工龄逐年加分，链路成熟</div></div>
-      <div class="stat wide"><div class="n" style="color:var(--red);">✕</div><div><div class="d">美国 / 英国 / 澳大利亚：留不下</div><div class="s">美国 H-1B 拟收 10.3 万美元天价费，英澳毕业生转永居通道基本关闭——同样是 200 万投入，出口完全不同</div></div></div>
+<div class="screen" id="sL1">
+<div class="destination-page">
+    <div class="country-overview">
+    <header class="destination-hero">
+      <span class="destination-badge western-page-label">第 1 站 · 共 10 站</span>
+      <h1>为什么选加拿大</h1>
+      <p class="destination-slogan">先选国家：留不留得下，比排名重要</p>
+    </header>
+    <section class="destination-card">
+      <p class="destination-intro"><b>现在家长的第一个反应：安不安全。</b>地缘政治让安全比什么时候都重要——<b>先安全，再稳不稳，然后才是留不留得下</b>。</p>
+      <p class="destination-bridge"><b>安全是底线，毕业后有没有选择，是下一步。</b><br>孩子可以继续深造，也可以回国发展。但如果想先在当地积累工作经验，各地能给他多长的工作／求职窗口？我们先把这一项摆出来看。</p>
+      <h2>主要留学目的地对比</h2>
+      <p class="destination-caption">本科毕业后的工作 / 求职窗口 · 点击看条件与出处</p>
+      <div class="destination-list"><button type="button" class="compact-country" data-country-view="country-0" aria-label="美国，OPT 1 年 · STEM 可至 3 年，查看条件与出处"><span class="compact-name">美国 <span aria-hidden="true">›</span></span><span class="compact-value">OPT 1 年 · STEM 可至 3 年</span></button>
+<button type="button" class="compact-country" data-country-view="country-1" aria-label="英国，18 个月 / 2 年，查看条件与出处"><span class="compact-name">英国 <span aria-hidden="true">›</span></span><span class="compact-value">18 个月 / 2 年</span></button>
+<button type="button" class="compact-country" data-country-view="country-2" aria-label="加拿大，最长 3 年，查看条件与出处"><span class="compact-name">加拿大 <span aria-hidden="true">›</span></span><span class="compact-value">最长 3 年</span></button>
+<button type="button" class="compact-country" data-country-view="country-3" aria-label="澳大利亚，通常 2 年，查看条件与出处"><span class="compact-name">澳大利亚 <span aria-hidden="true">›</span></span><span class="compact-value">通常 2 年</span></button>
+<button type="button" class="compact-country" data-country-view="country-4" aria-label="中国香港，首次 24 个月，查看条件与出处"><span class="compact-name">中国香港 <span aria-hidden="true">›</span></span><span class="compact-value">首次 24 个月</span></button>
+<button type="button" class="compact-country" data-country-view="country-5" aria-label="新加坡，1 年求职停留，查看条件与出处"><span class="compact-name">新加坡 <span aria-hidden="true">›</span></span><span class="compact-value">1 年求职停留</span></button>
+<button type="button" class="compact-country" data-country-view="country-6" aria-label="日本，通常最长 1 年，查看条件与出处"><span class="compact-name">日本 <span aria-hidden="true">›</span></span><span class="compact-value">通常最长 1 年</span></button></div>
+<p class="destination-caption destination-date">政策截至 2026 年 9 月；按符合条件的本科毕业生常规路径比较。求职停留与工作授权分别标明，未来申请以当时政策为准。</p>
+    </section>
+<button type="button" class="compact-path" data-country-view="canada-path"><span>加拿大这条路，值得看什么？ <span aria-hidden="true">›</span></span><small>工作与长期身份，是两步</small></button><button type="button" class="destination-action western-page-next" onclick="go('sL2')">国家认可，第 2 站 →</button>
     </div>
-    <div class="dts">来源：加拿大移民部 IRCC 毕业工签（PGWP）政策、EE 快速通道官方说明；美国 DHS 2026 年 8 月 H-1B 收费拟议规则（联邦公报公示）；英国内政部毕业生签证条款。</div>
-    <div class="fact" style="margin-top:10px;"><b>小众路线：</b>新加坡（排名高但留下难、体量小）；欧洲大陆（学费低但语言门槛高）；马来西亚（成本最低，认可度有限）。</div>
-    <button class="btn" onclick="go('sL2')">国家认可，第 2 站 →</button>
+<div class="country-detail-view" hidden><button type="button" class="country-back western-detail-back">← 返回目的地对比</button><div class="country-detail-content"></div></div>
+<template data-country-template="country-0"><h2>美国</h2><p class="destination-value">通常 1 年；符合条件的 STEM 最长 3 年</p>
+          <p class="destination-route">OPT · 与专业相关的工作授权</p>
+          <p class="destination-detail">普通 OPT 最长 12 个月；符合条件的 STEM 毕业生可再申请 24 个月延期，合计最长 36 个月（3 年）。延期须满足专业、雇主及培训计划等条件。</p>
+          <p class="destination-source">来源：<a href="https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students" target="_blank" rel="noopener noreferrer">USCIS · OPT</a> · <a href="https://studyinthestates.dhs.gov/form-i-983-overview" target="_blank" rel="noopener noreferrer">DHS · STEM OPT 条件</a></p>
+        </template>
+<template data-country-template="country-1"><h2>英国</h2><p class="destination-value">18 个月 / 2 年</p>
+          <p class="destination-route">Graduate visa · 可找工作及工作</p>
+          <p class="destination-detail">2026 年底前申请为 2 年；2027 年起申请为 18 个月。本科口径；之后留英工作需转符合条件的签证。</p>
+          <p class="destination-source">来源：<a href="https://www.gov.uk/graduate-visa" target="_blank" rel="noopener noreferrer">英国内政部 · Graduate visa</a></p>
+        </template>
+<template data-country-template="country-2"><h2>加拿大</h2><p class="destination-value">最长 3 年</p>
+          <p class="destination-route">PGWP · 毕业后工作许可</p>
+          <p class="destination-detail">符合条件的两年及以上项目可申请。须满足语言等要求，时长也受护照有效期影响；不是毕业即获。</p>
+          <p class="destination-source">来源：<a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/about.html" target="_blank" rel="noopener noreferrer">IRCC · PGWP 时长</a> · <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html" target="_blank" rel="noopener noreferrer">申请条件</a></p>
+        </template>
+<template data-country-template="country-3"><h2>澳大利亚</h2><p class="destination-value">通常 2 年</p>
+          <p class="destination-route">485 · 本科毕业后工作签证</p>
+          <p class="destination-detail">本科（含荣誉学位）的常规时长。须满足学习、年龄、英语等要求；特定护照或偏远地区等安排另看条件。</p>
+          <p class="destination-source">来源：<a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485/post-higher-education-work" target="_blank" rel="noopener noreferrer">澳洲内政部 · 485 毕业生签证</a></p>
+        </template>
+<template data-country-template="country-4"><h2>中国香港</h2><p class="destination-value">首次 24 个月</p>
+          <p class="destination-route">IANG · 非本地毕业生留港安排</p>
+          <p class="destination-detail">符合条件的非本地应届毕业生，毕业后 6 个月内申请时可尚未找到工作；后续续签需符合就业或经营等条件。</p>
+          <p class="destination-source">来源：<a href="https://www.immd.gov.hk/hks/services/visas/IANG.html" target="_blank" rel="noopener noreferrer">香港入境事务处 · IANG</a> · <a href="https://www.immd.gov.hk/hks/faq/non-local-graduates-return-employment-arrangement.html" target="_blank" rel="noopener noreferrer">申请与续签问答</a></p>
+        </template>
+<template data-country-template="country-5"><h2>新加坡</h2><p class="destination-value">1 年求职停留</p>
+          <p class="destination-route">LTVP · 符合条件的院校毕业生可申请</p>
+          <p class="destination-detail">用于毕业后找工作，不可续期。求职停留不等于工作授权，实际工作仍须取得相应工作准证。</p>
+          <p class="destination-source">来源：<a href="https://ask.gov.sg/ica/questions/clos83fvp01ht5k0w2hqby2ji" target="_blank" rel="noopener noreferrer">ICA · 毕业后 1 年 LTVP</a> · <a href="https://www.mom.gov.sg/passes-and-permits/work-passes-for-holders-of-long-term-visit-passes-issued-by-ica" target="_blank" rel="noopener noreferrer">MOM · 工作准证要求</a></p>
+        </template>
+<template data-country-template="country-6"><h2>日本</h2><p class="destination-value">通常最长 1 年</p>
+          <p class="destination-route">特定活动 · 毕业后继续求职</p>
+          <p class="destination-detail">符合条件者获 6 个月，可续一次。需学校推荐等材料；全职工作须取得相应就业在留资格。</p>
+          <p class="destination-source">来源：<a href="https://www.moj.go.jp/isa/immigration/faq/kanri_qa.html" target="_blank" rel="noopener noreferrer">日本出入国在留管理厅 · 毕业后求职问答</a></p>
+        </template>
+<template data-country-template="canada-path"><h2>加拿大这条路，值得看什么？</h2>
+      <p class="destination-intro">同样是 200 万投入，毕业后有多久的工作窗口，值得放进总账里。加拿大符合条件的本科毕业生可申请最长 3 年 PGWP，给求职与积累工作经验留出时间。</p>
+      <p class="destination-intro destination-next"><b>工作与长期身份，是两步。</b>毕业后积累符合条件的工作经验，可以再评估 EE 等永居路径；拿到毕业工签并不等于获得永居。</p>
+      <p class="destination-source">来源：<a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/about.html" target="_blank" rel="noopener noreferrer">IRCC · PGWP</a> · <a href="https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=514" target="_blank" rel="noopener noreferrer">留学生申请永居说明</a></p></template>
   </div>
- </div>
- <!-- 栏目 2 -->
- <div class="screen" id="sL2">
-  <div class="hero"><span class="badge">第 2 站 · 共 10 站</span><h1 style="font-size:22px;">Western 是谁</h1><p class="slogan">先正名，再看实力</p></div>
-  <div class="card">
-    <div class="vidslot"><span class="vtag">预留位 · 即将上线</span><div class="tri"></div><div class="vt">Western 官方宣传片（中英字幕）</div><div class="vs">招生官线下讲座开场播放的学校宣传片，及其 PPT 中优势专业介绍精华，将在此整合呈现</div></div>
-    <div class="fact" style="margin-top:12px;"><b>先正名：</b>旧译"西安大略大学"，很多人以为是西安的大学——其实在<b>加拿大</b>安大略省伦敦市（不是英国伦敦），建校 1878 年。</div>
-    <div class="fact" style="margin-top:8px;"><b>Ivey 和 Western 什么关系：</b>Ivey 就是 Western 的商学院——不是两所学校，Ivey 发的 HBA 文凭就是 Western 的学位。下面拿 Ivey 举例，因为它最能代表 Western 的实力；医学院、工程学院同理，都是 Western 的一部分。</div>
-    <div class="fact" style="margin-top:8px;"><b>认知差：</b>中国家长只知多大 Rotman、UBC Sauder；<b>加拿大本地家长把 Ivey 放前面</b>——排名说的和雇主知道的，不是一回事。</div>
-    <div class="fact" style="margin-top:8px;"><b>幸存者偏差：</b>Ivey 毕业生大量留在北美不回来，国内听不到声音——<b>看不见的成功者，成了知名度上消失的人</b>。</div>
-    <div class="fact" style="margin-top:8px;"><b>HBA 是什么：</b>Ivey 的本科商科学位（Honours Business Administration）——2+2 结构：大一大二在 Western 任一学院打底，大三进 Ivey 全案例教学读两年，文凭由 Ivey 颁发。下面数据里的"HBA"，就是这张本科文凭。</div>
-    <div class="q" style="margin-top:14px;">不看综合排名，只看最硬的牌——</div>
-    <div class="stats">
-      <div class="stat"><div class="n">#1</div><div class="d">Ivey＝加拿大第一商学院</div><div class="s">Ivey 官方口径；Financial Times 2025 研究影响力全加第 1、全球第 25</div></div>
-      <div class="stat"><div class="n">#1</div><div class="d">Ivey MBA 全加第一</div><div class="s">Bloomberg Businessweek 连续多年评为加拿大第一 MBA</div></div>
-      <div class="stat"><div class="n">89<small>%</small></div><div class="d">HBA 毕业 3 个月内拿 offer</div><div class="s">Ivey 官方就业报告，全加最佳就业数据</div></div>
-      <div class="stat"><div class="n">8.5<small> 万加元</small></div><div class="d">HBA 毕业生平均总薪酬</div><div class="s">含底薪＋奖金（官方就业报告口径）</div></div>
-      <div class="stat wide"><div class="n">92.3<small>%</small></div><div><div class="d">全校毕业生 6 个月内就业率</div><div class="s">Western 官方 Facts & Figures——不只 Ivey，整个学校的出口都硬</div></div></div>
-      <div class="stat wide"><div class="n">强势学科群</div><div><div class="d">Schulich 医学院 · 工程 · 法学</div><div class="s">医学与牙科全加顶尖之一；工程带 Co-op 带薪实习，毕业即带加拿大工龄</div></div></div>
+</div>
+<!-- 栏目 2 -->
+ <div id="sL2" class="screen">
+  <div class="school-page">
+    <div class="school-overview">
+      <header class="school-hero"><span class="school-badge western-page-label">第 2 站 · 共 10 站</span><h1>Western 是谁</h1><p>先正名，再看实力</p></header>
+      <p class="school-identity">Western（韦仕敦大学，旧译“西安大略大学”）于 1878 年建校，位于加拿大安大略省伦敦市，是一所涵盖商科、医学、工程、法学等领域的综合研究型大学。伦敦是一座大学城，开车到多伦多约两小时。</p>
+      <button type="button" class="school-video-entry" data-school-view="video"><span class="school-video-preview"><img src="videos/poster_allin.jpg" data-school-poster alt="Western 官方宣传片封面"><span class="school-video-play" aria-hidden="true">▶</span></span><span><b>看见 Western：All in</b><small>官方宣传片 · 2 分 06 秒 · 中文字幕</small><span class="school-watch">观看影片 ›</span></span></button>
+      <p class="school-transition">说到 Western 的实力，先看它的一张王牌——<b>Western Ivey 商学院。</b></p>
+      <section class="school-story"><p><b>认知差：</b>中国家长只知多伦多大学 Rotman 商学院、英属哥伦比亚大学（UBC）Sauder 商学院；<b>加拿大本地家长把 Western Ivey 商学院放前面</b>——排名说的和雇主知道的，不是一回事。</p>
+<p><b>幸存者偏差：</b>Ivey 毕业生大量留在北美不回来，国内听不到声音——<b>看不见的成功者，成了知名度上消失的人</b>。</p></section>
+      <h2 class="school-prompt">不看综合排名，只看最硬的牌——</h2>
+      <div class="school-stats">
+        <button type="button" data-school-view="research"><strong>加拿大第 1</strong><span>商科研究影响力</span><small>FT 2025 · 全球第 25 ›</small></button>
+        <button type="button" data-school-view="mba"><strong>加拿大第 1</strong><span>Ivey MBA</span><small>Bloomberg 2026 ›</small></button>
+        <button type="button" data-school-view="hba"><strong>89%</strong><span>HBA 毕业 3 个月内获 offer</span><small>2024 届 · Ivey 官方 ›</small></button>
+        <button type="button" data-school-view="salary"><strong>8.46 万加元</strong><span>HBA 平均总薪酬</span><small>2024 届 · 84,575 加元 ›</small></button>
+      </div>
+      <div class="school-more"><button type="button" data-school-view="hba-intro">Ivey 与 HBA 是什么？ ›</button><button type="button" data-school-view="western">全校就业与学科 ›</button></div>
+      <p class="school-note">点击数据查看年份、统计口径与官方出处</p>
+      <button type="button" class="school-next western-page-next" onclick="go('sL3')">学校认可，第 3 站 →</button>
     </div>
-    <div class="dts">来源：Ivey 官网（排名与就业报告）、Financial Times 2025 商学院研究影响力榜、Bloomberg Businessweek 历年 MBA 榜、Western 官方 Facts & Figures。</div>
-    <button class="btn" onclick="go('sL3')">学校认可，第 3 站 →</button>
+    <div class="school-detail" hidden><button type="button" class="school-back western-detail-back">← 返回 Western 是谁</button><div class="school-detail-content"></div></div>
+    <template data-school-template="video"><h2>Western 官方宣传片 · All in</h2><video controls preload="metadata" playsinline webkit-playsinline poster="videos/poster_allin.jpg" style="width:100%;border-radius:12px;display:block;background:#000;" ondblclick="if(this.requestFullscreen)this.requestFullscreen()">
+      <source src="videos/Western_All_in_mobile.mp4" type="video/mp4">
+      <track kind="subtitles" srclang="zh" label="中文字幕" default src="videos/Western_All_in.zh-CN.vtt">
+      <track kind="subtitles" srclang="en" label="English" src="videos/Western_All_in.en-CA.vtt">
+    </video><p class="school-source">Western 官方品牌宣传片《All in——为加拿大与世界的宏大协作》（720p · 2 分 06 秒 · 已配中文字幕。来源：Western 官方品牌中心 brand.westernu.ca）</p><p class="school-source">若内嵌播放器无法播放，<a href="videos/Western_All_in_mobile.mp4" target="_blank" rel="noopener">直接打开影片</a>。</p></template>
+    <template data-school-template="research"><h2>商科研究影响力：加拿大第 1</h2><p>Financial Times 2025 Research Insights 排名：Ivey 加拿大第 1、全球第 25。这是商科研究影响力排名。</p><p class="school-source">出处：<a href="https://news.westernu.ca/2025/11/ivey-business-school-financial-times-ranking/" target="_blank" rel="noopener noreferrer">Western 官方新闻 · 2025 年 11 月</a></p></template>
+    <template data-school-template="mba"><h2>Ivey MBA：加拿大第 1</h2><p>Bloomberg Businessweek 2026 排名。Ivey 官方于 2026 年 9 月 15 日公布；评价维度包括薪酬、学习、人脉和创业。这是 MBA 项目排名。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/news/news-ivey/2026/september/ivey-earns-top-spot-in-canada-in-bloomberg-businessweek-ranking/" target="_blank" rel="noopener noreferrer">Ivey 官方排名公告</a></p></template>
+    <template data-school-template="hba"><h2>HBA：毕业 3 个月内获 offer</h2><p>Ivey 官网引用 2024 届全职就业报告：求职学生中，89% 在毕业后 3 个月内收到就业 offer。这是收到录用通知的数据。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/" target="_blank" rel="noopener noreferrer">Ivey 官方 · 就业数据与报告年份</a></p></template>
+    <template data-school-template="salary"><h2>HBA 平均总薪酬：84,575 加元</h2><p>2024 届就业报告；主页四舍五入显示为 8.46 万加元。总薪酬包括底薪、签约奖金及其他保证薪酬。</p><p>报告薪酬数据的学生比例为 71%。这是报告样本的平均值，不是每位毕业生的收入，也不是中国留学生单独统计。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/" target="_blank" rel="noopener noreferrer">Ivey 官网 · 84,575 加元</a> · <a href="https://www.ivey.com.hk/media/e5vljecy/ivey-hba-permanent-summer-employment-report.pdf" target="_blank" rel="noopener noreferrer">Ivey 2024–2025 就业报告 · 第 12–13 页</a></p></template>
+    <template data-school-template="hba-intro"><h2>Ivey 和 Western 什么关系？</h2><p>Ivey 就是 Western 的商学院——不是两所学校，Ivey 发的 HBA 文凭就是 Western 的学位。下面拿 Ivey 举例，因为它最能代表 Western 的实力；医学院、工程学院同理，都是 Western 的一部分。</p><h2>HBA 是什么？</h2><p>Ivey 的本科商科学位（Honours Business Administration），采用 2＋2 结构：前两年在 Western 或其他认可大学学习，大三起进入 Ivey，完成两年的商科学习。</p><p>进入 Ivey 需满足成绩、课程及申请要求；AEO 是有条件的预录取资格。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/hba/program-details/program-road-map/" target="_blank" rel="noopener noreferrer">Ivey · 2＋2 课程结构</a> · <a href="https://www.ivey.uwo.ca/hba/admissions/secondary-school-students/" target="_blank" rel="noopener noreferrer">AEO 与进入条件</a></p></template>
+    <template data-school-template="western"><h2>全校毕业后 6 个月就业率：93.5%</h2><p>Western 官方 Facts &amp; Figures 2024–2025 页面公布，页面更新于 2025 年 9 月。属于学校整体统计，不是中国留学生单独统计；页面未在这一指标旁注明毕业届别。</p><h2>不只 Ivey</h2><p>Schulich 医学与牙科学院、工程学院、法学院，都是 Western 的一部分。实习安排需看具体专业与项目条件。</p><p class="school-source">出处：<a href="https://www.uwo.ca/about/whoweare/facts.html" target="_blank" rel="noopener noreferrer">Western · Facts &amp; Figures</a></p></template>
   </div>
- </div>
- <!-- 栏目 3 -->
- <div class="screen" id="sL3">
-  <div class="hero"><span class="badge">第 3 站 · 共 10 站</span><h1 style="font-size:22px;">就业：一切选择的终点</h1><p class="slogan">就业第一、身份第二、教育第三</p></div>
-  <div class="card">
-    <div class="q">就业硬数据——以 Ivey（Western 的商学院）本科为例：</div>
-    <div class="stats" style="margin-top:0;">
-      <div class="stat"><div class="n">42<small>%</small></div><div class="d">毕业生进咨询</div><div class="s">Ivey HBA 官方就业报告</div></div>
-      <div class="stat"><div class="n">28<small>%</small></div><div class="d">毕业生进投行</div><div class="s">Ivey HBA 官方就业报告</div></div>
-      <div class="stat"><div class="n">8.5<small> 万加元</small></div><div class="d">咨询方向起薪中位数</div><div class="s">约合人民币 45 万/年</div></div>
-      <div class="stat"><div class="n">11<small> 万加元</small></div><div class="d">投行方向起薪</div><div class="s">约合人民币 58 万/年</div></div>
-    </div>
-    <div class="fact" style="margin-top:10px;"><b>工程方向也有数：</b>Western 官方 2025 实习工资表——工程类带薪实习平均年薪约 5.0–5.6 万加元，软件工程实习最高近 10 万加元；<b>毕业前已带加拿大工龄</b>。</div>
-    <div class="fact" style="margin-top:8px;"><b>招生官原话（2026）：</b>"Ivey 的学生从来不担心就业，没有人找不到工作。"</div>
-    <div class="dts">来源：Ivey HBA Employment Report 2024、Western Engineering 实习工资表 2025、招生官讲座实录。</div>
-    <div class="q" style="margin-top:14px;">加拿大顶级商学院·本科·同表（只摆数字，不评优劣）</div>
-    <table class="dtable">
-      <tr><th>商学院（本科）</th><th>拿到 offer</th><th>平均薪酬</th></tr>
-      <tr class="hl"><td>Ivey HBA（Western）</td><td class="num">89%·3 个月内<br>99%·6 个月内</td><td class="num">8.46 万加元<br><small style="font-weight:400;">含签约奖金总包</small></td></tr>
-      <tr><td>Smith Commerce（Queen's）</td><td>93%·6 个月内</td><td>7.92 万加元·底薪</td></tr>
-      <tr><td>Rotman Commerce（多大）</td><td>93%·9 个月内</td><td>约 7.0 万加元</td></tr>
-      <tr><td>Sauder BCom（UBC）</td><td>79%·6 个月内</td><td>7.33 万加元·底薪</td></tr>
-    </table>
-    <div class="dts">均为各校官方就业报告 2024 届本科口径（Ivey 2024 届 594 人、71% 报告薪酬）。各校统计窗口不同，同表只为让家长一眼看到量级，不评优劣。</div>
-    <div class="q" style="margin-top:14px;">如果回国：三线同表（人民币/月）</div>
-    <table class="dtable">
-      <tr><th>路径</th><th>起薪口径</th></tr>
-      <tr class="hl"><td>海归优先岗位</td><td class="num">15,440 元/月<br><small style="font-weight:400;">连续 6 年上涨</small></td></tr>
-      <tr><td>全国企业平均招聘</td><td>10,058 元/月（38 城）</td></tr>
-      <tr><td>国内本科应届平均</td><td>6,050 元/月·月入过万仅 7%</td></tr>
-    </table>
-    <div class="dts">智联招聘《2024 中国海归就业调查报告》；麦可思《2024 中国本科生就业报告》（2023 届）。海归岗位月薪比国内本科应届高约 1.6 倍。</div>
-    <div class="q" style="margin-top:16px;">那您家的终点是——</div>
-    <div class="seg" style="flex-direction:column;">
-      <button onclick="goalSet('stay')">留在加拿大 / 北美工作</button>
-      <button onclick="goalSet('back')">回国发展</button>
-      <button onclick="goalSet('either')">都可以，看机会</button>
-    </div>
-    <div id="goalOut" style="display:none;margin-top:14px;">
-      <div class="fact" id="goalFact"></div>
-      <button class="btn" onclick="go('sL4')">终点记下，第 4 站 →</button>
-    </div>
-  </div>
- </div>
- <!-- 栏目 4 -->
- <div class="screen" id="sL4">
-  <div class="hero"><span class="badge">第 4 站 · 共 10 站</span><h1 style="font-size:22px;">校友文化：别的大学看不到的牌</h1><p class="slogan">就业不是孩子一个人的战斗</p></div>
-  <div class="card">
-    <div class="stats" style="margin-top:0;">
-      <div class="stat"><div class="n">3.6<small> 万+</small></div><div class="d">Ivey 校友网络规模</div><div class="s">Ivey 官方：遍布全球 100 个国家</div></div>
-      <div class="stat"><div class="n">100<small> 国</small></div><div class="d">走到哪都有校友</div><div class="s">纽约分会一城就有 600+ 校友，超半数每年参加活动</div></div>
-      <div class="stat wide"><div class="n">38<small> 万+</small></div><div><div class="d">Western 全校校友网络</div><div class="s">官方校友会：遍布全球 160 个国家——Ivey 是其中最强的一支，整张网都托底</div></div></div>
-    </div>
-    <div class="fact" style="margin-top:10px;"><b>Ivey 校友网络：</b>全加商学院出了名的强——找工作、面试，所在城市、目标公司几乎总能找到校友。</div><div class="fact" style="margin-top:8px;"><b>Coffee chat：</b>一封邮件约一次，公司什么样、岗位怎么准备、面试注意什么——校友给最直观、最直接的帮助和指导。这不是客套，是传统。</div><div class="fact" style="margin-top:8px;"><b>全校性互助：</b>不只 Ivey，整个 Western 都这样——这在其他大学很少见。</div><div class="fact" style="margin-top:8px;"><b>对中国家长的意义：</b>一所学校的网络在托底。这个维度排名表上看不到，但它真实决定毕业后的出路。</div>
-    <div class="dts">来源：Ivey 官网校友网络页面（3.6 万+、100 国）、Western 官方校友会（38 万+、160 国）、Ivey 纽约分会公开数据。</div>
-    <button class="btn" onclick="go('sL5')">有人托底，第 5 站 →</button>
-  </div>
- </div>
- <!-- 栏目 5 -->
- <div class="screen" id="sL5">
-  <div class="hero"><span class="badge">第 5 站 · 共 10 站</span><h1 style="font-size:22px;">身份与留下</h1><p class="slogan">留不留得下，通道成不成熟</p></div>
-  <div class="card">
-    <div class="fact"><b>完整链路：</b>毕业工签（PGWP）→ EE 快速通道打分 → PR，全链路成熟。</div>
-    <div class="q" style="margin-top:12px;">本科毕业能拿几年工签？（官方政策）</div>
-    <div class="cmpbar">
-      <div class="row"><span class="nm">加拿大 PGWP</span><span class="bar"><i class="hl" style="width:100%"></i></span><span class="vv">3 年</span></div>
-      <div class="row"><span class="nm">英国毕业生签</span><span class="bar"><i style="width:67%"></i></span><span class="vv">2 年</span></div>
-      <div class="row"><span class="nm">美国 OPT</span><span class="bar"><i style="width:33%"></i></span><span class="vv">1 年</span></div>
-    </div>
-    <div class="dts">关键不在工签长短，在之后：加拿大 EE 把本地学历＋工龄逐年折成分数直通 PR；英国 2 年后须转工作签且门槛高；美国 OPT 后靠 H-1B，而 2026 年 8 月新规拟对每份申请加收 10.3 万美元、覆盖在美应届生——没有雇主会为毕业生掏这笔钱，抽签这条路等于没了。所以"留得下"只有加拿大。<br>来源：IRCC PGWP 政策、英国内政部 Graduate Route、美国 DHS H-1B 收费拟议规则（2026 年 8 月联邦公报公示）。</div>
-    <div class="fact" style="margin-top:10px;"><b>EE 打分逻辑：</b>学历、语言、本地工作经验逐年可攒——孩子在加拿大读本科，每一步都在加分。</div>
-    <button class="btn" onclick="go('sL6')">身份明白，第 6 站 →</button>
-  </div>
- </div>
- <!-- 栏目 6 -->
- <div class="screen" id="sL6">
-  <div class="hero"><span class="badge">第 6 站 · 共 10 站</span><h1 style="font-size:22px;">一共要花多少钱</h1><p class="slogan">四年总账，加元与人民币双列</p></div>
-  <div class="card">
-    <div class="stats" style="margin-top:0;">
-      <div class="stat"><div class="n">≈200<small> 万</small></div><div class="d">Western 四年总投入（人民币）</div><div class="s">学费＋住宿＋餐费＋生活，加元与人民币双列</div></div>
-      <div class="stat"><div class="n">1<small> 万加元</small></div><div class="d">入学奖学金实录</div><div class="s">国际生下滑各校加码抢人——本站作者入学即获，直接从总账里减</div></div>
-    </div>
-    <table class="dtable" style="margin-top:12px;">
-      <tr><th>国际生学费·本科（加元/年）</th><th>量级</th></tr>
-      <tr class="hl"><td>Western</td><td class="num">约 5.2–5.4 万</td></tr>
-      <tr><td>多伦多大学</td><td>约 6.2 万起</td></tr>
-      <tr><td>UBC</td><td>约 6 万上下</td></tr>
-    </table>
-    <div class="dts">同省同城际对比：读同样的本科，Western 的学费账单更低一档；生活费伦敦又比多伦多、温哥华低一档——两头都省。<br>来源：各校官网 2025-26 国际生学费公示。</div>
-    <div class="fact" style="margin-top:8px;"><b>先给个概念，您家的具体数，走完十站后由您输入来算。</b></div>
-    <button class="btn" onclick="go('sL7')">心里有数，第 7 站 →</button>
-  </div>
- </div>
- <!-- 栏目 7 -->
- <div class="screen" id="sL7">
-  <div class="hero"><span class="badge">第 7 站 · 共 10 站</span><h1 style="font-size:22px;">孩子安不安全</h1><p class="slogan">用官方统计说话</p></div>
-  <div class="card">
-    <div class="q">暴力犯罪严重指数（加拿大统计局，越低越安全）</div>
-    <div class="cmpbar">
-      <div class="row"><span class="nm">伦敦</span><span class="bar"><i class="hl" style="width:96%"></i></span><span class="vv">102.3</span></div>
-      <div class="row"><span class="nm">全国平均</span><span class="bar"><i style="width:100%"></i></span><span class="vv">107.0</span></div>
-    </div>
-    <div class="note">2023 年加拿大统计局口径：伦敦暴力犯罪指数低于全国平均；总犯罪指数略高于安省平均的主要是非暴力财产类。</div>
-    <div class="stats">
-      <div class="stat"><div class="n">48<small>%</small></div><div class="d">2024 年枪击案降幅</div><div class="s">伦敦警察局年报：27 起降至 14 起</div></div>
-      <div class="stat"><div class="n">13.7<small>%</small></div><div class="d">总体犯罪严重指数降幅</div><div class="s">2023–2024 持续改善中</div></div>
-    </div>
-    <div class="fact" style="margin-top:10px;"><b>校园安全服务：</b>夜间护送、紧急报警柱、24 小时校警。<b>城市性格：</b>大学城，安静、秩序好。</div>
-    <button class="btn" onclick="go('sL8')">安心了，第 8 站 →</button>
-  </div>
- </div>
- <!-- 栏目 8 -->
- <div class="screen" id="sL8">
-  <div class="hero"><span class="badge">第 8 站 · 共 10 站</span><h1 style="font-size:22px;">吃得好吗</h1><p class="slogan">中餐、超市、冬天怎么办</p></div>
-  <div class="card"><div class="fact"><b>大统华（T&T）是什么样的超市：</b>加拿大最大的华人连锁超市，1993 年创立、门店遍布全国——中式调料、活鱼海鲜、熟食点心、火锅料一站式买齐，是中国留学生的"食堂后备仓"。伦敦店到校距离近，<b>满额免费送货上门——冬天最实用</b>。</div><div class="fact" style="margin-top:8px;"><b>Costco 是什么：</b>北美人手一张卡的会员制仓储超市——量大、价优、品质稳，肉蛋奶、纸品、水果一次买齐一周的量。国内很多城市还没有，家长可能不熟；在北美它就是家庭采购的主力仓，办张会员卡（本站作者已办）日常开销能省一截。</div><div class="fact" style="margin-top:8px;"><b>各式中餐馆：</b>川菜、粤菜、火锅、饺子面馆、烤串……国内想吃的这里都有，解乡愁不用跑多伦多。</div><div class="fact" style="margin-top:8px;"><b>奶茶店就在身边：</b>CoCo 开在城里，Chatime 更直接开进 Western 校园的 Weldon 图书馆——孩子刷夜复习，楼下就是珍珠奶茶。</div>
-    <div class="dts">来源：Western 校园餐饮官网（Chatime 入驻 Weldon 图书馆）、大统华官网、本站作者 2026 年到校实地实测。</div>
-    <button class="btn" onclick="go('sL9')">放心了，第 9 站 →</button>
-  </div>
- </div>
- <!-- 栏目 9 -->
- <div class="screen" id="sL9">
-  <div class="hero"><span class="badge">第 9 站 · 共 10 站</span><h1 style="font-size:22px;">适合学习吗</h1><p class="slogan">城市最后看，破刻板印象</p></div>
-  <div class="card">
-    <div class="fact"><b>伦敦是哪座伦敦：</b>加拿大安大略省的伦敦，<b>不是英国伦敦</b>——华人学生叫它"小伦敦"。泰晤士河穿城而过，别称"森林城市"。</div>
-    <div class="stats">
-      <div class="stat"><div class="n">42<small> 万</small></div><div class="d">市区人口</div><div class="s">加拿大第 11 大城市，不大不小</div></div>
-      <div class="stat"><div class="n">200<small> 公里</small></div><div class="d">距多伦多</div><div class="s">车程约 2 小时——近得够得着机会，远得安静读得了书</div></div>
-      <div class="stat"><div class="n">6<small> 万+</small></div><div class="d">在校大学生</div><div class="s">Western＋Fanshawe，整座城市为大学而建</div></div>
-      <div class="stat"><div class="n">148<small> 年</small></div><div class="d">建校历史（1878）</div><div class="s">百年学府，学术氛围是沉淀出来的</div></div>
-    </div>
-    <div class="dts" style="margin-top:10px;">来源：2021 年加拿大人口普查；在校生数为 Western＋Fanshawe 官方注册数。</div>
-    <div class="fact" style="margin-top:8px;"><b>GPA 友好度：</b>Western 不压分（多大/UBC 压分口碑在外）——本站作者家当年正是因此选 Western。</div>
-    <button class="btn" onclick="go('sL10')">十站还差一站 →</button>
-  </div>
- </div>
- <!-- 栏目 10 -->
- <div class="screen" id="sL10">
-  <div class="hero"><span class="badge">第 10 站 · 共 10 站</span><h1 style="font-size:22px;">落地怎么办：新生 20 问</h1><p class="slogan">走完这条链的第一环是什么样</p></div>
-  <div class="card">
-    <div class="fact"><b>落地全流程本站作者已全部走完：</b>SIN 卡、Ontario Photo Card、驾照考试、公交卡、银行卡、手机卡、Costco 会员卡、各大超市商场、主要中餐厅——每一步的材料、顺序、坑，都是第一手实录。</div>
-    <div class="fact" style="margin-top:8px;"><b>招生官问答库：</b>历次讲座与答疑提炼成问答（发布前经本人确认）。<b>后续整合：</b>招生官讲座开场的学校宣传片与其 PPT 中优势专业介绍精华，拿到授权后将整合进本站——内容与官方同步。</div>
-    <div class="fact" style="margin-top:8px;background:#fdf9f0;border:1px solid var(--gold);"><b>十站走完，回头看：</b>国家（留得下）→ 学校（被低估的实力）→ 就业（终点硬数据）→ 校友（有人托底）→ 身份（通道成熟）→ 成本（有总账）→ 安全、吃饭、城市、落地——每一环都有数。</div>
-    <div class="yrline"><b>🏠 样板间：一位 2026 级学生的完整链条（真实在走）</b><br>终点 2030+：北美就业＋身份落地 ← 大四：申研（GMAT 大三考掉，成绩 5 年有效）或全职 offer ← 大三：进 Ivey HBA（均分 80+＋领导力履历）← 大一大二：BMOS＋AEO ← 今天：选了 Western。<br><br>您不必照抄细节——照的是方法：<b>终点定方向，今天定锁。</b></div>
-    <button class="btn" onclick="go('sCalc')">十站走完 → 拿我家的数算一算</button>
-  </div>
- </div>
+</div>
 
- <!-- 屏 2：计算器 -->
- <div class="screen" id="sCalc">
-  <div class="hero"><span class="badge">DEMO</span><h1 style="font-size:22px;">输入您家的数，算出您家的答案</h1></div>
-  <div class="card">
-    <div class="q">① 孩子现在读</div>
-    <div class="seg">
-      <button class="sel" data-k="grade" data-v="g10">高一</button>
-      <button data-k="grade" data-v="g11">高二</button>
-      <button data-k="grade" data-v="g12">高三</button>
-    </div>
-    <div class="note" style="margin-top:6px;">只收模糊年级用于推算时间轴，不留任何可识别的个人信息</div>
+<!-- 栏目 3 -->
+ <div id="sL3" class="screen">
+ <div class="school-page">
+  <div class="school-overview">
+   <header class="school-hero"><span class="school-badge western-page-label">第 3 站 · 共 10 站</span><h1>就业：一切选择的终点</h1><p>就业第一、身份第二、教育第三</p></header>
+   <p class="job-intro">就业，要分专业看。这里以 Western Ivey 商学院为例，看商科毕业生的就业情况。其他专业，则要结合课程、实习安排和毕业去向来判断。</p>
+   <div class="school-stats">
+    <button type="button" data-job-view="industry"><strong>19%</strong><span>进入咨询行业</span><small>2024 届 · 已接受全职工作 ›</small></button>
+    <button type="button" data-job-view="industry"><strong>34%</strong><span>进入金融服务行业</span><small>包含投行等多个方向 ›</small></button>
+    <button type="button" data-job-view="offers"><strong>89%</strong><span>毕业 3 个月内获 offer</span><small>2024 届 · Ivey 官方 ›</small></button>
+    <button type="button" data-job-view="salary"><strong>8.46 万加元</strong><span>平均总薪酬（约 40 万人民币）</span><small>2024 届 · 84,575 加元 ›</small></button>
+   </div>
 
-    <div class="q" style="margin-top:16px;">② 您家四年总预算（人民币）</div>
-    <div class="seg">
-      <button data-k="budget" data-v="140">150 万以内</button>
-      <button class="sel" data-k="budget" data-v="175">150–200 万</button>
-      <button data-k="budget" data-v="225">200–250 万</button>
-      <button data-k="budget" data-v="280">250 万以上</button>
-    </div>
-
-    <div class="q" style="margin-top:16px;">③ 孩子的方向</div>
-    <div class="seg">
-      <button class="sel" data-k="dir" data-v="ivey">商科</button>
-      <button data-k="dir" data-v="stem">工程/医学/理科</button>
-      <button data-k="dir" data-v="undecided">还没定</button>
-    </div>
-
-    <div class="q" style="margin-top:16px;">④ 刚才定的终点（可改）</div>
-    <div class="seg">
-      <button class="sel" data-k="goal" data-v="stay">留在北美</button>
-      <button data-k="goal" data-v="back">回国</button>
-      <button data-k="goal" data-v="either">都可以</button>
-    </div>
-
-    <div class="q" style="margin-top:16px;">⑤ 您家最看重什么？（点一下，结论实时变）</div>
-    <div class="seg">
-      <button class="sel" data-k="focus" data-v="job">就业出口</button>
-      <button data-k="focus" data-v="pr">身份与留下</button>
-      <button data-k="focus" data-v="cost">成本</button>
-      <button data-k="focus" data-v="life">生活质量</button>
-    </div>
+   <div class="job-table-tabs" role="tablist" aria-label="就业对比">
+    <button type="button" role="tab" id="employment-schools-tab" aria-controls="employment-schools-panel" aria-selected="true" data-table="schools">加拿大商学院 · 本科</button>
+    <button type="button" role="tab" id="employment-china-tab" aria-controls="employment-china-panel" aria-selected="false" data-table="china">如果回国 · 三线同表</button>
+   </div>
+   <section id="employment-schools-panel" role="tabpanel" aria-labelledby="employment-schools-tab" data-table-panel="schools">
+    <table class="job-overview-table"><thead><tr><th>商学院</th><th>就业 / offer</th><th>薪酬 · 加元<br><small>（人民币约值）</small></th></tr></thead><tbody>
+     <tr><td>Western<br><b>Ivey</b></td><td>89% 获 offer<br><small>3 个月内</small></td><td>8.46 万<br><small>（约 40 万元）<br>平均总薪酬</small></td></tr>
+     <tr><td>多伦多大学<br><b>Rotman</b></td><td>93% 就业<br><small>9 个月内</small></td><td>7.00 万<br><small>（约 33 万元）<br>平均年薪</small></td></tr>
+     <tr><td>英属哥伦比亚大学<br><b>Sauder</b></td><td>79% 就业<br><small>6 个月内</small></td><td>6.22 万<br><small>（约 29.4 万元）<br>中位数</small></td></tr>
+    </tbody></table>
+    <button type="button" class="job-table-source" data-job-view="schools">2024 届 · 统计口径不同；按 1 加元 ≈ 4.72 元换算 · 出处 ›</button>
+   </section>
+   <section id="employment-china-panel" role="tabpanel" aria-labelledby="employment-china-tab" data-table-panel="china" hidden>
+    <table class="job-overview-table"><thead><tr><th>如果回国：三线同表</th><th>人民币 / 月</th></tr></thead><tbody>
+     <tr><td>海归优先岗位<br><small>2024 · 平均招聘薪酬</small></td><td><b>15,440 元</b></td></tr>
+     <tr><td>38 城企业招聘<br><small>2024 第三季度 · 平均招聘薪酬</small></td><td>10,058 元</td></tr>
+     <tr><td>国内本科毕业生<br><small>2023 届 · 毕业半年后平均收入</small></td><td>6,050 元</td></tr>
+    </tbody></table>
+    <button type="button" class="job-table-source" data-job-view="china">不同样本，不直接计算留学收入增幅 · 出处 ›</button>
+   </section>
+   <h2 class="school-prompt">那您家的终点是——</h2>
+   <div class="job-goals">
+    <button type="button" data-goal="stay" data-job-view="stay" aria-pressed="false">留在加拿大 /<br>北美工作</button>
+    <button type="button" data-goal="back" data-job-view="back" aria-pressed="false">回国发展</button>
+    <button type="button" data-goal="either" data-job-view="either" aria-pressed="false">都可以，看机会</button>
+   </div>
+   <button type="button" class="school-next job-continue western-page-next" disabled>终点记下，第 4 站 →</button>
   </div>
-
-  <div class="card">
-    <div class="q">您家的计算结果（实时）</div>
-    <div class="kpis">
-      <div class="kpi"><div class="kl">四年总投入（估算）</div><div class="kv" id="kCost">-</div><div class="ks" id="kCostS"></div></div>
-      <div class="kpi"><div class="kl">毕业起薪预期</div><div class="kv" id="kSalary">-</div><div class="ks" id="kSalaryS"></div></div>
-      <div class="kpi"><div class="kl">预算对照</div><div class="kv" id="kHead">-</div><div class="ks" id="kHeadS">物价连年上涨，别把预算打满</div></div>
-      <div class="kpi"><div class="kl">身份通道</div><div class="kv" id="kPR" style="font-size:16px;">-</div><div class="ks" id="kPRS"></div></div>
-    </div>
-    <div class="yrline" id="kTime"></div>
-    <div class="fit">
-      <div class="big" id="fitScore">-</div>
-      <div class="lbl" id="fitLabel">-</div>
-      <div class="fitbar"><i id="fitBar"></i></div>
-      <div class="note">适配分＝四个维度加权计算，最看重的那项占最大权重，随输入实时变化</div>
-    </div>
-    <div class="verdict g" id="verdict"></div>
-    <details><summary>这些数字从哪来的？（示例口径）</summary>
-      <p>学费与生活费：Western 官方国际生学费＋生活费官方口径；起薪：Western 各学院官方就业报告（商科以 Ivey HBA 为例：咨询中位数约 8.5 万、投行约 11 万加元；工程按官方实习工资表口径）；奖学金：作者入学即获 1 万加元实录；回国口径：海归就业率 vs 985/211 vs 普通本科同表。正式版全部标注官方来源与年份。</p>
-    </details>
-    <button class="btn" onclick="genReport()">生成我家专属报告 →</button>
-    <p class="foot">Demo 示例数据，正式版以官方来源为准</p>
-  </div>
+  <div class="school-detail" hidden><button type="button" class="school-back western-detail-back">← 返回就业总览</button><div class="school-detail-content" aria-live="polite"></div><button type="button" class="school-next job-next western-page-next" hidden onclick="go('sL4')">终点记下，第 4 站 →</button></div>
+  <template data-job-template="industry"><h2>毕业生进入哪些行业？</h2><p>Ivey HBA 2024 届，按已接受全职工作的报告样本统计：咨询行业 19%，金融服务行业 34%。</p><p>金融服务的 34% 包含多个方向。其中“投行／私募／风险投资”合计 12%，其余是其他金融服务岗位。行业类别与岗位职能分别统计。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/media/zk1brvui/iveyhba-permanent-summer-employment-report-2024-2025.pdf" target="_blank" rel="noopener noreferrer">Ivey HBA 2024–2025 就业报告 · 第 10–11 页</a></p></template>
+  <template data-job-template="offers"><h2>毕业 3 个月内获 offer：89%</h2><p>Ivey 官方网页引用 2024 届 HBA 全职就业报告。这里统计收到录用通知的情况，不是单独统计中国留学生。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/" target="_blank" rel="noopener noreferrer">Ivey 官方 · 就业数据与报告年份</a></p></template>
+  <template data-job-template="salary"><h2>平均总薪酬：84,575 加元</h2><p>Ivey HBA 2024 届：平均底薪 80,936 加元，平均总薪酬 84,575 加元。总薪酬包括底薪、签约奖金及其他保证薪酬。</p><p>报告薪酬数据的学生比例为 71%；总薪酬中位数为 75,000 加元。这是样本统计，不是每位毕业生的收入。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/media/zk1brvui/iveyhba-permanent-summer-employment-report-2024-2025.pdf" target="_blank" rel="noopener noreferrer">Ivey HBA 2024–2025 就业报告 · 第 12–13 页</a></p></template>
+  <template data-job-template="schools"><h2>加拿大商学院 · 本科对比</h2><p class="job-context">以下均为 2024 届。统计时间窗口与薪酬定义不同，逐项标明。</p>
+   <p class="school-source">人民币为便于理解的近似换算，按 1 加元 ≈ 4.72 元人民币（加拿大央行 2026 年 9 月 29 日汇率取倒数并四舍五入）；实际汇率会变动。<a href="https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/" target="_blank" rel="noopener noreferrer">汇率出处 ›</a></p>
+   <section class="job-school"><h3>Western Ivey 商学院 · HBA</h3><p>89%：毕业 3 个月内收到 offer<br>平均底薪：80,936 加元<br>平均总薪酬：84,575 加元</p><a href="https://www.ivey.uwo.ca/media/zk1brvui/iveyhba-permanent-summer-employment-report-2024-2025.pdf" target="_blank" rel="noopener noreferrer">Ivey 官方报告 ›</a></section>
+   <section class="job-school"><h3>多伦多大学 Rotman 商学院 · Commerce</h3><p>93%：求职毕业生中，毕业 9 个月内就业的比例<br>平均年薪：70,000 加元</p><a href="https://rotmancommerce.utoronto.ca/wp-content/uploads/2025/10/RC_Employment-Report_2024-25_web.pdf" target="_blank" rel="noopener noreferrer">Rotman 官方 · 2024–2025 就业报告，第 7 页（2024 届） ›</a></section>
+   <section class="job-school"><h3>英属哥伦比亚大学 Sauder 商学院 · BCom</h3><p>79%：毕业 6 个月内就业<br>薪酬中位数：62,200 加元</p><a href="https://mybcom.sauder.ubc.ca/file/6472/download" target="_blank" rel="noopener noreferrer">Sauder 官方 · 2024 届就业报告 ›</a></section></template>
+  <template data-job-template="china"><h2>如果回国：看国内就业参考</h2>
+   <section class="job-school"><h3>15,440 元 / 月</h3><p>2024 年海归优先岗位平均招聘薪酬。包含不同学历与经验要求的岗位，不等同于海归本科应届生到手收入。</p><a href="https://hulianhutongshequ.cn/upload/tank/report/2025/202502/3/9e69682a8e6b449b80b918a24ebdb5cb.pdf" target="_blank" rel="noopener noreferrer">智联招聘《2024 中国海归就业调查报告》· 报告转载 ›</a></section>
+   <section class="job-school"><h3>10,058 元 / 月</h3><p>2024 年第三季度，38 个核心城市企业平均招聘薪酬。</p><a href="https://hulianhutongshequ.cn/upload/tank/report/2024/202410/3/f3ea7380913444cba03e319011140d2c.pdf" target="_blank" rel="noopener noreferrer">智联招聘《2024 年第三季度中国企业招聘薪酬报告》· 报告转载 ›</a></section>
+   <section class="job-school"><h3>6,050 元 / 月</h3><p>2023 届国内本科毕业生毕业半年后平均月收入，来自麦可思 2024 版就业报告。</p><a href="https://mycos.com/index.php/Index/response_info/nav/3/id/20250810.html" target="_blank" rel="noopener noreferrer">麦可思官方 · 报告数据 ›</a></section>
+   <p class="job-context">选校时还要看目标城市、行业和岗位要求。以上三项属于不同样本，不能直接算成留学带来的收入增幅。</p>
+  </template>
+  <template data-job-template="stay"><h2>您的终点：加拿大 / 北美工作</h2><p>先看毕业后的工作许可，再看雇主招什么人。加拿大与美国是不同的工作路径；加拿大毕业工签之后，长期身份仍需满足相应条件。</p><p>目标定在这里，就重点看专业培养、实习机会与毕业生实际去向。</p></template>
+  <template data-job-template="back"><h2>您的终点：回国发展</h2><p>那就围绕目标城市、行业和岗位算账：雇主需要什么能力，专业是否对口，四年投入换来了哪些机会。回国薪酬参考可看，孩子的目标岗位要单独比较。</p></template>
+  <template data-job-template="either"><h2>您的终点：都可以，看机会</h2><p>那就保留两条路：一边看海外工作许可与雇主认可，一边看国内目标岗位与专业匹配。优先选择能积累实习经验、毕业去向较清楚的培养路径。</p></template>
  </div>
+</div>
 
- <!-- 屏 3：生成中 -->
- <div class="screen" id="sGen">
-  <div class="card gen"><div class="spin">📊</div><div class="q" style="margin-top:12px;">正在生成您家的专属报告…</div><p style="font-size:12.5px;color:#8b7ab8;" id="genStep">写入预算与成本模型…</p></div>
- </div>
-
- <!-- 屏 4：专属报告（人生链条版） -->
- <div class="screen" id="sRep">
-  <div class="hero" style="padding:14px 0 0;"><span class="badge">专属决策报告</span><h1 style="font-size:22px;">我家孩子的 Western 决策报告</h1><p class="slogan" id="repSub" style="font-size:12.5px;"></p></div>
-  <div id="repCards"></div>
-  <div class="card" style="text-align:center;">
-    <div class="q">综合适配</div>
-    <div class="fit" style="margin-top:0;"><div class="big" id="rFit">-</div><div class="lbl" id="rFitL">-</div></div>
-    <div class="verdict g" id="rVerdict" style="text-align:left;"></div>
-    <div class="fact" style="text-align:left;margin-top:14px;"><b>🤖 问 AI 拿第二意见</b>——报告给数据（第一依据），AI 结合您家情况给第二意见，决定您自己下。</div>
-    <div class="dts" style="text-align:left;margin-top:10px;">报告数据来源：Ivey HBA Employment Report 2024、各校官方就业报告与学费公示、IRCC 毕业工签政策、加拿大统计局、加拿大环境部、智联招聘《2024 中国海归就业调查报告》、麦可思《2024 中国本科生就业报告》、本站作者一手实录。每站小字均有对应出处。</div>
-    <button class="btn ghost" onclick="copyPrompt()">📋 复制提示词（已装好您家的参数）</button>
-    <button class="btn" onclick="location.reload()">重新计算</button>
-    <p class="foot">© 2026 王怡丹 · yidan.firstgood.com</p>
+<!-- 栏目 4 -->
+ <div id="sL4" class="screen">
+ <div class="alumni-page">
+  <header class="alumni-hero"><span class="alumni-badge western-page-label">第 4 站 · 共 10 站</span><h1>校友文化：别的大学看不到的牌</h1><p>就业不是孩子一个人的战斗</p></header>
+  <div class="alumni-card">
+   <div class="alumni-stats">
+    <a class="alumni-stat" href="https://www.ivey.uwo.ca/alumni/" target="_blank" rel="noopener noreferrer"><strong>3.6<small> 万+</small></strong><b>Ivey 校友网络规模</b><p>Ivey 官方：遍布全球 100 个国家</p><span class="alumni-source-link">Ivey 官网 ›</span></a>
+    <a class="alumni-stat" href="https://www.ivey.uwo.ca/alumni/your-ivey-network/chapters/new-york/" target="_blank" rel="noopener noreferrer"><strong>100<small> 国</small></strong><b>走到哪都有校友</b><p>纽约地区 600+ 校友，超半数每年参加活动</p><span class="alumni-source-link">纽约分会官网 ›</span></a>
+    <a class="alumni-stat alumni-wide" href="https://www.uwo.ca/about/whoweare/facts.html" target="_blank" rel="noopener noreferrer"><strong>39.3<small> 万+</small></strong><div><b>Western 全校校友网络</b><p>遍布全球 160 个国家——Ivey 是其中最强的一支，整张网都托底</p><span class="alumni-source-link">Western 官方 · Facts &amp; Figures ›</span></div></a>
+   </div>
+   <div class="alumni-facts">
+    <p><b>Western Ivey 商学院校友网络：</b>全加商学院出了名的强——找工作、面试，所在城市、目标公司几乎总能找到校友。</p>
+    <p><b>Coffee chat（与校友聊聊职业和求职）：</b>一封邮件约一次，公司什么样、岗位怎么准备、面试注意什么——校友给最直观、最直接的帮助和指导。这不是客套，是传统。</p>
+    <p><b>从北美，到中国香港：</b>Western Ivey 商学院在伦敦市、多伦多和中国香港设有校区或教学中心。香港校友分会汇聚了 600 多位来自加拿大及香港课程的校友——孩子将来考虑香港发展，也有可以主动联系的校友网络。</p>
+    <p><b>全校性互助：</b>从 Ivey，看见整个 Western——这种彼此支持的文化，也延伸到其他专业，是 Western 校园文化的一部分。</p>
+    <p><b>对中国家长的意义：</b>一所学校的网络在托底。这个维度排名表上看不到，但它真实决定毕业后的出路。</p>
+   </div>
+   <p class="alumni-source-note">官网数据：Western 2024–2025（2025 年 9 月更新）；Ivey / 纽约及香港分会未注明年份，2026 年 9 月查阅。</p><p class="alumni-source-note">HBA 本科在伦敦市，香港目前主要开展高管教育。互助文化：在校生分享。</p>
+   <button type="button" class="alumni-next western-page-next" onclick="go('sL5')">有人托底，第 5 站 →</button>
   </div>
  </div>
 </div>
 
+<!-- 栏目 5 -->
+ <div id="sL5" class="screen">
+ <div class="options-page">
+  <div class="options-overview">
+   <header class="options-hero"><span class="options-badge western-page-label">第 5 站 · 共 10 站</span><h1>身份与选择</h1><p>出去读书，为孩子多一个选择</p></header>
+   <p class="options-intro">出去读书，是希望孩子将来多一个选择。可以回国发展，也可以先在海外积累经验，再决定下一步。</p>
+   <h2>在加拿大读完本科，下一步怎样选？</h2>
+   <p class="options-note">继续深造、回国发展、留在加拿大工作，都可以按家庭目标准备。求职停留、工作许可和永久居民身份，各有条件。</p>
+   <button type="button" class="options-source" onclick="go('sL1')">回看第 1 站：七个主要目的地对比 ›</button>
+   <button type="button" class="options-path" data-option-detail="canada-path"><b>加拿大：先有工作空间，再看长期路径 <span>›</span></b><small>毕业工签 → 合资格工作经验 → 争取移民邀请 → 申请永居</small></button>
+   <section class="options-return"><b>也可以继续读硕士、博士</b><p>毕业后可以直接工作，也可以继续深造，或先工作再读。要结合孩子的兴趣、目标职业、申请条件和家庭预算来选择。</p></section>
+   <h2>您家更倾向哪条路？</h2>
+   <div class="options-goals" aria-label="毕业发展方向">
+    <button type="button" data-goal="stay" aria-pressed="false">留在加拿大 /<br>北美工作</button>
+    <button type="button" data-goal="back" aria-pressed="false">准备回国</button>
+    <button type="button" data-goal="either" aria-pressed="false">都可以，<br>看机会</button>
+   </div>
+   <p class="options-note">政策查阅于 2026 年 9 月。上述加拿大路径均须满足申请条件；申请时再核对届时规则。</p>
+   <button type="button" class="options-next western-page-next" onclick="go('sL6')">选择明白，第 6 站 →</button>
+  </div>
+  <div class="options-detail" hidden><button type="button" class="options-back western-detail-back">← 返回身份与选择</button><div class="options-detail-content" aria-live="polite"></div></div>
+
+
+
+
+
+
+
+  <template data-option-template="canada-path"><h2>加拿大：每一步都有条件</h2><p><b>工作阶段：</b>符合条件申请毕业工签，寻找工作并积累合资格的工作经验。</p><p><b>长期身份阶段：</b>满足适用移民项目的资格要求，评估语言、学历、经验等因素；参加 Express Entry 等适用程序，获邀后申请永久居民身份。</p><p>工签、项目资格、获邀和最终获批是不同环节。分数与邀请安排会变化，不能把“读完本科”写成“直通永居”。</p><p><b>准备回国的家庭：</b>可以把毕业后工作作为备选，比较它是否有助于目标岗位，以及时间和生活成本是否值得。是否争取长期身份，由孩子和家庭根据实际情况决定。</p><p class="options-source">官方出处：<a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/about.html" target="_blank" rel="noopener noreferrer">IRCC · PGWP</a><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html" target="_blank" rel="noopener noreferrer">IRCC · Express Entry</a><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/who-can-apply/canadian-experience-class.html" target="_blank" rel="noopener noreferrer">IRCC · 加拿大经验类</a></p></template>
+ </div>
+</div>
+
+<!-- 栏目 6 -->
+ <div id="sL6" class="screen">
+ <div class="cost-page">
+  <section class="cost-overview">
+   <header><span class="cost-badge western-page-label">第 6 站 · 共 10 站</span><h1>一共要花多少钱</h1><p class="cost-slogan">学费之外，还要看四年生活总账</p></header>
+   <p class="cost-intro">继续以 Western Ivey 商学院路线为例：前两年按所读专业计费，后两年按 Ivey HBA 计费，再加住宿与生活开支。</p>
+   <button type="button" class="cost-budget" data-cost="budget"><strong>≈200 万人民币</strong><span>四年规划预算 · 点开看总账 ›</span><small>约 42.4 万加元，具体随专业、生活方式和汇率变化</small></button>
+   <h2>三校商科：四年总成本估算</h2>
+   <table><thead><tr><th>学校 / 城市</th><th>四年加元（约人民币）</th></tr></thead><tbody>
+    <tr><td>Western Ivey<br><small>伦敦</small></td><td><b>35.1–41.0 万</b><br>（约 166–194 万）</td></tr>
+    <tr><td>多伦多大学 Rotman<br><small>多伦多</small></td><td><b>42.9–46.3 万</b><br>（约 202–218 万）</td></tr>
+    <tr><td>英属哥伦比亚大学 Sauder<br><small>温哥华</small></td><td><b>40.3–43.7 万</b><br>（约 190–206 万）</td></tr>
+   </tbody></table>
+   <p class="cost-note">含学费、全年住宿生活及其他费用；按现行费率与规划假设估算，未扣奖学金、实习收入，未计未来涨价。</p>
+   <p class="cost-advantage"><b>伦敦市的优势，要放进四年总账里看。</b>住宿开支相对多伦多、温哥华更容易控制，四年积累下来，也是实实在在的预算空间。</p>
+   <button type="button" class="cost-source" data-cost="total">查看三校费用拆分、估算依据与出处 ›</button>
+   <p class="cost-award"><b>1 万加元（约 4.72 万人民币）入学奖学金实录</b><br>本站作者个人经历；您家实际获得的奖学金，再从总账里减。</p>
+
+   <p class="cost-note">人民币参考：1 加元 ≈ 4.72 元，加拿大央行 2026-09-29。先给个概念，您家的具体数，走完十站后由您输入来算。</p>
+   <button type="button" class="cost-next western-page-next" onclick="go('sL7')">心里有数，第 7 站 →</button>
+  </section>
+  <section class="cost-detail" hidden><button type="button" class="cost-back western-detail-back">← 返回四年总账</button><div class="cost-detail-content"></div></section>
+ </div>
+<template data-cost-panel="total">
+ <h1>三校四年总账</h1>
+ <p>统一按国际生、常规四年本科、每年 12 个月生活支出估算。生活与其他费用是规划假设；学费采用已公布的适用届别费率；未公布年份暂沿用已有费率，不另预设涨幅。以下单位为万加元（约万人民币）。</p>
+ <h2>Western Ivey 商学院 · 伦敦市</h2>
+ <table><tbody><tr><td>四年学费</td><td>23.51–26.03（111–123）</td></tr><tr><td>住宿与生活</td><td>9.60–12.00（45–57）</td></tr><tr><td>其他费用</td><td>2.00–3.00（9–14）</td></tr><tr><td><b>四年合计</b></td><td><b>35.11–41.03（166–194）</b></td></tr></tbody></table>
+ <h2>多伦多大学 Rotman · 多伦多</h2>
+ <table><tbody><tr><td>四年学费</td><td>30.06（142）</td></tr><tr><td>住宿与生活</td><td>10.80–13.20（51–62）</td></tr><tr><td>其他费用</td><td>2.00–3.00（9–14）</td></tr><tr><td><b>四年合计</b></td><td><b>42.86–46.26（202–218）</b></td></tr></tbody></table>
+ <h2>英属哥伦比亚大学 Sauder · 温哥华</h2>
+ <table><tbody><tr><td>四年学费</td><td>26.67（126）</td></tr><tr><td>住宿与生活</td><td>11.60–14.00（55–66）</td></tr><tr><td>其他费用</td><td>2.00–3.00（9–14）</td></tr><tr><td><b>四年合计</b></td><td><b>40.27–43.67（190–206）</b></td></tr></tbody></table>
+ <h2>生活费差异，怎样放进预算？</h2>
+ <p>三校都按合租、不开车、一般学生生活方式规划：伦敦市每年 2.4–3 万加元，多伦多 2.7–3.3 万，温哥华 2.9–3.5 万。它们是参考租金差异制定的预算区间，不是三所学校统一公布的生活费统计。</p>
+ <p>CMHC 2025 年同口径、专供出租公寓两居室平均月租（均为都会区）：伦敦 1,651、多伦多 2,034、温哥华 2,363 加元。若两人均摊，四年仅房租差额示算：伦敦市比多伦多少约 4.34 万人民币，比温哥华少约 8.07 万人民币。</p>
+ <p>这是都会区全部租户的平均租金，含既有租约，不代表新生在校区附近一定能租到该价格。首年住校、独住、开车或暑期安排不同，都应另调预算。</p>
+ <h2>学费与其他费用怎样算？</h2>
+ <p>Western 2026–27 收费表标注 draft（草案，可调整），最终以学校账单为准。</p>
+ <p>Western 前两年示例为文科、社科、一般理科或 MOS，各年学费 47,493–60,105 加元；后两年 HBA 各 70,040。Rotman 以大一 66,110 加元，加三年 2027–28 已公布的该届别高年级费率 78,160 示算；第三、四年暂沿用此费率，不是四年锁定报价。Sauder 按每年 30 学分、现行年费 66,678.30 示算。各校未来收费、入学届别与专业变化均须再核对。</p>
+ <p>其他费用统一暂留每年 5,000–7,500 加元，覆盖附加费、医疗保险、教材材料、机票及安置等；实际分项再算，避免交通或保险重复计入。学费及其他费用均未扣奖学金与实习收入。</p>
+ <p><b>选择 Western 的成本优势，不只看学费，更要看在伦敦市生活四年的总账。</b>三校区间有重叠，个人开支可能改变结果。</p>
+ <p><a href="https://registrar.uwo.ca/student_finances/fees_refunds/2026-27-UGRD-Fee-Schedule---FT-International1.pdf" target="_blank" rel="noopener">Western 2026–27 国际生收费表</a><br><a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/tuition-fees/" target="_blank" rel="noopener">Ivey HBA 2026–27 学费</a><br><a href="https://planningandbudget.utoronto.ca/wp-content/uploads/2026/04/2026-27-Tuition-Fee-Report_FINAL.pdf" target="_blank" rel="noopener">多伦多大学 2026–27 学费报告</a><br><a href="https://students.ubc.ca/finances/tuition-fees/undergraduate-tuition-fees/" target="_blank" rel="noopener">UBC 2026–27 本科学费表</a><br><a href="https://international.uwo.ca/studentservices/student_life/money_and_taxes/making_a_budget.html" target="_blank" rel="noopener">Western 校外生活费预算参考</a><br><a href="https://www.studentlife.utoronto.ca/task/living-costs-in-toronto/" target="_blank" rel="noopener">多伦多大学 2026 生活费参考</a><br><a href="https://you.ubc.ca/financial-planning/cost/" target="_blank" rel="noopener">UBC 生活预算项目说明</a><br><a href="https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-centres" target="_blank" rel="noopener">CMHC 2025 租赁市场报告 · 三市同口径租金</a><br><a href="https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/" target="_blank" rel="noopener">汇率：加拿大央行 2026-09-29，1 加元约 4.72 元</a></p>
+</template>
+
+ <template data-cost-panel="budget"><h1>200 万，怎样做四年预算？</h1><p>以下以当前费率作规划示例，继续以 Ivey 常规四年路线为例。前两年示例选文科、社科、一般理科或 MOS；其他专业另算。</p><table><thead><tr><th>四年项目</th><th>加元（约人民币）</th></tr></thead><tbody><tr><td>前两年学费</td><td>9.50–12.02 万<br>（45–57 万）</td></tr><tr><td>后两年 HBA 学费</td><td>14.01 万<br>（66 万）</td></tr><tr><td>住宿、餐费与生活</td><td>9.60–12.00 万<br>（45–57 万）</td></tr><tr><td>附加费、保险、材料、机票等</td><td>2.00–3.00 万<br>（9–14 万）</td></tr><tr><td>示例合计</td><td>35.11–41.03 万<br>（约 166–194 万）</td></tr></tbody></table><p>生活支出按每年 2.4–3 万加元、全年 12 个月估算；其他支出也为规划假设，均不是学校报价。约 200 万是规划预算，可为汇率、未来涨价和个人开支留余量，不能视为费用上限。</p><p>四年学费按 2026–27 当前费率示算；未来年费须更新。奖学金和实习收入，确认后再扣。Ivey 官网生活费示例的房租只含 8 个月，不直接当作全年总账。</p><p><a href="https://registrar.uwo.ca/student_finances/fees_refunds/2026-27-UGRD-Fee-Schedule---FT-International1.pdf" target="_blank" rel="noopener">Western 2026–27 国际生收费表（标注 draft，可调整）</a><br><a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/tuition-fees/" target="_blank" rel="noopener">Ivey HBA 学费与课程材料费</a><br><a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/academic-living-expenses/" target="_blank" rel="noopener">Ivey 生活费估算及房租计费月份</a><br><a href="https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/" target="_blank" rel="noopener">加拿大央行每日汇率</a></p></template>
+ <template data-cost-panel="tuition"><h1>三校学费：把年级看清楚</h1><p><b>Western Ivey 商学院：</b>前两年按原专业收费。2026–27 文科、社科、一般理科学费 47,493 加元 / 年；MOS 为 60,105 加元 / 年。HBA 两年的学费分别为 70,040 加元，不含附加费和材料费。AEO 并非直接进入 HBA，仍须满足后续条件。</p><p><b>多伦多大学 · Rotman：</b>2026–27 新入学大一按 Arts &amp; Science 费率 66,110 加元；该届别 2027–28 商科高年级费率已公布为 78,160 加元。第三、四年的未来费率须另行核对，本页暂沿用 78,160 示算。</p><p><b>英属哥伦比亚大学 · Sauder：</b>2026–27 新入学国际生 Commerce 每 30 学分学费为 66,678.30 加元；实际总额随修读学分变化。</p><p>表内只比学费，不把不同城市生活费混进去。Ivey 后两年不能沿用 Western 普通专业费率。</p><p><a href="https://registrar.uwo.ca/student_finances/fees_refunds/2026-27-UGRD-Fee-Schedule---FT-International1.pdf" target="_blank" rel="noopener">Western 2026–27 收费表</a><br><a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/tuition-fees/" target="_blank" rel="noopener">Ivey HBA 2026–27 学费</a><br><a href="https://planningandbudget.utoronto.ca/wp-content/uploads/2026/04/2026-27-Tuition-Fee-Report_FINAL.pdf" target="_blank" rel="noopener">多伦多大学 2026–27 学费报告（表 D1 / D2）</a><br><a href="https://students.ubc.ca/finances/tuition-fees/undergraduate-tuition-fees/" target="_blank" rel="noopener">UBC 2026–27 本科学费表</a></p></template>
+
+</div>
+ <!-- 栏目 7 -->
+ <div id="sL7" class="screen">
+ <div class="safety-page">
+  <section class="safety-overview">
+   <header><span class="western-page-label">第 7 站 · 共 10 站</span><h1>孩子安不安全</h1><p>用公开数据说话</p></header>
+   <h2>同在北美，加拿大的和平环境排名更靠前</h2>
+   <button type="button" class="safety-country" data-safety="country"><span class="safety-rate"><b>第 14</b><span>加拿大</span></span><span class="safety-rate"><b>第 134</b><span>美国</span></span><small>2026 全球和平指数 · 163 个国家和地区<br>经济与和平研究所（IEP）· 排名与出处 ›</small></button>
+   <p class="safety-note">国家背景值得参考，具体还要看城市、居住区域与校园支持。</p>
+   <h2>伦敦：大学城，也看实际治安数据</h2>
+   <button type="button" class="safety-city" data-safety="city" aria-label="查看伦敦2025年总体犯罪严重指数及出处">
+    <span class="safety-bar-row"><span>伦敦都会区</span><span class="safety-track"><i style="width:88%"></i></span><b>66.0</b></span>
+    <span class="safety-bar-row"><span>全国平均</span><span class="safety-track"><i style="width:100%"></i></span><b>75.0</b></span>
+    <small>2025 年总体犯罪严重指数 · 加拿大统计局 ›</small>
+   </button>
+   <p class="safety-note">伦敦低于全国平均；较 2024 年上升约 8%。这是都会区总体指标，并非 Western 校园的犯罪率。</p>
+   <p class="safety-story"><b>城市性格：</b>大学城，校园、住处和日常生活可以安排得更集中。家长关心的，不只是城市大小，更是孩子住在哪里、晚上怎样回来、遇到事情找谁。</p>
+   <h2>Western 校园里，有这些支持</h2>
+   <div class="safety-services">
+    <button type="button" data-safety="escort"><b>夜间护送 ›</b><span>Foot Patrol 免费步行陪同</span></button>
+    <button type="button" data-safety="phones"><b>紧急报警电话 ›</b><span>校园蓝色电话直连安全中心</span></button>
+    <button type="button" data-safety="constable"><b>24 小时校警 ›</b><span>巡逻、响应与安全协助</span></button>
+   </div>
+   <p class="safety-note">服务出处：Western 官方安全页面，2026 年 9 月查阅。</p>
+   <button type="button" class="safety-next western-page-next" onclick="go('sL8')">安心了，第 8 站 →</button>
+  </section>
+  <section class="safety-detail" hidden><button type="button" class="safety-back western-detail-back">← 返回安全概览</button><div class="safety-detail-content"></div></section>
+ </div>
+ <template data-safety-panel="country"><h1>加拿大与美国：和平环境排名</h1><p>2026 年全球和平指数（Global Peace Index）：在 163 个国家和地区中，加拿大排第 14，美国排第 134。排名越靠前，表示该指数评估的整体和平程度越高。</p><p>指数由经济与和平研究所（IEP）发布，用 23 项指标评估社会安全、国内外冲突和军事化三个维度。它是独立研究机构的综合指数，不是政府发布的留学生安全排名，也不直接等于校园犯罪率。</p><p>选国家时看整体环境，选学校时再看城市、具体住处和校园支持。</p><a href="https://www.visionofhumanity.org/wp-content/uploads/2026/06/Global-Peace-Index-2026-A3-map-poster.pdf" target="_blank" rel="noopener">IEP 2026 全球和平指数 · 完整排名</a><a href="https://www.economicsandpeace.org/global-peace-index/" target="_blank" rel="noopener">IEP 指数介绍与评估方法</a></template>
+ <template data-safety-panel="city"><h1>伦敦与全国平均</h1><p>加拿大统计局 2025 年数据：伦敦都会区总体犯罪严重指数为 66.0，加拿大全国为 75.0。伦敦低于全国平均；与 2024 年相比，伦敦这一指标上升约 8%。</p><p>总体犯罪严重指数（CSI）综合警方记录的犯罪数量和严重程度，包含暴力与非暴力犯罪。这里的伦敦是都会区统计，并非 Western 校园单独的数据。</p><p>选住处时，再看具体街区、通勤路线和夜间安排；城市总体指标要结合校园安全服务一起看。</p><a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260722/dq260722a-eng.pdf" target="_blank" rel="noopener">加拿大统计局 2025 数据 · 表 4，第 15 页</a><a href="https://www.statcan.gc.ca/en/statistical-programs/document/3302_D16_V1" target="_blank" rel="noopener">加拿大统计局：怎样理解犯罪严重指数</a></template>
+ <template data-safety-panel="escort"><h1>夜间护送：Foot Patrol</h1><p>Western 提供免费的步行陪同服务。具体服务日期、营业时段与服务范围以官网最新通知为准；不是全天候接送车。</p><p>需要护送时可联系 <a href="tel:+15196613650">519-661-3650</a>。服务未开放或感到不安全时，可向校园特别警员服务求助；有即时危险拨打 911。</p><a href="https://www.uwo.ca/footpatrol/" target="_blank" rel="noopener">Western Foot Patrol 官方服务安排</a><a href="https://www.uwo.ca/constable/get-help-now/safe-campus-at-night.html" target="_blank" rel="noopener">Western 夜间安全与备用支持</a></template>
+ <template data-safety-panel="phones"><h1>校园蓝色紧急电话</h1><p>校园内的蓝色紧急电话直连 Western 特别警员通讯中心。无法安全使用自己的手机时，可以启动电话，说明位置和需要的帮助。</p><p>有生命危险、正在发生的犯罪、火灾或紧急医疗情况，拨打 <a href="tel:911">911</a>。</p><a href="https://www.uwo.ca/constable/get-help-now/safe-campus-at-night.html" target="_blank" rel="noopener">Western 官方：蓝色紧急电话</a></template>
+ <template data-safety-panel="constable"><h1>24 小时校园安全支持</h1><p>Western Special Constable Service（校园特别警员服务）全年提供每周 7 天、每天 24 小时的巡逻、响应与安全协助。</p><p>非紧急安全问题：<a href="tel:+15196613300">519-661-3300</a>。紧急情况：<a href="tel:911">911</a>。</p><a href="https://www.uwo.ca/constable/index.html" target="_blank" rel="noopener">Western 特别警员服务官网</a><a href="https://www.uwo.ca/campussafety/contact/index.html" target="_blank" rel="noopener">Western 安全服务联系方式</a></template>
+</div>
+ <!-- 栏目 8 -->
+ <div id="sL8" class="screen">
+ <div class="food-page">
+  <section class="food-overview">
+   <header><span class="western-page-label">第 8 站 · 共 10 站</span><h1>吃得好吗</h1><p>中餐、超市、冬天怎么办</p></header>
+   <section class="food-story"><h2>第一年，住和吃都有安排</h2><p>符合条件并按时完成住宿手续的新生，Western 保证提供校内宿舍名额。多数新生宿舍楼内就有餐厅——住在这些楼里，不用走到室外，就能吃上饭，冬天尤其方便。</p><button type="button" data-food="residence">查看住宿条件与餐厅安排 ›</button></section>
+   <section class="food-story"><h2>T&amp;T 大统华：中国留学生的“食堂后备仓”</h2><p>中式调料、活鱼海鲜、熟食点心、火锅料一站式买齐。伦敦有大统华门店，熟悉的食材，不用跑多伦多采购。<b>符合条件可满额免配送费送货上门——冬天最实用。</b></p><button type="button" data-food="tnt">门店、配送范围与免运条件 ›</button></section>
+   <section class="food-story"><h2>Costco 开市客：一周采购的主力仓</h2><p>北美常见的会员制仓储超市——肉蛋奶、纸品、水果，一次买齐一周的量。本站作者已办会员卡；按自己的采购量安排，常用物品集中买，也能把日常开销管起来。</p><button type="button" data-food="costco">会员费用与采购安排 ›</button></section>
+   <section class="food-story"><h2>IKEA 宜家：把住处布置成家的样子</h2><p>床上用品、餐具、收纳用品，到了伦敦也能在宜家选购。White Oaks 商场的宜家门店，部分商品可现场买走，大件家具可订购配送。</p><button type="button" data-food="ikea">门店位置与配送说明 ›</button></section>
+   <section class="food-story"><h2>各式中餐馆：解乡愁，不用跑多伦多</h2><p>川菜、粤菜、火锅、饺子面馆、烤串……常见的家乡口味，在伦敦也能找到。想换换口味，有中餐馆；想自己做饭，也有熟悉的食材。</p></section>
+   <section class="food-story"><h2>奶茶店就在身边</h2><p>CoCo 开在城里，Chatime 更直接开进 Western 校园的 Weldon 图书馆——<b>复习间隙，楼下就能买杯奶茶。</b></p><button type="button" data-food="tea">校园位置、营业时间与门店 ›</button></section>
+   <p class="food-note">出处：Western 校园餐饮官网、T&T 大统华官网、Costco 开市客加拿大官网、CoCo 官网（2026 年 9 月查阅）；Western 住宿与宿舍餐饮官网、IKEA 宜家加拿大官网（2026 年 10 月 6 日查阅）。</p>
+   <button type="button" class="food-next western-page-next" onclick="go('sL9')">放心了，第 9 站 →</button>
+  </section>
+  <section class="food-detail" hidden><button type="button" class="food-back western-detail-back">← 返回生活概览</button><div class="food-detail-content"></div></section>
+ </div>
+ <template data-food-panel="residence"><h1>第一年，校内吃住怎么安排</h1><h2>新生住宿保障：按时完成手续</h2><p>Western 主校区为符合条件的新生保证提供校内宿舍名额：高中直接升入大学、在 5 月中旬前获得全日制大一录取，并按截止日期完成住宿分配问卷和预付款。申请人还须符合官网列明的其他资格，包括无需携家属入住；Huron 和 King’s 学生不适用主校区的这项安排。</p><p>保障的是宿舍名额，具体楼栋按学校分配流程安排。转学生、较晚获得录取等不符合保障资格的申请人，可申请候补；以个人录取通知和住宿办公室确认结果为准。</p><h2>多数新生宿舍楼内就有餐厅</h2><p>官网列明，8 栋新生宿舍设有餐厅。住在楼内设餐厅的宿舍，开放时段内可在楼内就餐。具体楼栋、菜单及营业时间可在官网查看。</p><p>新生宿舍通常须购买餐饮计划（Meal Plan），Lambton Hall 为例外。使用 Western ONEcard 选餐付款，消费从余额中扣除；是否够用取决于个人饮食和预算，不是无限量包餐。</p><a href="https://residence.uwo.ca/applying/key_steps" target="_blank" rel="noopener">Western 官方 · 新生住宿保障与申请步骤</a><a href="https://residence.uwo.ca/applying/important_dates_and_deadlines" target="_blank" rel="noopener">Western 官方 · 对应学年的住宿截止日期</a><a href="https://residence.uwo.ca/dining" target="_blank" rel="noopener">Western 官方 · 宿舍餐厅与餐饮计划</a><a href="https://residencedining.uwo.ca/" target="_blank" rel="noopener">Western 官方 · 宿舍餐厅菜单与营业时间</a><p class="food-note">2026 年 10 月 6 日查阅；按入学学年核对资格、截止日期与餐饮安排。</p></template>
+ <template data-food-panel="tnt"><h1>T&amp;T 大统华：冬天采购也有办法</h1><p>先在官网选择伦敦门店或输入住址，核对是否在配送范围内，再安排订单与收货时间。具体距离和交通方式，要结合孩子的住处看。</p><p>官网有“满 59 加元免快速配送费”活动，活动页面标注至 2026 年 12 月 31 日；订单金额、折扣、配送区域与商品重量等条件以当次下单为准。免配送费不等于所有费用都免，结账时还要看服务费等项目。</p><p>备好常用调料和耐储存食材，冬天少跑几趟，也是照顾好自己的一种办法。</p><a href="https://www.tntsupermarket.com/store-location/" target="_blank" rel="noopener">大统华官网 · 门店查询</a><a href="https://www.tntsupermarket.com/chs/activity/59-free-delivery" target="_blank" rel="noopener">大统华 · 满额免快速配送费活动</a><a href="https://www.tntsupermarket.com/how-it-works" target="_blank" rel="noopener">大统华 · 配送方式与覆盖范围</a><p class="food-note">2026 年 9 月查阅；活动结束后须重新核对配送政策。</p></template>
+ <template data-food-panel="costco"><h1>Costco 开市客：按自己的采购量来</h1><p>加拿大 Gold Star 普通会员年费为 65 加元，加适用税费；按 1 加元约 4.72 元参考，税前年费约 307 元人民币。本站作者已办卡，这是个人经历。</p><p>大包装更适合消耗量稳定、储存空间够的物品。是否省钱，要把会员费、交通成本和吃不完的损耗也算进去；不必为了办卡而买得更多。</p><a href="https://www.costco.ca/f/-/membership-conditions-regulations" target="_blank" rel="noopener">Costco 开市客加拿大官网 · 会员费与规则</a><a href="https://www.costco.ca/warehouse-locations" target="_blank" rel="noopener">Costco 开市客加拿大官网 · 仓库查询</a><a href="https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/" target="_blank" rel="noopener">人民币参考换算 · 加拿大央行 2026-09-29</a></template>
+ <template data-food-panel="ikea"><h1>伦敦宜家：日用品与家具都能安排</h1><p>IKEA London White Oaks 位于 White Oaks 商场。地址：1105 Wellington Rd, Unit 10A, London, ON N6E 1V4。</p><p>这是紧凑型零售门店，部分日用品和家具可以现场购买带走；大件家具可订购送货到家。出发前查看商品库存、当天营业时间与交通安排；配送范围、费用及到货时间以商品和收货地址的结账结果为准。</p><a href="https://www.ikea.com/ca/en/stores/london/" target="_blank" rel="noopener">IKEA 加拿大官网 · 伦敦门店、库存与配送</a><a href="https://www.ikea.com/ca/en/newsroom/corporate-news/thousands-of-london-ontario-residents-welcomed-the-first-compact-ikea-store-in-canada-pub68aa0780/" target="_blank" rel="noopener">IKEA 官方 · 伦敦门店介绍</a><p class="food-note">2026 年 10 月 6 日查阅。</p></template>
+ <template data-food-panel="tea"><h1>复习间隙，买杯熟悉的奶茶</h1><p>Western 校园餐饮官网列明：Chatime 位于 Weldon Library。营业时间按学期、日期安排，出门前可以查看当天开放情况。</p><p>伦敦城里也有 CoCo。门店位置、营业时间及在线点单，以品牌官网为准。</p><a href="https://food.uwo.ca/chatime" target="_blank" rel="noopener">Western 官方 · Chatime 位置与营业时间</a><a href="https://food.uwo.ca/find-food" target="_blank" rel="noopener">Western 官方 · 校园餐饮查询</a><a href="https://www.cocofreshtea.ca/cn/locations/" target="_blank" rel="noopener">CoCo 官网 · 分店与在线点单</a><p class="food-note">2026 年 9 月查阅。</p></template>
+</div>
+ <!-- 栏目 9 -->
+ <div id="sL9" class="screen">
+ <div class="study-page">
+  <section class="study-overview">
+   <header><span class="western-page-label">第 9 站 · 共 10 站</span><h1>适合学习吗</h1><p>城市最后看，破刻板印象</p></header>
+   <button type="button" class="study-video" data-study="video"><img src="videos/poster_story.jpg" alt="Western 官方宣传片封面"><span>▶ 看看孩子将来读书的地方</span><small>官方宣传片 · 1 分 54 秒 · 中文字幕</small></button>
+   <p class="study-location"><b>伦敦是哪座伦敦：</b>加拿大安大略省伦敦市，不是英国伦敦。泰晤士河穿城而过，别称“森林城市”。</p>
+   <div class="study-grid">
+    <button type="button" data-study="population"><strong>42.2 万</strong><span>市区人口 · 2021 年</span><small>不大不小，生活有自己的节奏 ›</small></button>
+    <button type="button" data-study="distance"><strong>约 2 小时</strong><span>开车到多伦多</span><small>近得够得着机会，远得安静读得了书 ›</small></button>
+    <button type="button" data-study="students"><strong>4.3 万</strong><span>Western 在校学生</span><small>大学城，身边有一起读书的同伴 ›</small></button>
+    <button type="button" data-study="history"><strong>1878 年</strong><span>Western 建校</span><small>百年学府，学术氛围是沉淀出来的 ›</small></button>
+   </div>
+   <p class="study-gpa"><b>GPA 友好度：</b>Western 不压分（多大/UBC 压分口碑在外）——本站作者家当年正是因此选 Western。</p>
+   <p class="study-note">出处：加拿大统计局 2021 年人口普查、Western 官网（学生数为 2024–2025 年）。点击数据查看详情与来源。</p>
+   <button type="button" class="study-next western-page-next" onclick="go('sL10')">看过校园，第 10 站 →</button>
+  </section>
+  <section class="study-detail" hidden><button type="button" class="study-back western-detail-back">← 返回学习环境概览</button><div class="study-detail-content"></div><button type="button" class="study-next western-page-next" onclick="go('sL10')">看过校园，第 10 站 →</button></section>
+ </div>
+ <template data-study-panel="video"><h1>孩子将来读书的地方</h1><video controls preload="metadata" playsinline webkit-playsinline poster="videos/poster_story.jpg"><source src="videos/What_is_Western_like_mobile.mp4" type="video/mp4"><track kind="subtitles" srclang="zh" label="中文字幕" default src="videos/What_is_Western_like.zh-CN.vtt"></video><p class="study-video-source">Western 官方宣传片《What is Western like》（720p · 1 分 54 秒 · 已配中文字幕。来源：<a href="https://welcome.uwo.ca/what-is-western-like/index.html" target="_blank" rel="noopener">Western 招生官网</a>）</p><a href="videos/What_is_Western_like_mobile.mp4" target="_blank" rel="noopener">若内嵌播放器无法播放，直接打开影片</a></template>
+ <template data-study-panel="population"><h1>伦敦：不大不小的大学城</h1><p>2021 年加拿大人口普查：伦敦市人口为 422,324，约 42.2 万。这里采用市区口径，和包含周边地区的伦敦都会区人口不同。</p><p>泰晤士河穿城而过，“森林城市”也是伦敦的别称。对孩子来说，城市的大小、住处与校园距离，都会影响日常学习和生活安排。</p><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000301" target="_blank" rel="noopener">加拿大统计局 · 2021 年人口普查</a><a href="https://www.uwo.ca/about/visit/london.html" target="_blank" rel="noopener">Western 官网 · 认识伦敦</a></template>
+ <template data-study-panel="distance"><h1>多伦多的机会，也够得着</h1><p>Western 官网介绍，从多伦多到伦敦开车约 2 小时。实际时间取决于出发地点、交通和天气。</p><p>近得够得着机会，远得安静读得了书。需要到多伦多参加活动、见校友或面试时，可以提前安排交通；平时的学习生活，仍以校园和住处为中心。</p><a href="https://international.uwo.ca/studentservices/new_students/how_to_get_here.html" target="_blank" rel="noopener">Western International · 如何到达伦敦</a></template>
+ <template data-study-panel="students"><h1>身边有一起读书的同伴</h1><p>Western 2024–2025 年官方数据显示，在校学生为 42,978 人，约 4.3 万。这里采用 Western 官网公布的合计学生数，包含 Huron、King’s 两所附属学院，不等同于主校区人数。</p><p>课堂、图书馆、社团和校园活动，是孩子认识同伴、建立日常生活圈的地方。</p><a href="https://www.uwo.ca/about/whoweare/facts.html" target="_blank" rel="noopener">Western 官网 · 2024–2025 年学校数据</a></template>
+ <template data-study-panel="history"><h1>百年学府，学术氛围是沉淀出来的</h1><p>Western 于 1878 年建校。校园里不仅有商科，也有医学、工程、法学等领域的教学与研究。</p><a href="https://www.uwo.ca/about/whoweare/facts.html" target="_blank" rel="noopener">Western 官网 · 建校时间与学院介绍</a></template>
+</div>
+ <!-- 栏目 10 -->
+ <div id="sL10" class="screen">
+ <div class="arrival-page">
+  <section class="arrival-overview">
+   <header><span class="western-page-label">第 10 站 · 共 10 站</span><h1>落地怎么办</h1><p>落地怎么安排，四年怎么规划</p></header>
+   <section class="arrival-experience"><h2>落地全流程，本站作者已亲自走过</h2><p>手机卡、银行账户、加拿大社会保险号码（SIN）、安大略省照片身份证（Ontario Photo Card）、驾照理论考试、公交卡、Costco 会员卡、各大超市商场、主要亚洲餐厅——每一步需要的材料和办理顺序，都是第一手实录。</p></section>
+   <section class="arrival-sample"><h2>🏠 样板间：本站作者全程设计的四年规划</h2><p class="arrival-goal"><b>以北美就业为主线，发展“商业管理 × 计算机（CS）× AI”的复合能力，保留加拿大长期发展和以后读 MBA 的选择。</b></p>
+    <ol class="arrival-route-map" aria-label="本站作者的阶段路线：今天已选 BMOS 并获 Ivey AEO，后续阶段为规划">
+     <li class="arrival-now"><span class="arrival-stage-label">今天<small>已选择</small></span><div><b>Western BMOS ＋ Ivey AEO</b><small>管理与组织研究专业 · 有条件预录取</small></div></li>
+     <li><span class="arrival-stage-label">大一、大二</span><div><b>准备升入 HBA</b><small>学业优先 · 编程、数据分析与 AI</small></div></li>
+     <li><span class="arrival-stage-label">大三</span><div><b>进入 HBA，争取暑期实习</b><small>满足要求并获录取后</small></div></li>
+     <li><span class="arrival-stage-label">大四</span><div><b>主攻全职求职</b><small>按岗位需要比较相关硕士</small></div></li>
+     <li><span class="arrival-stage-label">毕业后</span><div><b>积累加拿大工作经验</b><small>核实工作与身份条件 · 再评估 MBA</small></div></li>
+    </ol>
+    <button type="button" class="arrival-route-button" data-arrival="route">查看各阶段的具体安排 ›</button>
+   </section>
+   <p class="arrival-note">以上为本站作者当前规划。进入 HBA、获得实习和工作、取得长期身份，均须分别满足条件。</p>
+   <p class="arrival-method"><b>先定终点，再倒推每一步。</b></p>
+   <button type="button" class="arrival-next western-page-next" onclick="go('sCalc')">十站走完 → 拿我家的数算一算</button>
+  </section>
+  <section class="arrival-detail" hidden><button type="button" class="arrival-back western-detail-back">← 返回落地与规划概览</button><div class="arrival-detail-content"></div></section>
+ </div>
+ <template data-arrival-panel="route">
+  <h1>样板间：本站作者全程设计的四年规划</h1>
+  <p class="arrival-goal"><b>目标先定：以北美就业为主线，发展“商业管理 × 计算机（CS）× AI”的复合能力，保留加拿大长期发展和以后读 MBA 的选择。</b></p>
+  <section class="arrival-route-stage"><h2>今天｜已选择 Western BMOS</h2><p>已选择 Western 的 BMOS（管理与组织研究）专业，并获 Western Ivey 商学院 AEO（有条件预录取）资格。</p></section>
+  <section class="arrival-route-stage"><h2>大一、大二｜学业基础与能力准备</h2><p>以 BMOS 为起点，优先完成升入 Ivey HBA 所需的学业与活动要求。在学业负担允许的情况下，补充编程、数据分析和 AI 应用能力，做出可以展示的项目，为后续实习积累经历。</p></section>
+  <section class="arrival-route-stage"><h2>大三｜进入 HBA，准备实习</h2><p>满足要求并获录取后进入 Ivey HBA。围绕目标岗位准备简历、面试和校友交流，争取大三结束后的暑期实习，用真实工作体验检验职业方向。</p></section>
+  <section class="arrival-route-stage"><h2>大四｜准备全职工作，比较深造价值</h2><p>以毕业后的全职工作为主要准备方向，把课程项目和实习经历转化为求职优势。若目标岗位需要进一步学历，再比较相关硕士项目。</p></section>
+  <section class="arrival-route-stage"><h2>毕业后｜积累工作经验，再判断下一步</h2><p>争取先在加拿大积累工作经验，分别核实工作许可与长期身份条件。工作一段时间后，再判断 MBA 是否能帮助下一步职业发展。</p></section>
+  <p class="arrival-note">这是本站作者当前的规划。进入 HBA、获得实习和工作、取得长期身份，都需要分别满足条件。计算机与 AI 部分为能力准备方向。</p>
+  <p class="arrival-method"><b>先定终点，再倒推每一步。</b></p>
+  <a href="https://www.ivey.uwo.ca/hba/program-details/program-road-map/" target="_blank" rel="noopener">Ivey 官网 · AEO 与 HBA 的 2＋2 路线</a>
+  <a href="https://www.ivey.uwo.ca/recruiter/meet-our-talent/hire-an-intern/" target="_blank" rel="noopener">Ivey 官网 · HBA 暑期实习安排</a>
+ </template>
+</div>
+<div id="western-calculator-review">
+ <div class="decision-page">
+  <section class="screen" id="sCalc" data-view="form">
+   <header><span class="western-page-label">决策计算器 · 填写家庭条件</span><h1>输入您家的数</h1><p>看看 Western 是否适合您家</p></header>
+   <form class="decision-form">
+    <div class="decision-pair"><label>① 孩子目前的学习阶段<select name="grade"><option value="g10">高一</option><option value="g11">高二</option><option value="g12">高三</option><option value="graduated">高中已毕业，准备申请本科</option></select></label><label>② 专业方向<select name="direction"><option value="unknown">尚未确定</option><option value="business">商科与管理</option><option value="engineering">工程</option><option value="science">理科与计算机</option><option value="humanities">人文与社会科学</option><option value="health">健康与医学相关</option><option value="arts">艺术与音乐</option></select></label></div>
+    <div class="decision-pair"><label>③ 预计就读安排<select name="duration"><option value="unknown" selected>尚未确定</option><option value="regular">常规四年安排（可含暑期实习）</option><option value="coop">考虑因 Co-op（带薪实习）延长毕业时间</option></select></label><label>④ 本科全过程预算（万元人民币）<input name="budget" type="number" min="0" max="10000" step="1" value="175" required></label></div>
+    <div class="decision-pair"><label>⑤ 已确认奖学金总额（加元）<input name="award" type="number" min="0" max="1000000" step="1" value="0" required></label><label>⑥ 本科毕业后优先考虑<select name="next" required><option value="unknown" selected>尚未确定</option><option value="study">继续深造</option><option value="back">回国发展</option><option value="job">留在海外工作</option></select></label></div>
+    <p class="decision-footnote">家庭预算不含奖学金。奖学金填写本科期间已确认总额，默认 0，自动换算人民币。Co-op＝带薪实习；是否延长毕业时间，以具体项目安排为准。</p>
+    <label data-coop-input>延长毕业额外一年生活预算（加元）<input name="coopLiving" type="number" min="0" max="1000000" step="100" value="30000" required><small>暂按 30,000 加元规划，可按实习城市修改；未确认实习收入按 0。</small></label>
+    <fieldset><legend>⑦ 刚才定的终点（可改）</legend><div class="decision-choices"><button type="button" data-goal="stay" aria-pressed="true">留加拿大</button><button type="button" data-goal="back" aria-pressed="false">回国</button><button type="button" data-goal="either" aria-pressed="false">都可以</button></div></fieldset>
+    <label>⑧ 您家最看重什么<select name="focus"><option value="unknown" selected>尚未确定</option><option value="life">生活适应</option><option value="budget">成本与预算</option><option value="academic">专业与职业方向</option><option value="route">毕业后的选择空间</option><option value="balanced">同样看重</option></select><small>毕业后的选择空间：留在海外工作、继续深造或回国。</small></label>
+    <div class="decision-pair"><label><span data-academic-question>⑨ 孩子对所选专业方向</span><select name="academic" required><option value="50" selected>尚未确定</option><option value="100">愿意，已了解</option><option value="0">明确不愿意</option></select></label><label>⑩ 孩子对伦敦大学城生活<select name="life" required><option value="50" selected>尚未确定</option><option value="100">愿意，已讨论</option><option value="0">明确不接受</option></select></label></div>
+    <label><span data-route-question>⑪ 对于留在海外工作的安排，您家能接受哪种情况？</span><select name="route" required><option value="50" selected>尚未确定</option><option value="100">已明确工作方向、核实要求，愿意准备</option><option value="0">家庭要求与这条工作路线明确冲突</option></select></label>
+    <p class="decision-footnote">终点决定路线分析，关注点决定权重。尚未确定专业或学制时，结果显示暂估范围。</p>
+    <button type="submit" class="decision-primary western-page-next">条件填好了 → 查看您家的计算结果</button>
+   </form>
+  </section>
+  <section class="screen" id="sResult" data-view="result" hidden>
+   <header><span class="western-page-label">决策计算器 · 您家的计算结果</span><h1>这条路线，适合您家吗？</h1><p data-summary></p></header>
+   <div class="decision-score" aria-live="polite"><strong data-score></strong><span>家庭匹配参考分 / 100</span><b data-verdict></b></div>
+   <div class="decision-money"><div><span>本科全过程成本参考</span><b data-cost></b></div><div><span>计入奖学金后的资金</span><b data-funds></b></div><p data-budget-reason></p><p data-cost-scope></p></div>
+   <div class="decision-scenarios" data-scenarios hidden></div>
+   <table class="decision-breakdown"><thead><tr><th>维度</th><th>得分</th><th>权重</th><th>贡献</th></tr></thead><tbody data-breakdown></tbody></table>
+   <p class="decision-footnote" data-formula></p>
+   <div class="decision-conclusion"><h2>先解决什么</h2><p data-next-action></p></div>
+   <p class="decision-footnote">分项得分 × 权重＝对总分的贡献。100 分表示当前条件匹配，不保证录取、就业或身份结果。预算按费用区间计算；其余三项按家庭回答计分。权重、档位和分数上限是本站提出的规则，未经过结果预测验证。</p>
+   <button type="button" class="decision-explain" data-open-rules>分数怎么算？查看完整规则与出处 ›</button>
+   <button type="button" class="decision-primary western-page-next" data-copy>一键复制您家的条件与结果 → 问 AI</button>
+   <p class="decision-footnote">复制后，粘贴给豆包、千问、Kimi、DeepSeek，继续分析您家的选择。</p>
+   <p class="decision-footnote" data-copy-status role="status" aria-live="polite"></p>
+   <label data-copy-fallback hidden>长按下方文字复制<textarea readonly rows="6" data-copy-text aria-label="您家的 AI 查询内容"></textarea></label>
+   <button type="button" class="decision-explain western-detail-back" data-return>← 返回修改家庭条件</button><p class="decision-footnote" style="text-align:center">© 2026 王怡丹 · Western 在校生个人分享</p>
+  </section>
+  <section class="screen" id="sRules" data-view="rules" hidden>
+   <button type="button" class="decision-explain western-detail-back" data-close-rules>← 返回计算结果</button><h1>每一分，怎么算出来</h1>
+   <h2>先按专业方向与路线估算费用</h2><p>采用 Western 2026–2027 国际生各年级学费，按当前费率示算，不包含未来涨价；参考汇率为 1 加元约 4.72 元。常规参照按四年，每年生活费暂按 24,000–30,000 加元、其他开支 5,000–7,500 加元规划，均为预算假设。</p><p>商科与管理覆盖 BMOS 四年及前两年其他专业、后两年 Ivey HBA 的不同安排。理科与计算机区分普通理科和计算机的收费；工程采用工程学费；人文社科、艺术音乐及健康医学科学采用相应学费。护理、临床医学、牙医、特殊学制、双学位及额外资格不纳入这些常规参照，须另核实。尚未确定专业时，暂用已覆盖常见方向的宽区间，不视作具体项目报价。</p><p>长期 Co-op 场景暂按常规学业加一年生活期示算，使用您填写的额外生活预算；工程项目费暂按 1,775–2,325 加元、理科 1,500–2,000 加元（12–16 个月），其他方向暂留 2,000 加元项目费作为假设。须核实具体项目是否提供长期 Co-op、适用收费与实际学制，不能据此认定每个专业都读五年。未确认的实习收入为 0。</p>
+   <h2>预算分：跟随所选路线的费用区间</h2><p>可用资金＝家庭预算（万元人民币）＋已确认奖学金（加元）×4.72÷10,000。设费用区间低端为 L、高端为 H。资金低于 L：预算分＝60×（资金÷L）²；L–H 之间：预算分从 60 线性增加到 100；达到 H：预算分 100。</p>
+   <h2>其余三项：依据家庭回答</h2><p>专业方向与生活适应：已了解且愿意为 100；尚未确认为 50；明确不接受为 0。毕业安排：方向明确、已核实要求且愿意准备为 100；方向或要求尚未确认为 50；家庭要求与路线明确冲突为 0。毕业安排分反映家庭接受程度，不代表工作或深造能实现；回国本身不扣分。学习阶段不参与计分。</p>
+   <h2>权重与总分</h2><p>关注点尚未确定或同样看重时，每项权重为 25%。选择最看重的一项后，该项占 50%，其他三项各占 1/6。加权分＝四项得分乘各自权重后相加，最终四舍五入。</p>
+   <h2>关键条件不满足，不能靠其他项补成高分</h2><p>总分上限为预算分，随资金连续变化。其他条件再好，也不能抵消资金缺口。资金为 0 时总分为 0。</p><p>如果孩子明确不愿走所选专业方向、明确不接受伦敦生活，或所选毕业路线被家庭判定为不能接受，总分上限也为 39。专业尚未确定时，该维度暂按“未确认”的 50 分，待方向明确后重算。最终分＝加权分与所有适用上限中的最小值。路线未确定时，两种场景分别计算，显示分数范围。</p>
+   <p>80–100：已回答条件较匹配；60–79：条件部分匹配；40–59：存在关键缺口；0–39：当前条件不匹配。结果可能因回答、费用、汇率和政策变化而调整，不能用来预测录取、就业或身份结果。</p>
+   <h2>终点怎样影响分析</h2><p>毕业安排的问题跟随您选择的工作、深造或回国方向变化，判断家庭是否愿意准备、能否接受结果的不确定性。选择回国发展会同步选中“回国”；选择留在海外工作会同步选中“留加拿大”。继续深造可结合地点另行规划。回国本身不扣分。</p>
+   <h2>成本与项目出处</h2><a href="https://welcome.uwo.ca/what-can-i-study/undergraduate-programs/index.html" target="_blank" rel="noopener">Western · 本科专业</a><a href="https://registrar.uwo.ca/student_finances/fees_refunds/2026-27-UGRD-Fee-Schedule---FT-International1.pdf" target="_blank" rel="noopener">Western · 2026–2027 国际生学费</a><a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/tuition-fees/" target="_blank" rel="noopener">Ivey · HBA 学费</a><a href="https://international.uwo.ca/studentservices/student_life/money_and_taxes/making_a_budget.html" target="_blank" rel="noopener">Western International · 生活预算参考</a><a href="https://www.eng.uwo.ca/careers/students/undergraduate-co-op/long-term-co-op/index.html" target="_blank" rel="noopener">Western 工程 · 长期 Co-op 与项目费</a><a href="https://www.uwo.ca/sci/undergraduate/careers_and_coops/science_coop_program/credit__fees.html" target="_blank" rel="noopener">Western 理科 · Co-op 收费</a>
+  </section>
+ </div>
+</div>
+
+</div>
+
 <script>
-const S={grade:'g10',budget:175,budgetTxt:'150–200 万',dir:'ivey',goal:'stay',w1:40,w2:20,w3:20,w4:20};
-const GRADE={g10:{t:'高一',entry:2029},g11:{t:'高二',entry:2028},g12:{t:'高三',entry:2027}};
-function habit(k){
- const m={country:'先看国家，您抓的是第一层——选校的次序就是<b>先选国家（留不留得下）、再选学校（出口）、城市最后</b>。国家定错了，学校再好也白搭：同样是 200 万投入，美国 H-1B 被 10.3 万美元天价费掐死、英国澳大利亚留不下，加拿大 3 年毕业工签直通 PR。第 1 站我们就用数据把五路对比摆开。',
- rank:'很多家长先看排名——但排名是研究经费和论文的榜，<b>不是孩子就业的榜</b>。中国家长只知多大 Rotman、UBC Sauder，加拿大本地雇主却把 Ivey 放前面：排名说的和雇主知道的，不是一回事。',
- city:'城市当然要看，但它是最后一位——先定国家（留不留得下），再定学校（出口），城市最后。伦敦这条线我们后面用数据讲。',
- exit:'您已经抓到要害了——选校的本质就是选出口。那就把终点先定下来。',
- none:'没关系，多数家长都没想过——所以才容易跟着排名走。我们从终点倒着想一遍，两分钟就清楚了。'};
- $('habitFact').innerHTML=m[k];$('habitOut').style.display='block';
-}
-function goalSet(g){
- S.goal=g;
- const m={stay:'留在北美：身份通道必须通畅——加拿大毕业工签→EE→PR 是最成熟的一条（美国 H-1B 天价费、英国澳大利亚都留不下）。终点定在这里，大三那一环就该是北美雇主认的招牌。',
- back:'回国：那要算"海归 vs 985/211 vs 普通本科"的同表账——出口宽不宽，数据说话。而且 Ivey 毕业生大多留在北美，海归反而稀缺。',
- either:'看机会：那更需要两头都硬——北美留得下、回国也叫得响。两头都要，对本科招牌的要求最高。'};
- $('goalFact').innerHTML=m[g];$('goalOut').style.display='block';
- // 同步计算器③的选中态
- document.querySelectorAll('[data-k=goal] button, .seg button').forEach(()=>{});
- const map={stay:0,back:1,either:2};
- const seg=document.querySelectorAll('#sCalc .seg')[1];
- seg.querySelectorAll('button').forEach((x,i)=>x.classList.toggle('sel',i===map[g]));
-}
+const WESTERN_ORDER=['sPain','sHabit',...Array.from({length:10},(_,i)=>'sL'+(i+1)),'sCalc','sResult'];
+const WESTERN_NAMES=['首页','出发前','第 1 站 · 为什么选加拿大','第 2 站 · Western 是什么学校','第 3 站 · 毕业后去哪里','第 4 站 · 校友与互助','第 5 站 · 毕业后的选择','第 6 站 · 一共要花多少钱','第 7 站 · 安全与支持','第 8 站 · 吃饭与生活','第 9 站 · 学习环境','第 10 站 · 落地与规划','决策计算器 · 家庭条件','决策计算器 · 计算结果'];
+const WESTERN_STORAGE='western-family-guide-v1';
+const S={habit:null,goal:'stay',goalChosen:false,calculator:{},actionClicks:[]};
+try{const saved=JSON.parse(localStorage.getItem(WESTERN_STORAGE)||'null');if(saved&&typeof saved==='object'){if(['country','rank','city','exit','none'].includes(saved.habit))S.habit=saved.habit;if(['stay','back','either'].includes(saved.goal))S.goal=saved.goal;S.goalChosen=saved.goalChosen===true;if(saved.calculator&&typeof saved.calculator==='object')S.calculator=saved.calculator;if(Array.isArray(saved.actionClicks))S.actionClicks=saved.actionClicks.filter(k=>/^footer-\d+$/.test(k)).slice(0,15);}}catch{}
 const $=id=>document.getElementById(id);
-function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');window.scrollTo(0,0);}
-const FOCUS={job:[50,20,15,15],pr:[20,50,15,15],cost:[15,15,55,15],life:[20,15,15,50]};
-document.querySelectorAll('.seg button[data-k]').forEach(b=>b.onclick=()=>{
- b.parentNode.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));
- b.classList.add('sel');
- if(b.dataset.k==='focus'){const w=FOCUS[b.dataset.v];S.w1=w[0];S.w2=w[1];S.w3=w[2];S.w4=w[3];}
- else if(b.dataset.k==='budget'){S.budget=+b.dataset.v;S.budgetTxt=b.textContent;}
- else S[b.dataset.k]=b.dataset.v;
- calc();
+function saveWestern(){try{localStorage.setItem(WESTERN_STORAGE,JSON.stringify(S));}catch{}}
+function habit(k){
+ S.habit=k;
+ const m={country:'先看国家，您抓的是第一层——同样是 200 万投入，毕业后的工作机会和身份路径，值得先看清楚。第 1 站，我们把各条路线的数据和官方政策摆开。',rank:'很多家长先看排名——但排名不是孩子就业的榜。具体专业学什么、毕业生去了哪里、雇主招什么人，值得一起看。',city:'城市当然要看，但它是最后一位——先定国家（留不留得下），再定学校（出口），城市最后。',exit:'您已经抓到要害了——选校的本质就是选出口。那就把终点先定下来。',none:'没关系，多数家长都没想过——所以才容易跟着排名走。我们从终点倒着想一遍，带着问题走完十站。'};
+ document.querySelectorAll('#sHabit [data-habit]').forEach(button=>{const selected=button.dataset.habit===k;button.classList.toggle('sel',selected);button.setAttribute('aria-pressed',String(selected));});
+ $('habitFact').textContent=m[k];$('habitOut').style.display='block';saveWestern();
+}
+function goalSet(g,chosen=true){
+ if(!['stay','back','either'].includes(g))return;
+ S.goal=g;if(chosen)S.goalChosen=true;
+ document.querySelectorAll('#sL3 [data-goal],#sL5 [data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===g)));
+ const next=document.querySelector('#sL3 .job-continue');if(next)next.disabled=false;
+ const calculator=$('western-calculator-review');if(calculator&&calculator.syncWesternGoal)calculator.syncWesternGoal(g);
+ saveWestern();
+}
+function scrollWesternTop(){
+ const reset=()=>{
+  window.scrollTo(0,0);
+  const anchor=document.querySelector('.western-flow-nav');
+  if(anchor&&typeof anchor.scrollIntoView==='function')anchor.scrollIntoView({block:'start',inline:'nearest',behavior:'instant'});
+  if(document.scrollingElement)document.scrollingElement.scrollTop=0;
+ };
+ reset();
+ if(typeof window.requestAnimationFrame==='function')window.requestAnimationFrame(()=>window.requestAnimationFrame(reset));
+ if(typeof window.setTimeout==='function')window.setTimeout(reset,180);
+}
+function go(id){
+ const target=$(id);if(!target)return;
+ const focused=document.activeElement;if(focused&&typeof focused.blur==='function'&&/^(INPUT|SELECT|TEXTAREA)$/.test(focused.tagName))focused.blur();
+ document.querySelectorAll('video').forEach(video=>video.pause());
+ document.querySelectorAll('.screen').forEach(screen=>screen.classList.remove('on'));
+ if(['sCalc','sResult','sRules'].includes(id))document.querySelectorAll('#western-calculator-review [data-view]').forEach(panel=>panel.hidden=panel.id!==id);
+ target.classList.add('on');
+ const index=WESTERN_ORDER.indexOf(id);
+ $('western-flow-name').textContent=id==='sRules'?'计算规则与出处':WESTERN_NAMES[index]||'';
+ $('western-flow-back').hidden=id==='sPain';
+ $('western-flow-home').hidden=id==='sPain';
+ $('western-flow-back').onclick=()=>go(id==='sRules'?'sResult':WESTERN_ORDER[Math.max(0,index-1)]);
+ scrollWesternTop();
+}
+$('western-flow-home').addEventListener('click',()=>go('sPain'));
+document.querySelectorAll('.western-page-next').forEach((button,index)=>{
+ const key='footer-'+index;
+ button.setAttribute('data-clicked',String(S.actionClicks.includes(key)));
+ button.addEventListener('click',()=>{
+  if(button.disabled)return;
+  if(button.getAttribute('type')==='submit'&&!document.querySelector('form').reportValidity())return;
+  button.setAttribute('data-clicked','true');
+  if(!S.actionClicks.includes(key))S.actionClicks.push(key);
+  saveWestern();
+ });
 });
-function calc(){
- const E=GRADE[S.grade].entry;
- $('kTime').innerHTML=`🧒 孩子现读 <b>${GRADE[S.grade].t}</b> → 预计 <b>${E} 年秋入学</b>（大一大二 BMOS＋AEO）→ <b>${E+2}</b> 进 Ivey HBA → <b>${E+3}</b> 大四申研或全职 offer 落袋 → <b>${E+4}</b> 本科毕业，走向终点。`;
- const tuition = S.dir==='ivey' ? 7.2*2+5.2*2 : 5.4*4;
- const living = 2.4*4;
- const scholarship = S.dir==='ivey'?1.0:0.8;
- const costWanCAD = tuition+living-scholarship;
- const costWanRMB = Math.round(costWanCAD*5.3);
- $('kCost').innerHTML=costWanRMB+'<small> 万</small>';
- const over=costWanRMB-S.budget;
- $('kCostS').textContent=over<=0?'预算内（建议再留通胀缓冲）':`缺口约 ${over} 万`;
- const sal = S.goal==='back' ? (S.dir==='ivey'?2.6:1.8) : (S.dir==='ivey'?9.5:S.dir==='stem'?7.5:6.5);
- const salRMB = Math.round(sal*5.3);
- $('kSalary').innerHTML=S.goal==='back'?salRMB+'<small> 万/年（人民币）</small>':sal.toFixed(1)+'<small> 万加元/年</small>';
- $('kSalaryS').textContent=S.goal==='back'?'海归口径：对比 985/211 与普通本科同表':S.dir==='ivey'?'商学院官方就业报告：42% 咨询、28% 投行':S.dir==='stem'?'官方实习工资表：工程均薪约 5.0–5.6 万/年':'按 Western 全校就业口径取中位';
- $('kHead').innerHTML=over<=0?'预算内':'缺口 '+over+'<small> 万</small>';
- $('kHead').style.color=over<=0?'var(--purple)':'var(--red)';
- $('kHeadS').textContent=over<=0?'学费物价年年涨，建议留缓冲、别打满':'缺口需正视：奖学金、汇率与勤工俭学怎么补';
- $('kPR').textContent=S.goal==='back'?'不需要':'通道成熟';
- $('kPRS').textContent=S.goal==='back'?'回国路线不涉及':'毕业工签 → EE → PR；美国天价费、英澳留不下';
- const costScore=over<=0?9.0:over<=40?7.0:over<=80?5.5:4.0;
- const dims={job:S.dir==='ivey'?9.5:8.5, pr:S.goal==='back'?6.0:9.0, cost:costScore, life:9.0};
- const totalW=S.w1+S.w2+S.w3+S.w4||1;
- const fs=Math.round(((dims.job*S.w1+dims.pr*S.w2+dims.cost*S.w3+dims.life*S.w4)/totalW)*10);
- window.R={costWanRMB,over,sal,salRMB,dims,fit:fs,overTxt:over<=0?'预算内，仍建议留通胀缓冲':'缺口约 '+over+' 万，需正视'};
- $('fitScore').textContent=fs;
- const g=fs>=85&&over<=0,ok=fs>=70;
- $('fitLabel').textContent=g?'高度适配':ok?'适配，个别维度留意':'需谨慎评估';
- const col=g?'var(--green)':ok?'var(--amber)':'var(--red)';
- $('fitLabel').style.color=col;$('fitScore').style.color=col;
- $('fitBar').style.width=fs+'%';$('fitBar').style.background=col;
- const v=$('verdict');
- v.className='verdict '+(g?'g':ok?'a':'r');
- v.innerHTML=g?`✅ <b>数据站在 Western 这边。</b>以您家的权重，链条上的每一环都接得上：${S.dir==='ivey'?'AEO 锁 Ivey，Ivey 通北美出口，':S.dir==='stem'?'工程/医学 Co-op 带加拿大工龄，出口硬，':'方向未定也有 2+2 与转轨空间，'}预算${over<=0?'在区间内（仍建议留通胀缓冲，别打满）':'有缺口，需正视'}。`
-  :ok?`⚠️ <b>大方向适配，一两个环节要细看。</b>${over>0?`预算缺口约 ${over} 万——重点看奖学金与成本。`:''}${S.goal==='back'?'回国路线请重点对比"海归 vs 985/211"同表数据。':''}`
-  :`🛑 <b>按您家的输入，存在明显错配。</b>${over>60?`预算缺口 ${over} 万是主因。`:'权重集中在它的弱项上——建议把关心点和 AI 深聊一轮。'}`;
-}
-function genReport(){
- go('sGen');
- const steps=['写入预算与成本模型…','校准 AEO → Ivey 链条…','匹配就业出口数据…','核对身份通道…','排版成报告…'];
- let i=0;const t=setInterval(()=>{i++;if(i<steps.length)$('genStep').textContent=steps[i];},380);
- setTimeout(()=>{clearInterval(t);buildReport();},380*steps.length+250);
-}
-function buildReport(){
- const R=window.R;
- const dirTxt={ivey:'商科',stem:'工程/医学/理科',undecided:'还没定方向'}[S.dir];
- const goalTxt={stay:'留在北美发展',back:'回国发展',either:'都可以'}[S.goal];
- const E=GRADE[S.grade].entry;
- $('repSub').textContent=`孩子现读${GRADE[S.grade].t} · 预算 ${S.budgetTxt} · ${dirTxt} · ${goalTxt} · 预计 ${E} 年入学`;
- const salTxt=S.goal==='back'?R.salRMB+' 万人民币/年':R.sal.toFixed(1)+' 万加元/年';
- const stay=S.goal!=='back';
- const ENDF={
-  ivey:['<b>商科出口（以 Ivey 为例）：</b>约 42% 进咨询、28% 进投行','<b>招生官原话（2026）：</b>"Ivey 的学生从来不担心就业，没有人找不到工作"','<b>校友托底：</b>Ivey 校友 3.6 万+、遍布 100 国——一封邮件约一次 coffee chat，最直接的指导'],
-  stem:['<b>工程出口：</b>官方实习工资表——工程类带薪实习平均年薪约 5.0–5.6 万加元，软件工程最高近 10 万；毕业前已带加拿大工龄','<b>医学/理科出口：</b>Schulich 医学院全加顶尖之一，科研与医学院申请通道完整','<b>校友托底：</b>Western 全校校友 38 万+、遍布 160 国——工程医学界同样找得到人'],
-  undecided:['<b>还没定不慌：</b>Western 12 个学院，先读一年再定方向，转专业通道成熟','<b>全校托底：</b>毕业生 6 个月内就业率 92.3%（官方 Facts & Figures）——不定方向，出口也不软','<b>校友网络：</b>全校校友 38 万+、遍布 160 国，任何方向都有人在前面']};
- const MID={
-  ivey:[
-   {step:`倒推二 · 大三（${E+2}）`,t:'进 Ivey HBA',rs:'条件',
-    l:'加拿大本科商科第一名片，案例教学与哈佛齐名——但门不是白进的。',
-    f:['<b>入场条件：</b>大一大二均分 80+ ＋ 校园领导力履历','<b>2+2 机制：</b>后两年进 Ivey，文凭由 Ivey 颁发','<b>选校关键：</b>Western 给 AEO 预录取——别的学校没有这个锁']},
-   {step:`倒推三 · ${E}–${E+1} 大一大二`,t:'BMOS ＋ AEO',rs:'',
-    l:'AEO＝Ivey 预录取。入学 Western 那天，HBA 的入场券已经攥在手里。',
-    f:['<b>机制：</b>AEO 学生只要达标即进 Ivey，无需大四再挤申请','<b>GPA 友好：</b>Western 不压分（多大/UBC 压分口碑）——80+ 门槛在这里更容易够到','<b>城市配合：</b>伦敦不大不小、安静、适合学习']}],
-  stem:[
-   {step:`倒推二 · 大三（${E+2}）`,t:'专业深化 ＋ Co-op 带薪实习',rs:'条件',
-    l:'工程和医学的硬通货是手艺和工龄——大三进专业核心课，Co-op 实习排进课表。',
-    f:['<b>工程：</b>Co-op 带薪实习写进培养方案，官方工资表平均年薪约 5.0–5.6 万加元','<b>医学方向：</b>Schulich 医学院体系，本科科研与临床见习通道完整','<b>隐性红利：</b>实习工龄同时喂给 EE 打分——身份和经验一起攒']},
-   {step:`倒推三 · ${E}–${E+1} 大一大二`,t:'对口学院打底 ＋ 攒均分',rs:'',
-    l:'第一环是选准 Western 的对口学院，把均分和先修课打牢。',
-    f:['<b>机制：</b>工程/医学/理科直接进对口学院，先修课按出口倒排','<b>GPA 友好：</b>Western 不压分（多大/UBC 压分口碑）——冲研、转专业都留有余地','<b>城市配合：</b>伦敦不大不小、安静、适合学习']}],
-  undecided:[
-   {step:`倒推二 · 大三（${E+2}）`,t:'定方向 ＋ 进入强学院',rs:'空间',
-    l:'两年探索后定方向， Western 的 2+2 与院内转轨给足容错。',
-    f:['<b>容错：</b>大一通识打底，大二按兴趣定模块，转专业通道成熟','<b>出口：</b>全校毕业生 6 个月内就业率 92.3%——不定方向不等于没出口','<b>后手：</b>商科、工程、医学三套路径都留着门，大二期末再锁']},
-   {step:`倒推三 · ${E}–${E+1} 大一大二`,t:'先进 Western，边读边定',rs:'',
-    l:'不定方向的家庭，第一环是选一个"转得动"的平台。',
-    f:['<b>平台：</b>12 个学院同校互通，比"选错学校再转学"成本低得多','<b>GPA 友好：</b>Western 不压分——探索期成绩单不难看','<b>城市配合：</b>伦敦不大不小、安静、适合学习']}]};
- const CARDS=[
-  {step:`终点 · ${E+4}+`,t:stay?'北美就业＋身份落地':'回国就业',rs:R.dims.job.toFixed(1),
-   l:stay?'终点定方向——这张卡的所有数字，就是您家孩子的出口预期。':'回国也有数：哪条路出口宽，同表对比。',
-   f:stay?[`<b>您家口径起薪预期：</b>${salTxt}`,...ENDF[S.dir],'<b>身份：</b>毕业工签 → EE → PR，通道成熟']
-        :[`<b>海归起薪口径：</b>${salTxt}`,'<b>同表对比：</b>海归 vs 985/211 vs 普通本科就业率与起薪','<b>隐性优势：</b>加拿大名校毕业生多留北美——海归供给少，回国反而稀缺','<b>校友网络：</b>国内各行业 Western 校友同样可约 coffee chat']},
-  {step:`倒推一 · 大四（${E+3}）`,t:'申研 或 全职 Offer',rs:'路径',
-   l:'两条路都提前一年准备：要读研的大三考掉标化，要就业的大三暑期实习转正。',
-   f:['<b>申研：</b>GMAT/GRE 大三考掉，成绩 5 年有效；北美研究生院认可加拿大本科招牌','<b>就业：</b>大三暑期实习是全职 offer 最大来源，校友 coffee chat 从大二就该开始约','<b>身份并行：</b>毕业工签 3 年，读研、工作都不耽误 EE 加分']},
-  ...MID[S.dir],
-  {step:'今天',t:'选不选 Western',rs:R.dims.cost.toFixed(1),
-   l:'走到这里，数据和链条都在您手上了——选不选，您定。',
-   f:[`<b>四年总投入估算：</b>${R.costWanRMB} 万人民币（已计奖学金 1 万加元）`,`<b>对照您家预算（${S.budgetTxt}）：</b>${R.overTxt}`,'<b>生活落地：</b>大统华满额送货上门、Costco 会员卡已办、中餐奶茶都在身边','<b>本站作者：</b>2026 级在读学生，正在链上走——全部数据一手实测']}
- ];
- go('sRep');
- $('repCards').innerHTML=CARDS.map((c,i)=>`
-  <div class="rep-card" id="rc${i}">
-   <div class="rep-head"><span class="dim-title"><span class="steplabel">${c.step}</span>${c.t}</span><span class="rs">${c.rs}</span></div>
-   <div class="one-line" style="font-size:13.5px;line-height:1.7;margin-top:6px;">${c.l}</div>
-   <div class="facts">${c.f.map(x=>`<div class="fact">${x}</div>`).join('')}</div>
-  </div>`).join('');
- CARDS.forEach((c,i)=>setTimeout(()=>{const el=$('rc'+i);if(el)el.classList.add('show');},250+i*330));
- const g=R.fit>=85,ok=R.fit>=70;
- setTimeout(()=>{
-  $('rFit').textContent=R.fit;
-  $('rFit').style.color=g?'var(--green)':ok?'var(--amber)':'var(--red)';
-  $('rFitL').textContent=g?'高度适配':ok?'适配，个别维度留意':'需谨慎评估';
-  const rv=$('rVerdict');rv.className='verdict '+(g?'g':ok?'a':'r');
-  rv.innerHTML=$('verdict').innerHTML;
- },250+CARDS.length*330);
-}
-function copyPrompt(){
- const p=`我家在评估加拿大 Western University 本科。孩子现读${GRADE[S.grade].t}，预计${GRADE[S.grade].entry}年入学；预算四年${S.budgetTxt}人民币；方向：${ {ivey:'商科',stem:'工程/医学/理科',undecided:'未定'}[S.dir] }；毕业希望：${ {stay:'留在北美',back:'回国',either:'都可以'}[S.goal] }。参考数据：Ivey HBA 约42%进咨询/28%进投行，起薪中位数咨询约8.5万/投行约11万加元；AEO 为 Ivey 预录取机制；入学奖学金1万加元（本站作者实录）；身份通道毕业工签→EE→PR。请分析 Western University 是否适合我们${S.dir==='ivey'?'（商科可参考 AEO→Ivey HBA 这条链）':''}，并指出我没想到的问题。`;
- navigator.clipboard.writeText(p).then(()=>alert('已复制，粘贴给 Kimi / DeepSeek / 豆包'));
-}
-calc();
+
+if(S.habit)habit(S.habit);
+goalSet(S.goalChosen?S.goal:'stay',S.goalChosen);
+go('sPain');
+
 </script>
+
+<script>
+(function(){
+ const root=document.getElementById('sL1');
+ const overview=root.querySelector('.country-overview');
+ const detail=root.querySelector('.country-detail-view');
+ const content=root.querySelector('.country-detail-content');
+ const back=root.querySelector('.country-back');
+ let trigger=null;
+ root.querySelectorAll('[data-country-view]').forEach(button=>button.addEventListener('click',()=>{
+   const template=root.querySelector('[data-country-template="'+button.dataset.countryView+'"]');
+   trigger=button;
+   content.replaceChildren(template.content.cloneNode(true));
+   overview.hidden=true;
+   detail.hidden=false;scrollWesternTop();
+   back.focus({preventScroll:true});
+ }));
+ function close(){detail.hidden=true;overview.hidden=false;scrollWesternTop();if(trigger)trigger.focus({preventScroll:true});}
+ back.addEventListener('click',close);
+ root.addEventListener('keydown',event=>{if(event.key==='Escape'&&!detail.hidden)close();});
+})();
+</script>
+
+<script>
+(function(){
+ const root=document.getElementById('sL2');
+ const overview=root.querySelector('.school-overview');
+ const detail=root.querySelector('.school-detail');
+ const content=root.querySelector('.school-detail-content');
+ const back=root.querySelector('.school-back');
+ let trigger=null;
+ root.querySelectorAll('[data-school-view]').forEach(button=>button.addEventListener('click',()=>{
+   const template=root.querySelector('[data-school-template="'+button.dataset.schoolView+'"]');
+   trigger=button;content.replaceChildren(template.content.cloneNode(true));
+   overview.hidden=true;detail.hidden=false;scrollWesternTop();back.focus({preventScroll:true});
+   if(button.dataset.schoolView==='video'){
+     const video=content.querySelector('video');
+     if(video&&typeof video.play==='function')video.play().catch(()=>{});
+   }
+ }));
+ function close(){content.querySelectorAll('video').forEach(video=>video.pause());detail.hidden=true;overview.hidden=false;scrollWesternTop();if(trigger)trigger.focus({preventScroll:true});}
+ back.addEventListener('click',close);
+ root.addEventListener('keydown',event=>{if(event.key==='Escape'&&!detail.hidden)close();});
+})();
+</script>
+
+<script>
+(function(){
+ const root=document.getElementById('sL3');
+ const overview=root.querySelector('.school-overview');
+ const detail=root.querySelector('.school-detail');
+ const content=root.querySelector('.school-detail-content');
+ const back=root.querySelector('.school-back');
+ const next=root.querySelector('.job-next');
+ let trigger=null;
+ const continueButton=root.querySelector('.job-continue');
+ continueButton.addEventListener('click',()=>go('sL4'));
+ root.querySelectorAll('[data-table]').forEach(button=>button.addEventListener('click',()=>{
+  root.querySelectorAll('[data-table]').forEach(tab=>tab.setAttribute('aria-selected',String(tab===button)));
+  root.querySelectorAll('[data-table-panel]').forEach(panel=>panel.hidden=panel.dataset.tablePanel!==button.dataset.table);
+ }));
+ root.querySelectorAll('[data-job-view]').forEach(button=>button.addEventListener('click',()=>{
+   if(button.dataset.goal){goalSet(button.dataset.goal);
+    root.querySelectorAll('[data-goal]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    continueButton.disabled=false;
+    return;
+   }
+   const template=root.querySelector('[data-job-template="'+button.dataset.jobView+'"]');
+   trigger=button;content.replaceChildren(template.content.cloneNode(true));
+   next.hidden=!button.dataset.goal;
+   if(button.dataset.goal){goalSet(button.dataset.goal);root.querySelectorAll('[data-goal]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));}
+   overview.hidden=true;detail.hidden=false;scrollWesternTop();back.focus({preventScroll:true});
+ }));
+ function close(){detail.hidden=true;overview.hidden=false;scrollWesternTop();if(trigger)trigger.focus({preventScroll:true});}
+ back.addEventListener('click',close);
+ root.addEventListener('keydown',event=>{if(event.key==='Escape'&&!detail.hidden)close();});
+})();
+</script>
+
+<script>
+(function(){
+ const root=document.getElementById('sL5');
+ const overview=root.querySelector('.options-overview');
+ const detail=root.querySelector('.options-detail');
+ const content=root.querySelector('.options-detail-content');
+ const back=root.querySelector('.options-back');
+ let trigger=null;
+ const goals=root.querySelectorAll('[data-goal]');
+ function showGoal(key){goals.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===key)));}
+ if(typeof S!=='undefined')showGoal(S.goal);
+ goals.forEach(button=>button.addEventListener('click',()=>{
+  showGoal(button.dataset.goal);
+  if(typeof goalSet==='function')goalSet(button.dataset.goal);
+ }));
+ root.querySelectorAll('[data-option],[data-option-detail]').forEach(button=>button.addEventListener('click',()=>{
+  trigger=button;
+  const key=button.dataset.option||button.dataset.optionDetail;
+  const template=root.querySelector('[data-option-template="'+key+'"]');
+  content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();back.focus({preventScroll:true});
+ }));
+ function close(){detail.hidden=true;overview.hidden=false;scrollWesternTop();if(trigger)trigger.focus({preventScroll:true});}
+ back.addEventListener('click',close);
+ root.addEventListener('keydown',event=>{if(event.key==='Escape'&&!detail.hidden)close();});
+})();
+</script>
+<script>
+(()=>{const root=document.getElementById('sL6');const overview=root.querySelector('.cost-overview'),detail=root.querySelector('.cost-detail'),content=root.querySelector('.cost-detail-content');root.querySelectorAll('[data-cost]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-cost-panel="'+button.dataset.cost+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();}));root.querySelector('.cost-back').addEventListener('click',()=>{detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
+</script>
+<script>
+(()=>{const root=document.getElementById('sL7');const overview=root.querySelector('.safety-overview'),detail=root.querySelector('.safety-detail'),content=root.querySelector('.safety-detail-content');root.querySelectorAll('[data-safety]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-safety-panel="'+button.dataset.safety+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();}));root.querySelector('.safety-back').addEventListener('click',()=>{detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
+</script>
+<script>
+(()=>{const root=document.getElementById('sL8');const overview=root.querySelector('.food-overview'),detail=root.querySelector('.food-detail'),content=root.querySelector('.food-detail-content');root.querySelectorAll('[data-food]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-food-panel="'+button.dataset.food+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();}));root.querySelector('.food-back').addEventListener('click',()=>{detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
+</script>
+<script>
+(()=>{const root=document.getElementById('sL9');const overview=root.querySelector('.study-overview'),detail=root.querySelector('.study-detail'),content=root.querySelector('.study-detail-content');root.querySelectorAll('[data-study]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-study-panel="'+button.dataset.study+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();if(button.dataset.study==='video'){const video=content.querySelector('video');if(video&&typeof video.play==='function')video.play().catch(()=>{});}}));root.querySelector('.study-back').addEventListener('click',()=>{content.querySelectorAll('video').forEach(video=>video.pause());detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
+</script>
+<script>
+(()=>{const root=document.getElementById('sL10');const overview=root.querySelector('.arrival-overview'),detail=root.querySelector('.arrival-detail'),content=root.querySelector('.arrival-detail-content');root.querySelectorAll('[data-arrival]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-arrival-panel="'+button.dataset.arrival+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();}));root.querySelector('.arrival-back').addEventListener('click',()=>{detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
+</script>
+<script>
+(()=>{
+const root=document.getElementById('western-calculator-review'),form=root.querySelector('form');
+let goal=typeof S!=='undefined'?S.goal:'stay',latestPrompt='';const fx=4.72;
+const referenceContext="就业参考：Ivey HBA 2024 届已接受全职工作的报告样本中，咨询行业19%，金融服务行业34%；毕业3个月内获offer为89%；平均总薪酬84,575加元，平均底薪80,936加元，总薪酬中位数75,000加元，薪酬报告比例71%。出处：https://www.ivey.uwo.ca/media/zk1brvui/iveyhba-permanent-summer-employment-report-2024-2025.pdf\n商学院对比（2024届）：多伦多大学Rotman求职毕业生9个月内就业93%，平均年薪70,000加元；英属哥伦比亚大学Sauder毕业6个月内就业79%，薪酬中位数62,200加元。各校统计时间和薪酬口径不同。Rotman出处：https://rotmancommerce.utoronto.ca/wp-content/uploads/2025/10/RC_Employment-Report_2024-25_web.pdf ；Sauder出处：https://mybcom.sauder.ubc.ca/file/6472/download\n人民币参考换算按1加元约4.72元（加拿大央行2026-09-29汇率取倒数并四舍五入），会随汇率变动。汇率出处：https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/\n回国参考：2024年海归优先岗位平均招聘薪酬15,440元/月；2024年第三季度38城企业平均招聘薪酬10,058元/月；2023届国内本科毕业生毕业半年后平均收入6,050元/月。前两项是岗位招聘薪酬，后一项是毕业生收入，不能据此直接计算留学收入增幅。出处：智联招聘《2024中国海归就业调查报告》《2024年第三季度中国企业招聘薪酬报告》、麦可思2024版就业报告。链接：https://hulianhutongshequ.cn/upload/tank/report/2025/202502/3/9e69682a8e6b449b80b918a24ebdb5cb.pdf ；https://hulianhutongshequ.cn/upload/tank/report/2024/202410/3/f3ea7380913444cba03e319011140d2c.pdf ；https://mycos.com/index.php/Index/response_info/nav/3/id/20250810.html\n校友网络参考：Ivey官网列36,000+校友、覆盖100国；纽约地区分会列600+校友、超过半数每年参加至少一次活动（两页均未注明统计年份，2026年9月查阅）。Western Facts & Figures 2024–2025页面列393,000+校友、160国，页面更新于2025年9月。网络人数不等同于实际获得帮助的概率；页面关于互助文化的描述为在校生分享。出处：https://www.ivey.uwo.ca/alumni/ ；https://www.ivey.uwo.ca/alumni/your-ivey-network/chapters/new-york/ ；https://www.uwo.ca/about/whoweare/facts.html\n教学地点与香港网络：Ivey在加拿大安大略省伦敦市、多伦多和中国香港设有校区或教学中心；HBA本科在伦敦市，香港目前主要开展高管教育。香港分会官网列600+校友，来自加拿大及香港课程；页面未注明统计年份，2026年9月查阅。出处：https://www.ivey.uwo.ca/about/campuses/ ；https://www.ivey.uwo.ca/alumni/your-ivey-network/chapters/hong-kong/\n毕业后路径参考（2026年9月查阅，未来申请须重新核对）：美国OPT通常12个月，符合条件的STEM可延长24个月；英国毕业生签在2026年底前申请为2年，2027年起申请为18个月；加拿大PGWP符合条件最长3年；澳大利亚本科485常规2年；中国香港IANG符合条件首次24个月；新加坡符合条件的当地院校毕业生求职LTVP为1年，不能直接作为工作授权；日本继续求职通常6个月加一次续期，合计1年，特定地方政府支持项目另有安排。这些主要是各地符合条件的当地毕业生路径，不能理解为Western毕业生可直接申请所有地区的毕业生安排，也不能把工作许可当作永居保证。\n政策出处：https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students ；https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-extension-for-stem-students-stem-opt ；https://www.gov.uk/graduate-visa ；https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/about.html ；https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html ；https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html ；https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485/post-higher-education-work ；https://www.immd.gov.hk/hks/services/visas/IANG.html ；https://ask.gov.sg/ica/questions/clos83fvp01ht5k0w2hqby2ji ；https://www.moj.go.jp/isa/immigration/faq/kanri_qa.html\n成本参考：继续以 Ivey 常规四年路线为例，前两年按原专业收费，后两年按 HBA 收费。Western 2026–27收费表标注draft（草案，可调整）；文科、社科、一般理科学费47,493加元/年，MOS为60,105；Ivey HBA两年各70,040加元/年，不含附加费和材料费。按当前费率与规划假设示算四年学费235,066–260,290加元；生活按每年24,000–30,000加元、全年12个月假设；四年其他费用假设20,000–30,000加元。总计约166–194万元人民币；约200万元是规划预算而非官方报价或费用上限，未来年费和汇率须更新。本站作者1万加元入学奖学金属于个人经历，不代表每位学生可获得。多伦多大学Rotman2026–27新生大一66,110加元，2027–28该届别高年级78,160，第三、四年暂沿用此费率估算；UBC Sauder新生30学分66,678.30，均只列学费。出处：https://registrar.uwo.ca/student_finances/fees_refunds/2026-27-UGRD-Fee-Schedule---FT-International1.pdf ；https://www.ivey.uwo.ca/hba/admissions/tuition-finances/tuition-fees/ ；https://planningandbudget.utoronto.ca/wp-content/uploads/2026/04/2026-27-Tuition-Fee-Report_FINAL.pdf ；https://students.ubc.ca/finances/tuition-fees/undergraduate-tuition-fees/\n三校四年总成本示算（Rotman采用2026入学届别，大一2026–27及高年级2027–28已公布费率，第三、四年暂沿用高年级费率）：Western Ivey约35.11–41.03万加元（166–194万人民币）；多伦多大学Rotman约42.86–46.26万加元（202–218万人民币）；UBC Sauder约40.27–43.67万加元（190–206万人民币）。均按现行学费、每年12个月生活及其他费用假设计算，不含未来涨价，不扣奖学金或实习收入。Rotman学费示算为66,110+3×78,160，Sauder为4×66,678.30，未来费率不是锁定报价。生活年预算伦敦市24,000–30,000、多伦多27,000–33,000、温哥华29,000–35,000加元；其他年费用均5,000–7,500，皆为规划假设。CMHC2025都会区两居室专供出租公寓全租户平均月租伦敦1,651、多伦多地区2,034、温哥华2,363，仅作预算参考，不代表新租约报价。出处：https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-centres ；https://international.uwo.ca/studentservices/student_life/money_and_taxes/making_a_budget.html ；https://www.studentlife.utoronto.ca/task/living-costs-in-toronto/ ；https://you.ubc.ca/financial-planning/cost/\n实习成本：部分长期Co-op（带薪实习）会延长毕业时间；Ivey官网目前同时列HBA暑期实习（5–8月）及长期实习（5月开始12或16个月，9月开始8或12个月）；常规四年预算不含额外延长期，选择长期实习须向学校核对学业安排、毕业时间与费用。先按无实习收入预算，实际获得后再扣。出处：https://experience.uwo.ca/students/workexperience.html ；https://www.ivey.uwo.ca/recruiter/meet-our-talent/hire-an-intern/ ；https://www.ivey.uwo.ca/hba/program-details/program-road-map/\n安全参考：2026年全球和平指数（IEP）在163个国家和地区中，加拿大排第14，美国第134。该指数综合社会安全、国内外冲突及军事化23项指标，是独立机构研究，不是政府发布的留学生安全排名，也不等于校园犯罪率。来源：https://www.visionofhumanity.org/wp-content/uploads/2026/06/Global-Peace-Index-2026-A3-map-poster.pdf ；https://www.economicsandpeace.org/global-peace-index/ 。2025年伦敦都会区总体CSI为66.0，加拿大全国75.0；伦敦较2024年上升约8%。这是总体指数，不是暴力指数、伦敦市单独数据或校园犯罪率。来源：https://www150.statcan.gc.ca/n1/daily-quotidien/260722/dq260722a-eng.pdf 。Western校园特别警员24/7服务，非紧急519-661-3300，紧急911；Foot Patrol免费步行陪同，服务日期与时段按官网最新通知，519-661-3650；蓝色紧急电话直连校园安全中心。来源：https://www.uwo.ca/constable/index.html ；https://www.uwo.ca/footpatrol/ ；https://www.uwo.ca/constable/get-help-now/safe-campus-at-night.html 。城市较小或本地居民较多不能作为安全保证；须结合住处、通勤路线及夜间安排评估。\n生活参考：Western主校区为符合资格且按时完成问卷、预付款的高中直接升入大一新生保障宿舍名额；须在5月中旬前获全日制大一录取并满足官网其他资格，Huron和King’s学生不适用，楼栋按学校流程分配。8栋新生宿舍设餐厅，住在这些楼的学生可在营业时间内楼内就餐。新生宿舍餐饮计划通常为必选，Lambton Hall例外；按消费扣余额，不是无限量包餐。官方出处：https://residence.uwo.ca/applying/key_steps ；https://residence.uwo.ca/applying/important_dates_and_deadlines ；https://residence.uwo.ca/dining （2026年10月6日查阅）。IKEA London White Oaks 位于 White Oaks 商场，部分商品可现场购买带走，大件家具可订购配送；库存、配送费与到货时间以商品和地址为准。出处：https://www.ikea.com/ca/en/stores/london/ （2026年10月6日查阅）。伦敦有大统华门店，配送范围、免配送费门槛及其他费用按住址和当次结账核对；官网满59加元免快速配送费活动列有效期至2026-12-31，不等于所有服务费用全免。Costco加拿大Gold Star会员年费65加元另税，是否省钱取决于采购量、交通、储存及损耗；本站作者已办卡为个人经历。Chatime位于Western Weldon Library，营业时间以校园餐饮官网为准，不能理解为通宵营业；CoCo伦敦分店以品牌目录核对。中餐生活场景为在校生分享。来源：https://www.tntsupermarket.com/store-location/ ；https://www.tntsupermarket.com/chs/activity/59-free-delivery ；https://www.tntsupermarket.com/how-it-works ；https://www.costco.ca/f/-/membership-conditions-regulations ；https://food.uwo.ca/chatime ；https://food.uwo.ca/find-food ；https://www.cocofreshtea.ca/cn/locations/\n学习环境参考：伦敦市2021年人口普查422,324人，约42.2万，采用市区口径；Western 2024–2025年合计学生42,978人（含Huron、King’s附属学院），约4.3万，1878年建校。多伦多至伦敦开车约2小时，取决于交通、天气和出发地点。出处：https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000301 ；https://www.uwo.ca/about/whoweare/facts.html ；https://international.uwo.ca/studentservices/new_students/how_to_get_here.html\n本站作者案例当前规划（个人路线，不是家庭通用结果）：本站作者已选择Western BMOS，并获Western Ivey商学院AEO有条件预录取资格。目标为北美就业，发展商业管理×计算机（CS）×AI的复合能力，保留加拿大长期发展及工作后评估MBA的选择。大一大二优先准备HBA升入条件，在学业负担允许时补充编程、数据分析、AI应用及项目；满足条件并获录取后，大三进入HBA，准备岗位面试、校友交流和暑期实习；大四主攻全职求职，按岗位需要比较相关硕士；毕业后争取加拿大工作经验，分别核实工作许可和长期身份条件，再评估MBA价值。这些是规划，不是已实现成果；计算机与AI为能力准备方向，不代表已确定CS双学位。项目结构与实习参考：https://www.ivey.uwo.ca/hba/program-details/program-road-map/ ；https://www.ivey.uwo.ca/recruiter/meet-our-talent/hire-an-intern/";
+const field=name=>form.elements.namedItem(name);
+const stored=typeof S!=='undefined'?S.calculator:{};
+const storedNames=['grade','direction','duration','budget','award','coopLiving','next','focus','academic','life','route'];
+for(const name of storedNames){
+ const element=field(name),saved=stored[name];if(saved===undefined)continue;
+ if(element.tagName==='SELECT'){if(Array.from(element.options).some(option=>option.value===String(saved)))element.value=String(saved);}
+ else if(String(saved).trim()!==''&&Number.isFinite(Number(saved))&&Number(saved)>=Number(element.min)&&Number(saved)<=Number(element.max))element.value=String(saved);
+}
+function remember(){if(typeof S==='undefined')return;S.calculator=Object.fromEntries(storedNames.map(name=>[name,field(name).value]));saveWestern();}
+form.addEventListener('input',remember);form.addEventListener('change',remember);
+
+const show=view=>go({form:'sCalc',result:'sResult',rules:'sRules'}[view]);
+function updateRoute(reset=true){
+ const next=field('next').value;
+ const copy=next==='study'?['对于继续深造的安排，您家能接受哪种情况？','已明确深造方向、核实要求，愿意准备','想继续深造，具体要求还没确认','家庭要求与这条深造路线明确冲突']:next==='back'||goal==='back'?['对于回国发展的安排，您家能接受哪种情况？','已明确回国方向、核实岗位要求，愿意准备','准备回国，目标岗位与要求还没确认','家庭要求与这条回国路线明确冲突']:next==='job'?['对于留在海外工作的安排，您家能接受哪种情况？','已明确工作方向、核实要求，愿意准备','希望海外工作，具体条件还没确认','家庭要求与这条工作路线明确冲突']:['对于毕业后的安排，您家能接受哪种情况？','至少一条路线已明确、核实要求，愿意准备','方向尚未确定，需要进一步了解','家庭要求与可选路线明确冲突'];
+ root.querySelector('[data-route-question]').textContent='⑪ '+copy[0];
+ ['100','50','0'].forEach((value,index)=>field('route').querySelector('option[value="'+value+'"]').textContent=value==='50'?'尚未确定':copy[index+1]);
+ if(reset)field('route').value='50';
+}
+function updateGoal(){root.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===goal)));}
+const directionLabels={business:'商科与管理',engineering:'工程',science:'理科与计算机',humanities:'人文与社会科学',health:'健康与医学相关',arts:'艺术与音乐',unknown:'专业尚未确定'};
+const baseTuition=3*47493+46597;
+const tuition={business:[2*47493+2*70040,2*60105+2*70040],engineering:[4*64310,4*64310],science:[baseTuition,3*55167+46597],humanities:[baseTuition,baseTuition],health:[baseTuition,baseTuition],arts:[baseTuition,baseTuition],unknown:[baseTuition,2*60105+2*70040]};
+function costScenarios(input){
+ const fees=tuition[input.direction],toWan=value=>value*fx/10000;
+ const regular={key:'regular',label:'常规本科参照 · 4 年',low:toWan(fees[0]+96000+20000),high:toWan(fees[1]+120000+30000)};
+ const coopFee=input.direction==='engineering'?[1775,2325]:input.direction==='science'?[1500,2000]:[2000,2000];
+ const coop={key:'coop',label:'Co-op 延长毕业场景 · 暂按 5 年',low:regular.low+toWan(input.coopLiving+coopFee[0]),high:regular.high+toWan(input.coopLiving+coopFee[1])};
+ return input.duration==='regular'?[regular]:input.duration==='coop'?[coop]:[regular,coop];
+}
+function evaluate(input,scenario){
+ const funds=input.budget+input.award*fx/10000,low=scenario.low,high=scenario.high;
+ const budgetScore=funds<low?Math.max(0,60*(funds/low)**2):Math.min(100,60+(funds-low)/(high-low)*40);
+ const scores={budget:budgetScore,academic:input.direction==='unknown'?Math.min(input.academic,50):input.academic,route:input.route,life:input.life};
+ const weights=Object.fromEntries(Object.keys(scores).map(key=>[key,['balanced','unknown'].includes(input.focus)?0.25:key===input.focus?0.5:1/6]));
+ const weighted=Object.keys(scores).reduce((sum,key)=>sum+scores[key]*weights[key],0);
+ let cap=budgetScore;
+ const hardStop=['academic','route','life'].some(key=>scores[key]===0);
+ if(hardStop)cap=Math.min(cap,39);
+ return {funds,scores,weights,weighted,cap,hardStop,score:Math.round(Math.min(weighted,cap)),scenario};
+}
+function makePrompt(input,results,actions){
+ const text=name=>field(name).selectedOptions[0].textContent;
+ const rows=results.map(result=>{
+  const parts=Object.keys(result.scores).map(key=>({budget:'预算',academic:'专业方向',route:'毕业后的选择空间',life:'生活适应'}[key])+': '+result.scores[key].toFixed(1)+'分，权重'+(result.weights[key]*100).toFixed(2)+'%').join('；');
+  return result.scenario.label+'：费用 '+result.scenario.low.toFixed(1)+'–'+result.scenario.high.toFixed(1)+' 万元人民币；匹配参考分 '+result.score+'；加权分 '+result.weighted.toFixed(2)+'；适用上限 '+result.cap.toFixed(1)+'。\n分项：'+parts;
+ }).join('\n');
+ return `请帮助我用数据评估 Western University（韦仕敦大学）本科是否适合我家，并比较其他可行选择。
+【家庭条件】
+选校最初关注：${typeof S!=='undefined'?({country:'国家',rank:'排名和名气',city:'城市',exit:'毕业后的出口',none:'此前还没想过'}[S.habit]||'尚未选择'):'尚未选择'}（用于分析背景，不参与匹配计分）。
+孩子学习阶段：${text('grade')}。实际入学年份待确认，学习阶段不参与计分。
+专业大类：${directionLabels[input.direction]}。
+预计就读安排：${text('duration')}。${input.duration==='regular'?'本次不计延长毕业的额外一年生活费。':'延长毕业额外一年生活预算：'+input.coopLiving+'加元（规划假设，须按实际城市和时长核实）。'}
+本科全过程家庭自有预算：${input.budget}万元人民币，不含奖学金。
+已确认奖学金：${input.award}加元，按参考汇率1加元约4.72元自动折算；可用资金共${results[0].funds.toFixed(2)}万元人民币。未确认奖学金与实习收入不计入。
+毕业发展地点：${{stay:'希望留加拿大',back:'希望回国',either:'两边都可接受，看实际机会'}[goal]}；本科毕业后优先：${text('next')}。
+家庭最看重：${text('focus')}。
+孩子对专业方向：${text('academic')}；对伦敦大学城生活：${text('life')}；家庭对毕业路线：${text('route')}。
+【计算结果】
+${rows}
+当前优先事项：${actions.join(' ')}
+【计分方法与边界】
+这是本站提出的家庭规划参考规则，不是官方评分、学校排名、录取或就业概率，也未经结果预测验证。
+费用低端为L，高端为H。预算分：资金低于L时为60×(资金/L)²；在L至H之间从60线性增加到100；达到H为100。
+专业方向和生活适应按家庭回答计100/50/0分（已了解并接受/未确认/明确不接受）；专业未定时方向分最高暂取50。毕业安排按100/50/0分（方向明确、已核实要求且愿意准备/方向或要求未确认/家庭要求与路线明确冲突）。回国本身不扣分。100分表示当前条件匹配，不保证录取、就业或身份结果；分项得分×权重＝对总分的贡献。各项显示值经四舍五入，最终分按未舍入值计算。
+关注点尚未确定或同样看重时各项25%；最看重的一项50%，其余三项各1/6。
+总分上限为预算分，随可用资金连续变化；资金为0时总分为0。任何明确不接受的关键项还使总分上限39。最终取加权分与所有适用上限中较小者，四舍五入。
+【费用假设】
+采用2026–2027相应专业和年级的当前学费示算，非未来锁定报价。常规参照为四年学业，每年生活费用假设24,000–30,000加元、其他费用5,000–7,500加元；长期实习另外计生活期和项目费，不直接加一年正常学费。理科Co-op项目费12–16个月参考1,500–2,000加元，工程1,775–2,325加元；其他大类暂预留2,000加元为假设，须核实具体项目是否提供长期Co-op。商科费用区间包含BMOS常规四年（当前MOS学费60,105×4）与前两年不同专业转入Ivey的示例，并非要求选择Ivey；确定项目后按实际费率更新。护理、临床医学、牙医、双学位与其他特殊学制不属于这些常规参照。尚未确定专业或路线的结果属于暂估。
+【请重点回答】
+1. 基于我家的预算、孩子意愿、专业方向和毕业终点，哪些条件匹配，哪些存在缺口？不要为了推荐Western而提高评价。
+2. 核对本人入学届别对应的专业学制、收费、录取与升入要求、Co-op安排。未来费用和政策尚不能确定的地方请明确标出。
+3. 工作优先与深造优先分别需要准备什么？海外发展与回国发展分别有哪些条件？区分工作许可与长期身份，不把历史就业薪酬当作个人保证。
+4. 给出下一步可以执行的核实清单；信息不足时提出最关键的补充问题。预算不足时，请比较能负担的路线。
+请区分官方事实、预算假设、家庭自述和个人案例，提供来源、年份和统计口径。按专业使用对应数据，不能把Ivey的商科数据套给其他专业。请独立检查本站计分规则是否合理。
+【站内参考资料与出处】
+${referenceContext}`;
+}
+const updateCoop=()=>{const needed=field('duration').value!=='regular';root.querySelector('[data-coop-input]').hidden=!needed;field('coopLiving').required=needed;field('coopLiving').disabled=!needed;};
+field('duration').addEventListener('change',updateCoop);updateCoop();
+function updateAcademic(reset=true){
+ const unknown=field('direction').value==='unknown';
+ field('academic').disabled=unknown;
+ root.querySelector('[data-academic-question]').textContent=unknown?'⑨ 专业尚未确定，意愿待评估':'⑨ 孩子对所选专业方向';
+ if(reset||unknown)field('academic').value='50';
+}
+field('direction').addEventListener('change',()=>updateAcademic());updateAcademic(false);
+root.querySelectorAll('[data-goal]').forEach(button=>button.addEventListener('click',()=>{
+ if(goal===button.dataset.goal)return;
+ goal=button.dataset.goal;
+ if(goal==='back'&&field('next').value==='job')field('next').value='back';
+ if(goal==='stay'&&field('next').value==='back')field('next').value='job';
+ updateGoal();updateRoute();if(typeof goalSet==='function')goalSet(goal);remember();
+}));
+field('next').addEventListener('change',()=>{if(field('next').value==='back')goal='back';if(field('next').value==='job')goal='stay';updateGoal();updateRoute();if(['back','job'].includes(field('next').value)&&typeof goalSet==='function')goalSet(goal);remember();});
+root.syncWesternGoal=key=>{if(goal===key)return;goal=key;if(goal==='back'&&field('next').value==='job')field('next').value='back';if(goal==='stay'&&field('next').value==='back')field('next').value='job';updateGoal();updateRoute();remember();};
+updateGoal();updateRoute(false);
+form.addEventListener('submit',event=>{
+ event.preventDefault();if(!form.reportValidity())return;remember();
+ const input={budget:Number(field('budget').value),award:Number(field('award').value),coopLiving:field('duration').value==='regular'?0:Number(field('coopLiving').value),direction:field('direction').value,duration:field('duration').value,academic:Number(field('academic').value),route:Number(field('route').value),life:Number(field('life').value),focus:field('focus').value};
+ const results=costScenarios(input).map(scenario=>evaluate(input,scenario)),result=results[results.length-1],scenario=result.scenario;
+ const scoreLow=Math.min(...results.map(item=>item.score)),scoreHigh=Math.max(...results.map(item=>item.score));
+ const q=selector=>root.querySelector(selector),money=value=>value.toFixed(1)+' 万人民币';
+ const goalText={stay:'留加拿大',back:'回国',either:'两边保留选择'}[goal],nextText={job:'海外工作优先',back:'回国发展优先',study:'深造优先',unknown:'毕业安排待定'}[field('next').value];
+ q('[data-summary]').textContent=directionLabels[input.direction]+' · '+goalText+' · '+nextText+' · '+field('grade').selectedOptions[0].textContent;
+ q('[data-score]').textContent=scoreLow===scoreHigh?scoreLow:scoreLow+'–'+scoreHigh;
+ q('[data-verdict]').textContent=results.length>1&&result.funds>=results[0].scenario.low&&result.funds<scenario.low?'延长毕业场景预算有缺口':results.some(item=>item.funds<item.scenario.low)?'预算存在关键缺口':scoreLow>=80?'已回答条件较匹配':scoreLow>=60?'条件部分匹配':scoreLow>=40?'存在关键缺口':'当前条件不匹配';
+ q('[data-cost]').textContent=results.length>1?'见下方两种场景':scenario.low.toFixed(1)+'–'+scenario.high.toFixed(1)+' 万人民币';
+ q('[data-funds]').textContent=money(result.funds);
+ q('[data-budget-reason]').textContent=result.funds<scenario.low?'按'+(scenario.key==='coop'?'Co-op 延长毕业场景':'常规参照')+'，距参考低端仍差 '+(scenario.low-result.funds).toFixed(1)+' 万。':result.funds<scenario.high?'资金可覆盖参考低端，距高端仍差 '+(scenario.high-result.funds).toFixed(1)+' 万。':'资金已覆盖当前参考高端，未来涨价与个人额外开支还需留余量。';
+ const scope=[];
+ scope.push('奖学金 '+input.award.toLocaleString('zh-CN')+' 加元，已自动折算；实习收入默认 0。');
+ if(input.focus==='unknown')scope.push('关注点尚未确定，暂按四项各 25% 计算。');
+ if(input.direction==='unknown')scope.push('专业未定，费用为常见方向宽区间，分数为暂估。');
+ if(input.direction==='business')scope.push('商科费用区间涵盖 BMOS 常规四年与前两年不同专业转入 Ivey 的示例，并非要求选择 Ivey；确定项目后按实际费率更新。');
+ if(input.direction==='health')scope.push('按四年健康/医学科学本科参照，护理及临床医学等须另核实。');
+ if(input.duration!=='regular')scope.push('延长毕业场景按额外一年生活费 '+input.coopLiving.toLocaleString('zh-CN')+' 加元示算；须核实项目与学制。');
+ q('[data-cost-scope]').textContent=scope.join(' ');
+ const scenarios=q('[data-scenarios]');scenarios.replaceChildren();scenarios.hidden=results.length===1;
+ if(results.length>1)results.forEach(item=>{const line=document.createElement('p');const label=document.createElement('b');label.textContent=item.scenario.label;const text=document.createElement('span');text.textContent=item.scenario.low.toFixed(1)+'–'+item.scenario.high.toFixed(1)+' 万 · '+item.score+' 分';line.append(label,text);scenarios.append(line);});
+ const labels={life:'生活适应',budget:'成本与预算',academic:'专业与职业方向',route:'毕业后的选择空间'};
+ const tbody=q('[data-breakdown]');tbody.replaceChildren();Object.keys(labels).forEach(key=>{const tr=document.createElement('tr');[labels[key],result.scores[key].toFixed(1),(result.weights[key]*100).toFixed(1)+'%',(result.scores[key]*result.weights[key]).toFixed(1)].forEach(text=>{const td=document.createElement('td');td.textContent=text;tr.append(td);});tbody.append(tr);});
+ q('[data-formula]').textContent=(results.length>1?'上表按 Co-op 延长毕业场景：':'')+'加权分 '+result.weighted.toFixed(1)+'；适用上限 '+result.cap.toFixed(1)+'；取较小值并四舍五入。各项显示值已舍入，总分按未舍入值计算。';
+ const actions=[];
+ if(results.length>1&&result.funds>=results[0].scenario.low&&result.funds<scenario.low)actions.push('资金能覆盖常规四年参考低端，但延长毕业场景存在缺口；先确认是否延长学制。');
+ else if(result.funds<scenario.low)actions.push('先落实资金缺口；当前不能直接按'+(scenario.key==='coop'?'Co-op 延长毕业场景':'这条路线')+'推进。');
+ else if(result.funds<scenario.high)actions.push('先核实生活与其他开支能否落在预算低端。');
+ if(input.academic===0)actions.push('孩子明确不愿走所选专业方向，应重新比较专业与学校。');else if(input.academic===50||input.direction==='unknown')actions.push('先确认孩子的专业兴趣与具体项目要求。');
+ if(input.route===0)actions.push('毕业路线目前不能接受，需要重审终点与路径。');else if(input.route===50)actions.push(field('next').value==='study'?'核实目标硕士或博士项目的申请要求。':goal==='back'?'核实课程与回国目标岗位的对应关系。':'核实毕业路线的具体条件。');
+ if(input.life===0)actions.push('孩子不接受伦敦生活，应比较其他城市与学校。');else if(input.life===50)actions.push('和孩子确认大学城生活是否适合。');
+ if(field('next').value==='back')actions.push('回国优先：核实目标岗位、国内实习安排与招聘时间。');
+ if(field('next').value==='study')actions.push('深造优先：另核实目标项目要求与本科之后的预算。');
+ if(!actions.length)actions.push('已回答条件较齐全；下一步核对具体录取、项目费用及毕业路线。');
+ q('[data-next-action]').textContent=actions.join(' ');
+ latestPrompt=makePrompt(input,results,actions);
+ q('[data-copy-text]').value=latestPrompt;q('[data-copy-fallback]').hidden=true;q('[data-copy-status]').textContent='';
+ show('result');
+});
+root.querySelector('[data-return]').addEventListener('click',()=>show('form'));
+root.querySelector('[data-open-rules]').addEventListener('click',()=>show('rules'));
+root.querySelector('[data-close-rules]').addEventListener('click',()=>show('result'));
+root.querySelector('[data-copy]').addEventListener('click',async()=>{
+ const status=root.querySelector('[data-copy-status]');
+ try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(latestPrompt);status.textContent='已复制。打开豆包、千问、Kimi 或 DeepSeek，粘贴并提问。';}
+ catch{const fallback=root.querySelector('[data-copy-fallback]'),area=root.querySelector('[data-copy-text]');fallback.hidden=false;area.focus();area.select();let copied=false;try{copied=document.execCommand('copy');}catch{}status.textContent=copied?'已复制，可粘贴给豆包、千问、Kimi 或 DeepSeek。':'未能自动复制，请长按下方文字选择复制。';if(copied)fallback.hidden=true;}
+});
+})();
+
+</script>
+
+<script>
+// Fold source paragraphs and standalone reference links, including cloned templates.
+(()=>{
+ function fold(root){
+  root.querySelectorAll('template').forEach(t=>fold(t.content));
+  const candidates=[...root.querySelectorAll('p,a')].filter(e=>{
+   if(e.closest('.western-source-fold'))return false;
+   const text=e.textContent.trim();
+   if(e.tagName==='P'){
+    const note=e.matches('.school-note,.alumni-source-note,.destination-date,.cost-note,.arrival-note,.options-note,.safety-note,.study-note,.food-note') || (e.matches('.decision-footnote')&&(text.startsWith('终点决定路线分析')||text.startsWith('分项得分')));
+    return note||/^(出处|来源|官方出处|服务出处|官网数据)[：:]/.test(text)||((e.classList.contains('school-source')||e.classList.contains('study-video-source'))&&text.includes('来源：'));
+   }
+   return /^https?:/.test(e.getAttribute('href')||'')&&!e.className&&!e.closest('p,li,table,.alumni-stat');
+  });
+  const selected=new Set(candidates);
+  candidates.forEach(e=>{
+   if(!e.parentNode||e.closest('.western-source-fold'))return;
+   const details=document.createElement('details');details.className='western-source-fold';
+   const summary=document.createElement('summary');summary.textContent='查看备注与出处';
+   const content=document.createElement('div');content.className='western-source-content';
+   e.before(details);details.append(summary,content);
+   let node=e;
+   while(node&&selected.has(node)){
+    const next=node.nextElementSibling;content.append(node);node=next;
+   }
+  });
+ }
+ fold(document);
+})();
+</script>
+
 </body>
 </html>
