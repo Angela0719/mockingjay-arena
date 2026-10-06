@@ -579,6 +579,7 @@ button{touch-action:manipulation;}
 #sL5 .options-page{padding:0;}
 #sL1 .destination-bridge{margin:9px 0;font-size:12px;line-height:1.7;color:#443366;}#sL1 .destination-bridge b{color:#3b1c64;}
 </style>
+<link rel="stylesheet" href="player.css?v=20261007-2">
 <style>
 #sL6{color-scheme:light dark;--cost-bg:light-dark(#faf8f5,#211d27);--cost-ink:light-dark(#302139,#f2eaf5);--cost-muted:light-dark(#635a68,#d0c4d5);--cost-line:light-dark(#dfd7e3,#584b61);--cost-fill:light-dark(#efe8f3,#362b40);--cost-deep:light-dark(#4d2864,#ccb0e0);--cost-on:light-dark(#ffffff,#26162e)}
 #sL6 .cost-page{max-width:440px;margin:0 auto;padding:20px 18px;background:var(--cost-bg);color:var(--cost-ink);font:14px/1.45 "PingFang SC","Microsoft YaHei",sans-serif;box-sizing:border-box}
@@ -717,9 +718,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 .screen a{overflow-wrap:anywhere;}
 .screen button{touch-action:manipulation;}
 #sL3 .job-goals [data-goal="either"],#sL5 .options-goals [data-goal="either"]{white-space:nowrap;}
-#sL2 .allin-start{display:block;width:100%;min-height:44px;margin:10px 0 0;border:0;border-radius:10px;background:#4f2683;color:#fff;font-family:inherit;font-size:15px;font-weight:600;line-height:1.5;padding:10px;}
-#sL2 .allin-status{font-size:12px;line-height:1.6;color:#756781;margin:8px 0;}
-#sL2 :is(.allin-start,.allin-status)[hidden]{display:none!important;}
 .screen :is(button,a,input,select,textarea,summary):focus-visible{outline:2px solid #7a4fb0;outline-offset:3px;}
 @media(max-width:640px){
  .wrap{width:100%;padding:16px max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));}
@@ -865,7 +863,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
     <div class="school-overview">
       <header class="school-hero"><span class="school-badge western-page-label">第 2 站 · 共 10 站</span><h1>Western 是谁</h1><p>先正名，再看实力</p></header>
       <p class="school-identity">Western（韦仕敦大学，旧译“西安大略大学”）于 1878 年建校，位于加拿大安大略省伦敦市，是一所涵盖商科、医学、工程、法学等领域的综合研究型大学。伦敦是一座大学城，开车到多伦多约两小时。</p>
-      <button type="button" class="school-video-entry" data-school-view="video"><span class="school-video-preview"><img src="videos/poster_allin.jpg" data-school-poster alt="Western 官方宣传片封面"><span class="school-video-play" aria-hidden="true">▶</span></span><span><b>看见 Western：All in</b><small>官方宣传片 · 2 分 06 秒 · 中文字幕</small><span class="school-watch">观看影片 ›</span></span></button>
+      <button type="button" class="western-video-entry" data-school-view="video"><span class="western-video-poster"><img src="videos/poster_allin.jpg" alt="Western 官方宣传片封面"><span class="western-video-symbol" aria-hidden="true">▶</span></span><span class="western-video-caption"><strong>看见 Western：All in</strong><small>官方宣传片 · 2 分 06 秒 · 中文字幕</small></span></button>
       <p class="school-transition">说到 Western 的实力，先看它的一张王牌——<b>Western Ivey 商学院。</b></p>
       <section class="school-story"><p><b>认知差：</b>中国家长只知多伦多大学 Rotman 商学院、英属哥伦比亚大学（UBC）Sauder 商学院；<b>加拿大本地家长把 Western Ivey 商学院放前面</b>——排名说的和雇主知道的，不是一回事。</p>
 <p><b>幸存者偏差：</b>Ivey 毕业生大量留在北美不回来，国内听不到声音——<b>看不见的成功者，成了知名度上消失的人</b>。</p></section>
@@ -881,10 +879,19 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
       <button type="button" class="school-next western-page-next" onclick="go('sL3')">学校认可，第 3 站 →</button>
     </div>
     <div class="school-detail" hidden><button type="button" class="school-back western-detail-back">← 返回 Western 是谁</button><div class="school-detail-content"></div></div>
-    <template data-school-template="video"><h2>Western 官方宣传片 · All in</h2><video src="videos/Western_All_in_mobile.mp4?v=20261007-1" controls preload="metadata" playsinline webkit-playsinline width="1280" height="720" poster="videos/poster_allin.jpg" style="width:100%;height:auto;aspect-ratio:16/9;border-radius:12px;display:block;background:#000;" ondblclick="if(this.requestFullscreen)this.requestFullscreen()">
-      <track kind="subtitles" srclang="zh" label="中文字幕" default src="videos/Western_All_in.zh-CN.vtt">
-      <track kind="subtitles" srclang="en" label="English" src="videos/Western_All_in.en-CA.vtt">
-    </video><button type="button" class="allin-start" data-allin-play>播放影片</button><p class="allin-status" data-allin-status role="status" aria-live="polite">轻点“播放影片”开始观看。</p><p class="school-source">Western 官方品牌宣传片《All in——为加拿大与世界的宏大协作》（720p · 2 分 06 秒 · 已配中文字幕。来源：Western 官方品牌中心 brand.westernu.ca）</p><p class="school-source">若内嵌播放器无法播放，<a href="videos/Western_All_in_mobile.mp4?v=20261007-1" target="_blank" rel="noopener">直接打开影片</a>。</p></template>
+    <section class="western-video-view" data-western-player data-overview=".school-overview" data-detail=".school-detail" hidden>
+      <button type="button" class="western-video-back" data-player-back>← 返回 Western 是谁</button>
+      <h2>Western 官方宣传片 · All in</h2>
+      <video src="videos/Western_All_in_mobile.mp4?v=20261007-2" controls preload="none" playsinline webkit-playsinline width="1280" height="720" poster="videos/poster_allin.jpg">
+        <track kind="subtitles" srclang="zh" label="中文字幕" default src="videos/Western_All_in.zh-CN.vtt">
+        <track kind="subtitles" srclang="en" label="English" src="videos/Western_All_in.en-CA.vtt">
+      </video>
+      <button type="button" class="western-play-button" data-player-toggle>播放影片</button>
+      <p class="western-play-status" data-player-status role="status" aria-live="polite">轻点“播放影片”开始观看。</p>
+      <p class="western-caption-status" data-caption-status role="status" hidden></p>
+      <p class="western-video-source">Western 官方品牌宣传片《All in——为加拿大与世界的宏大协作》（720p · 2 分 06 秒 · 已配中文字幕。来源：Western 官方品牌中心 brand.westernu.ca）</p>
+      <a class="western-player-link" href="player.html?film=allin" target="_blank" rel="noopener">若内嵌播放器无法播放，打开带字幕播放页</a>
+    </section>
     <template data-school-template="research"><h2>商科研究影响力：加拿大第 1</h2><p>Financial Times 2025 Research Insights 排名：Ivey 加拿大第 1、全球第 25。这是商科研究影响力排名。</p><p class="school-source">出处：<a href="https://news.westernu.ca/2025/11/ivey-business-school-financial-times-ranking/" target="_blank" rel="noopener noreferrer">Western 官方新闻 · 2025 年 11 月</a></p></template>
     <template data-school-template="mba"><h2>Ivey MBA：加拿大第 1</h2><p>Bloomberg Businessweek 2026 排名。Ivey 官方于 2026 年 9 月 15 日公布；评价维度包括薪酬、学习、人脉和创业。这是 MBA 项目排名。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/news/news-ivey/2026/september/ivey-earns-top-spot-in-canada-in-bloomberg-businessweek-ranking/" target="_blank" rel="noopener noreferrer">Ivey 官方排名公告</a></p></template>
     <template data-school-template="hba"><h2>HBA：毕业 3 个月内获 offer</h2><p>Ivey 官网引用 2024 届全职就业报告：求职学生中，89% 在毕业后 3 个月内收到就业 offer。这是收到录用通知的数据。</p><p class="school-source">出处：<a href="https://www.ivey.uwo.ca/hba/admissions/tuition-finances/" target="_blank" rel="noopener noreferrer">Ivey 官方 · 就业数据与报告年份</a></p></template>
@@ -1119,7 +1126,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
  <div class="study-page">
   <section class="study-overview">
    <header><span class="western-page-label">第 9 站 · 共 10 站</span><h1>适合学习吗</h1><p>城市最后看，破刻板印象</p></header>
-   <button type="button" class="study-video" data-study="video"><img src="videos/poster_story.jpg" alt="Western 官方宣传片封面"><span>▶ 看看孩子将来读书的地方</span><small>官方宣传片 · 1 分 54 秒 · 中文字幕</small></button>
+   <button type="button" class="western-video-entry" data-study="video"><span class="western-video-poster"><img src="videos/poster_story.jpg" alt="Western 官方宣传片封面"><span class="western-video-symbol" aria-hidden="true">▶</span></span><span class="western-video-caption"><strong>看看孩子将来读书的地方</strong><small>官方宣传片 · 1 分 54 秒 · 中文字幕</small></span></button>
    <p class="study-location"><b>伦敦是哪座伦敦：</b>加拿大安大略省伦敦市，不是英国伦敦。泰晤士河穿城而过，别称“森林城市”。</p>
    <div class="study-grid">
     <button type="button" data-study="population"><strong>42.2 万</strong><span>市区人口 · 2021 年</span><small>不大不小，生活有自己的节奏 ›</small></button>
@@ -1133,7 +1140,18 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   </section>
   <section class="study-detail" hidden><button type="button" class="study-back western-detail-back">← 返回学习环境概览</button><div class="study-detail-content"></div><button type="button" class="study-next western-page-next" onclick="go('sL10')">看过校园，第 10 站 →</button></section>
  </div>
- <template data-study-panel="video"><h1>孩子将来读书的地方</h1><video controls preload="metadata" playsinline webkit-playsinline poster="videos/poster_story.jpg"><source src="videos/What_is_Western_like_mobile.mp4" type="video/mp4"><track kind="subtitles" srclang="zh" label="中文字幕" default src="videos/What_is_Western_like.zh-CN.vtt"></video><p class="study-video-source">Western 官方宣传片《What is Western like》（720p · 1 分 54 秒 · 已配中文字幕。来源：<a href="https://welcome.uwo.ca/what-is-western-like/index.html" target="_blank" rel="noopener">Western 招生官网</a>）</p><a href="videos/What_is_Western_like_mobile.mp4" target="_blank" rel="noopener">若内嵌播放器无法播放，直接打开影片</a></template>
+ <section class="western-video-view" data-western-player data-overview=".study-overview" data-detail=".study-detail" hidden>
+      <button type="button" class="western-video-back" data-player-back>← 返回学习环境概览</button>
+      <h2>孩子将来读书的地方</h2>
+      <video src="videos/What_is_Western_like_mobile.mp4?v=20261007-2" controls preload="none" playsinline webkit-playsinline width="1280" height="720" poster="videos/poster_story.jpg">
+        <track kind="subtitles" srclang="zh" label="中文字幕" default src="videos/What_is_Western_like.zh-CN.vtt">
+      </video>
+      <button type="button" class="western-play-button" data-player-toggle>播放影片</button>
+      <p class="western-play-status" data-player-status role="status" aria-live="polite">轻点“播放影片”开始观看。</p>
+      <p class="western-caption-status" data-caption-status role="status" hidden></p>
+      <p class="western-video-source">Western 官方宣传片《What is Western like》（720p · 1 分 54 秒 · 已配中文字幕。来源：<a href="https://welcome.uwo.ca/what-is-western-like/index.html" target="_blank" rel="noopener">Western 招生官网</a>）</p>
+      <a class="western-player-link" href="player.html?film=story" target="_blank" rel="noopener">若内嵌播放器无法播放，打开带字幕播放页</a>
+    </section>
  <template data-study-panel="population"><h1>伦敦：不大不小的大学城</h1><p>2021 年加拿大人口普查：伦敦市人口为 422,324，约 42.2 万。这里采用市区口径，和包含周边地区的伦敦都会区人口不同。</p><p>泰晤士河穿城而过，“森林城市”也是伦敦的别称。对孩子来说，城市的大小、住处与校园距离，都会影响日常学习和生活安排。</p><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000301" target="_blank" rel="noopener">加拿大统计局 · 2021 年人口普查</a><a href="https://www.uwo.ca/about/visit/london.html" target="_blank" rel="noopener">Western 官网 · 认识伦敦</a></template>
  <template data-study-panel="distance"><h1>多伦多的机会，也够得着</h1><p>Western 官网介绍，从多伦多到伦敦开车约 2 小时。实际时间取决于出发地点、交通和天气。</p><p>近得够得着机会，远得安静读得了书。需要到多伦多参加活动、见校友或面试时，可以提前安排交通；平时的学习生活，仍以校园和住处为中心。</p><a href="https://international.uwo.ca/studentservices/new_students/how_to_get_here.html" target="_blank" rel="noopener">Western International · 如何到达伦敦</a></template>
  <template data-study-panel="students"><h1>身边有一起读书的同伴</h1><p>Western 2024–2025 年官方数据显示，在校学生为 42,978 人，约 4.3 万。这里采用 Western 官网公布的合计学生数，包含 Huron、King’s 两所附属学院，不等同于主校区人数。</p><p>课堂、图书馆、社团和校园活动，是孩子认识同伴、建立日常生活圈的地方。</p><a href="https://www.uwo.ca/about/whoweare/facts.html" target="_blank" rel="noopener">Western 官网 · 2024–2025 年学校数据</a></template>
@@ -1225,6 +1243,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 
 </div>
 
+<script src="player.js?v=20261007-2"></script>
 <script>
 const WESTERN_ORDER=['sPain','sHabit',...Array.from({length:10},(_,i)=>'sL'+(i+1)),'sCalc','sResult'];
 const WESTERN_NAMES=['首页','出发前','第 1 站 · 为什么选加拿大','第 2 站 · Western 是什么学校','第 3 站 · 毕业后去哪里','第 4 站 · 校友与互助','第 5 站 · 毕业后的选择','第 6 站 · 一共要花多少钱','第 7 站 · 安全与支持','第 8 站 · 吃饭与生活','第 9 站 · 学习环境','第 10 站 · 落地与规划','决策计算器 · 家庭条件','决策计算器 · 计算结果'];
@@ -1322,32 +1341,10 @@ go('sPain');
  const back=root.querySelector('.school-back');
  let trigger=null;
  root.querySelectorAll('[data-school-view]').forEach(button=>button.addEventListener('click',()=>{
+   if(button.dataset.schoolView==='video'){window.WesternVideoPlayer.open(root,button);return;}
    const template=root.querySelector('[data-school-template="'+button.dataset.schoolView+'"]');
    trigger=button;content.replaceChildren(template.content.cloneNode(true));
    overview.hidden=true;detail.hidden=false;
-   if(button.dataset.schoolView==='video'){
-     const video=content.querySelector('video');
-     const playButton=content.querySelector('[data-allin-play]');
-     const status=content.querySelector('[data-allin-status]');
-     function showStatus(text){status.textContent=text;status.hidden=false;playButton.hidden=false;}
-     function play(){
-       if(video.error)video.load();
-       if(video.ended)video.currentTime=0;
-       showStatus('正在加载影片，请稍候…');
-       const result=video.play();
-       if(result&&typeof result.catch==='function')result.catch(error=>{
-         showStatus(error.name==='NotAllowedError'?'请轻点“播放影片”开始观看。':'影片暂时无法播放，请重试或直接打开影片。');
-       });
-     }
-     playButton.addEventListener('click',play);
-     video.addEventListener('playing',()=>{playButton.hidden=true;status.hidden=true;});
-     video.addEventListener('pause',()=>{playButton.hidden=false;});
-     video.addEventListener('ended',()=>{playButton.textContent='重新播放';playButton.hidden=false;});
-     video.addEventListener('waiting',()=>showStatus('正在缓冲，请稍候…'));
-     video.addEventListener('error',()=>showStatus('影片暂时无法加载，请重试或直接打开影片。'));
-     video.load();
-     play();
-   }
    scrollWesternTop();back.focus({preventScroll:true});
  }));
  function close(){content.querySelectorAll('video').forEach(video=>video.pause());detail.hidden=true;overview.hidden=false;scrollWesternTop();if(trigger)trigger.focus({preventScroll:true});}
@@ -1425,7 +1422,21 @@ go('sPain');
 (()=>{const root=document.getElementById('sL8');const overview=root.querySelector('.food-overview'),detail=root.querySelector('.food-detail'),content=root.querySelector('.food-detail-content');root.querySelectorAll('[data-food]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-food-panel="'+button.dataset.food+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();}));root.querySelector('.food-back').addEventListener('click',()=>{detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();
 </script>
 <script>
-(()=>{const root=document.getElementById('sL9');const overview=root.querySelector('.study-overview'),detail=root.querySelector('.study-detail'),content=root.querySelector('.study-detail-content');root.querySelectorAll('[data-study]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-study-panel="'+button.dataset.study+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;detail.querySelector('.study-next').hidden=button.dataset.study==='video';scrollWesternTop();if(button.dataset.study==='video'){const video=content.querySelector('video');if(video&&typeof video.play==='function')video.play().catch(()=>{});}}));root.querySelector('.study-back').addEventListener('click',()=>{content.querySelectorAll('video').forEach(video=>video.pause());detail.hidden=true;overview.hidden=false;detail.querySelector('.study-next').hidden=false;scrollWesternTop();});})();
+(()=>{
+ const root=document.getElementById('sL9');
+ const overview=root.querySelector('.study-overview');
+ const detail=root.querySelector('.study-detail');
+ const content=root.querySelector('.study-detail-content');
+ root.querySelectorAll('[data-study]').forEach(button=>button.addEventListener('click',()=>{
+  if(button.dataset.study==='video'){window.WesternVideoPlayer.open(root,button);return;}
+  const template=root.querySelector('[data-study-panel="'+button.dataset.study+'"]');
+  content.replaceChildren(template.content.cloneNode(true));
+  overview.hidden=true;detail.hidden=false;scrollWesternTop();
+ }));
+ root.querySelector('.study-back').addEventListener('click',()=>{
+  detail.hidden=true;overview.hidden=false;scrollWesternTop();
+ });
+})();
 </script>
 <script>
 (()=>{const root=document.getElementById('sL10');const overview=root.querySelector('.arrival-overview'),detail=root.querySelector('.arrival-detail'),content=root.querySelector('.arrival-detail-content');root.querySelectorAll('[data-arrival]').forEach(button=>button.addEventListener('click',()=>{const template=root.querySelector('[data-arrival-panel="'+button.dataset.arrival+'"]');content.replaceChildren(template.content.cloneNode(true));overview.hidden=true;detail.hidden=false;scrollWesternTop();}));root.querySelector('.arrival-back').addEventListener('click',()=>{detail.hidden=true;overview.hidden=false;scrollWesternTop();});})();

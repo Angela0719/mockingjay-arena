@@ -1,0 +1,22 @@
+/* Shared presentation for both Western films and the standalone player. */
+:is(#sL2,#sL9,.western-player-page) .western-video-entry{display:block;width:100%;padding:0;border:0;border-radius:12px;overflow:hidden;background:#eee7f5;color:#4f2683;text-align:left;font-family:inherit;cursor:pointer;}
+:is(#sL2,#sL9,.western-player-page) .western-video-entry .western-video-poster{position:relative;display:block;width:100%;}
+:is(#sL2,#sL9,.western-player-page) .western-video-entry img{display:block;width:100%;height:auto;aspect-ratio:16/7;object-fit:cover;}
+:is(#sL2,#sL9,.western-player-page) .western-video-entry .western-video-symbol{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:rgba(45,24,67,.68);color:white;font-size:24px;padding-left:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);}
+:is(#sL2,#sL9,.western-player-page) .western-video-entry .western-video-caption{display:block;padding:10px 12px 12px;}
+:is(#sL2,#sL9,.western-player-page) .western-video-entry strong{display:block;font-size:15px;line-height:1.5;}
+:is(#sL2,#sL9,.western-player-page) .western-video-entry small{display:block;font-size:12px;line-height:1.5;color:#756781;margin-top:3px;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view{box-sizing:border-box;width:100%;max-width:440px;margin-inline:auto;padding:16px;background:#faf8f5;color:#302139;border-radius:12px;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view[hidden],.western-video-view [hidden]{display:none!important;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view .western-video-back{display:inline-flex;align-items:center;min-height:44px;margin:0 0 8px;padding:0;border:0;background:none;color:#4f2683;font:inherit;font-size:14px;text-decoration:none;cursor:pointer;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view h2{font-size:22px;line-height:1.5;color:#4f2683;margin:0 0 12px;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border-radius:12px;margin:0;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view video::cue{color:#fff;background:rgba(0,0,0,.72);font-size:16px;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view .western-play-button{display:block;width:100%;min-height:44px;padding:10px;margin-top:12px;border:0;border-radius:10px;background:#4f2683;color:#fff;font-family:inherit;font-size:15px;line-height:1.5;font-weight:600;cursor:pointer;touch-action:manipulation;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view .western-play-status,.western-video-view .western-caption-status{font-size:12px;line-height:1.6;color:#756781;margin:8px 0;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view .western-video-source{font-size:11px;line-height:1.65;color:#756781;margin:12px 0;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view .western-video-source a{display:inline;min-height:0;padding:0;color:inherit;font:inherit;}
+:is(#sL2,#sL9,.western-player-page) .western-video-view .western-player-link{display:inline-flex;align-items:center;min-height:44px;color:#4f2683;font-size:13px;line-height:1.6;overflow-wrap:anywhere;text-decoration:underline;}
+.western-player-page{margin:0;background:#f6f2fb;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+.western-player-page main{max-width:640px;margin:auto;padding:18px 16px;}
+@media(max-width:360px){:is(#sL2,#sL9,.western-player-page) .western-video-view{padding:12px;}:is(#sL2,#sL9,.western-player-page) .western-video-view h2{font-size:20px;}}
