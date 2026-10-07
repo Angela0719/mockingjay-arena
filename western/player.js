@@ -23,37 +23,45 @@
     var status = view.querySelector('[data-player-status]');
     var captionStatus = view.querySelector('[data-caption-status]');
     var subtitleBand = view.querySelector('[data-player-cue]');
-    var language = view.querySelector('[data-player-language]');
+    // Hide the obsolete language picker when older HTML is still cached.
+    var oldChoice = view.querySelector('.western-caption-choice');
+    if (oldChoice) oldChoice.hidden = true;
+    video.querySelectorAll('track').forEach(function(track){
+      if (!/^zh/i.test(track.srclang)) track.remove();
+    });
     var chinese = Array.from(video.textTracks).find(function(track){ return /^zh/i.test(track.language); });
     var nativeScreen = false;
-    // Older cached HTML has native subtitle tracks but no external caption UI.
-    if (subtitleBand && language) {
-    function drawCue(){
-      if(!chinese || subtitleBand.hidden)return;
-      subtitleBand.textContent = Array.from(chinese.activeCues || []).map(function(cue){return cue.text;}).join('\n');
-    }
-    function selectLanguage(){
-      view.dataset.captionsSet = 'true';
-      Array.from(video.textTracks).forEach(function(track){
-        track.mode = track.language === language.value ? (track === chinese && !nativeScreen ? 'hidden' : 'showing') : 'disabled';
+    var captionsEnabled = true;
+    // Older cached HTML can still rely on native Chinese subtitle controls.
+    if (subtitleBand) {
+      function drawCue(){
+        if(!chinese || subtitleBand.hidden)return;
+        subtitleBand.textContent = Array.from(chinese.activeCues || []).map(function(cue){return cue.text;}).join('\n');
+      }
+      function syncCaptions(){
+        view.dataset.captionsSet = 'true';
+        if(chinese){
+          var mode = captionsEnabled ? (nativeScreen ? 'showing' : 'hidden') : 'disabled';
+          if(chinese.mode !== mode)chinese.mode = mode;
+        }
+        subtitleBand.hidden = nativeScreen || !captionsEnabled;
+        drawCue();
+      }
+      if(chinese)chinese.addEventListener('cuechange',drawCue);
+      video.addEventListener('timeupdate',drawCue);
+      video.addEventListener('seeked',drawCue);
+      function fullscreenCaptions(active){nativeScreen=active;syncCaptions();}
+      video.addEventListener('webkitbeginfullscreen',function(){fullscreenCaptions(true);});
+      video.addEventListener('webkitendfullscreen',function(){fullscreenCaptions(false);});
+      document.addEventListener('fullscreenchange',function(){fullscreenCaptions(document.fullscreenElement === video);});
+      video.textTracks.addEventListener('change',function(){
+        if(!chinese)return;
+        captionsEnabled = chinese.mode !== 'disabled';
+        if(!nativeScreen && chinese.mode === 'showing')chinese.mode = 'hidden';
+        subtitleBand.hidden = nativeScreen || !captionsEnabled;
+        drawCue();
       });
-      subtitleBand.hidden = nativeScreen || language.value !== 'zh';drawCue();
-    }
-    language.addEventListener('change',selectLanguage);
-    if(chinese)chinese.addEventListener('cuechange',drawCue);
-    video.addEventListener('timeupdate',drawCue);
-    video.addEventListener('seeked',drawCue);
-    function fullscreenCaptions(active){nativeScreen=active;selectLanguage();}
-    video.addEventListener('webkitbeginfullscreen',function(){fullscreenCaptions(true);});
-    video.addEventListener('webkitendfullscreen',function(){fullscreenCaptions(false);});
-    document.addEventListener('fullscreenchange',function(){fullscreenCaptions(document.fullscreenElement === video);});
-    video.textTracks.addEventListener('change',function(){
-      if(nativeScreen)return;
-      var english=Array.from(video.textTracks).some(function(track){return track.language==='en'&&track.mode==='showing';});
-      if(english){language.value='en';subtitleBand.hidden=true;return;}
-      if(chinese&&chinese.mode==='showing'){chinese.mode='hidden';language.value='zh';}
-      subtitleBand.hidden=language.value!=='zh';drawCue();
-    });
+      syncCaptions();
     }
     function message(text) { status.textContent = text; }
     function pausedLabel() { button.textContent = video.ended ? '重新播放' : '播放影片'; }
