@@ -639,6 +639,40 @@ button{touch-action:manipulation;}
 #western-calculator-review .decision-pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#western-calculator-review label{min-width:0}#western-calculator-review .decision-scenarios{padding:5px 0;border-top:1px solid var(--d-line)}#western-calculator-review .decision-scenarios p{display:flex;justify-content:space-between;gap:8px;margin:6px 0;font-size:11px}#western-calculator-review .decision-scenarios b{font-weight:500}#western-calculator-review [data-cost-scope]{font-size:11px;color:var(--d-muted)}#western-calculator-review .decision-money>div>b{min-width:0;text-align:right}#western-calculator-review [data-score]{font-size:44px}
 
 </style>
+<style id="western-unified-background">
+/* Continue the first five stations' lavender page and white card palette. */
+:is(#sL6,#sL7,#sL8,#sL9,#sL10,#western-calculator-review){color-scheme:light;}
+#sL6{
+ --cost-bg:var(--bg);--cost-ink:var(--ink);--cost-muted:#756781;
+ --cost-line:#e6dcf5;--cost-fill:#fff;--cost-deep:var(--purple);--cost-on:#fff;
+}
+#sL7{
+ --safe-bg:var(--bg);--safe-ink:var(--ink);--safe-muted:#756781;
+ --safe-line:#e6dcf5;--safe-fill:#fff;--safe-deep:var(--purple);--safe-on:#fff;
+}
+#sL8{
+ --food-bg:var(--bg);--food-ink:var(--ink);--food-muted:#756781;
+ --food-line:#e6dcf5;--food-fill:#fff;--food-deep:var(--purple);--food-on:#fff;
+}
+#sL9{
+ --study-bg:var(--bg);--study-ink:var(--ink);--study-muted:#756781;
+ --study-fill:#fff;--study-deep:var(--purple);--study-on:#fff;
+}
+#sL10{
+ --arrival-bg:var(--bg);--arrival-ink:var(--ink);--arrival-muted:#756781;
+ --arrival-line:#e6dcf5;--arrival-fill:#fff;--arrival-deep:var(--purple);--arrival-on:#fff;
+}
+#western-calculator-review{
+ --d-bg:var(--bg);--d-ink:var(--ink);--d-muted:#756781;--d-line:#e6dcf5;
+ --d-fill:#fff;--d-deep:var(--purple);--d-on:#fff;--d-warn:var(--red);
+}
+#sL7 .safety-track{background:#eee4f8;}
+#western-calculator-review :is(select,input,[data-copy-text]){background:#fff;}
+</style>
+<style id="western-calculator-row-alignment">
+/* Keep the second row's controls level when the budget label wraps. */
+#western-calculator-review .decision-pair:has([name="duration"])>label{display:flex;flex-direction:column;justify-content:space-between;}
+</style>
 </head>
 <body>
 <div class="wrap">
