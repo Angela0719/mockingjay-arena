@@ -673,6 +673,56 @@ button{touch-action:manipulation;}
 /* Keep the second row's controls level when the budget label wraps. */
 #western-calculator-review .decision-pair:has([name="duration"])>label{display:flex;flex-direction:column;justify-content:space-between;}
 </style>
+<style id="western-panel-hierarchy-review">
+/* Keep the shared canvas; reuse station four's white and lavender layers. */
+:is(#sL1,#sL2,#sL3,#sL4,#sL5,#sL6,#sL7,#sL8,#sL9,#sL10,#western-calculator-review){
+ color-scheme:only light;
+ --western-panel:#fff;--western-soft:#f3ecfa;--western-soft-alt:#f6f1fd;
+}
+:is(#sL1,#sL2,#sL3,#sL4,#sL5,#sL6,#sL7,#sL8,#sL9,#sL10)>div,
+#western-calculator-review .decision-page{background:var(--bg);}
+#sL6 .cost-budget{background:var(--western-soft);border:1px solid #e6dcf5;}
+#sL6 .cost-overview table{background:var(--western-panel);border-radius:12px;overflow:hidden;}
+#sL6 .cost-overview thead{background:var(--western-soft);}
+#sL6 .cost-overview tbody tr:nth-child(even){background:var(--western-soft-alt);}
+#sL6 .cost-award{background:var(--western-panel);border:0;border-radius:12px;padding:8px 10px;margin:5px 0;}
+#sL6 .cost-advantage{background:var(--western-soft-alt);border-radius:10px;padding:6px 10px;}
+#sL7 .safety-country{background:var(--western-soft);border:1px solid #e6dcf5;}
+#sL7 .safety-city{background:var(--western-panel);border:1px solid #e6dcf5;border-radius:12px;padding:8px 10px;}
+#sL7 .safety-story{background:var(--western-soft-alt);border-radius:10px;padding:6px 10px;}
+#sL7 .safety-services button{background:var(--western-panel);border:1px solid #e6dcf5;}
+#sL8 .food-story{background:var(--western-panel);border:0;border-radius:12px;padding:6px 10px;margin-top:5px;}
+#sL8 .food-story:nth-of-type(even){background:var(--western-soft);}
+#sL8 .food-story h2{margin-bottom:4px;}
+#sL9 .study-location{background:var(--western-panel);border-radius:12px;padding:8px 10px;margin:8px 0;}
+#sL9 .study-grid{gap:6px;}
+#sL9 .study-grid button{background:var(--western-panel);border:1px solid #e6dcf5;}
+#sL9 .study-grid button:nth-child(2),#sL9 .study-grid button:nth-child(3){background:var(--western-soft);}
+#sL9 .study-gpa{background:var(--western-soft-alt);border-radius:10px;padding:6px 10px;margin:8px 0;}
+#sL10 .arrival-experience,#sL10 .arrival-sample{background:var(--western-panel);border:0;border-radius:12px;padding:8px 10px;margin-top:5px;}
+#sL10 .arrival-goal{background:var(--western-soft);}
+#sL10 .arrival-method{background:var(--western-soft-alt);border-radius:10px;padding:6px 10px;}
+#sL10 .arrival-route-stage{background:var(--western-panel);border:0;border-radius:12px;padding:8px 10px;margin-top:5px;}
+#sL6 .cost-detail-content,#sL7 .safety-detail-content,#sL8 .food-detail-content,
+#sL9 .study-detail-content,#sL10 .arrival-detail-content{
+ background:var(--western-panel);border-radius:12px;padding:10px;margin-top:5px;
+}
+#western-calculator-review{--decision-control-size:15px;}
+#western-calculator-review label{margin:6px 0;}
+#western-calculator-review .decision-pair{row-gap:6px;}
+#western-calculator-review fieldset{margin:6px 0;}
+#western-calculator-review :is(select,input,.decision-choices button){font-size:var(--decision-control-size);font-weight:400;line-height:1.5;}
+#western-calculator-review .decision-choices button{background:var(--western-panel);}
+#western-calculator-review .decision-choices button[aria-pressed="true"]{background:var(--d-deep);color:var(--d-on);}
+#western-calculator-review .decision-score{background:var(--western-soft);}
+#western-calculator-review .decision-money,#western-calculator-review .decision-conclusion{
+ background:var(--western-panel);border-radius:12px;padding:8px 10px;margin:5px 0;
+}
+#western-calculator-review .decision-breakdown{background:var(--western-panel);}
+#western-calculator-review .decision-breakdown thead{background:var(--western-soft);}
+/* Preserve the existing 16px iOS control size; never disable user zoom. */
+@supports(-webkit-touch-callout:none){#western-calculator-review{--decision-control-size:16px;}}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -1142,11 +1192,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   <section class="food-overview">
    <header><span class="western-page-label">第 8 站 · 共 10 站</span><h1>吃得好吗</h1><p>中餐、超市、冬天怎么办</p></header>
    <section class="food-story"><h2>第一年，住和吃都有安排</h2><p>符合条件并按时完成住宿手续的新生，Western 保证提供校内宿舍名额。多数新生宿舍楼内就有餐厅——住在这些楼里，不用走到室外，就能吃上饭，冬天尤其方便。</p><button type="button" data-food="residence">查看住宿条件与餐厅安排 ›</button></section>
-   <section class="food-story"><h2>T&amp;T 大统华：中国留学生的“食堂后备仓”</h2><p>中式调料、活鱼海鲜、熟食点心、火锅料一站式买齐。伦敦有大统华门店，熟悉的食材，不用跑多伦多采购。<b>符合条件可满额免配送费送货上门——冬天最实用。</b></p><button type="button" data-food="tnt">门店、配送范围与免运条件 ›</button></section>
+   <section class="food-story"><h2>T&amp;T 大统华：中国留学生的“食堂后备仓”</h2><p>中式调料、活鱼海鲜、熟食点心、火锅料一站式买齐。伦敦有大统华门店，熟悉的食材，不用跑多伦多采购。符合条件可满额免配送费送货上门——冬天最实用。</p><button type="button" data-food="tnt">门店、配送范围与免运条件 ›</button></section>
    <section class="food-story"><h2>Costco 开市客：一周采购的主力仓</h2><p>北美常见的会员制仓储超市——肉蛋奶、纸品、水果，一次买齐一周的量。本站作者已办会员卡；按自己的采购量安排，常用物品集中买，也能把日常开销管起来。</p><button type="button" data-food="costco">会员费用与采购安排 ›</button></section>
    <section class="food-story"><h2>IKEA 宜家：把住处布置成家的样子</h2><p>床上用品、餐具、收纳用品，到了伦敦也能在宜家选购。White Oaks 商场的宜家门店，部分商品可现场买走，大件家具可订购配送。</p><button type="button" data-food="ikea">门店位置与配送说明 ›</button></section>
    <section class="food-story"><h2>各式中餐馆：解乡愁，不用跑多伦多</h2><p>川菜、粤菜、火锅、饺子面馆、烤串……常见的家乡口味，在伦敦也能找到。想换换口味，有中餐馆；想自己做饭，也有熟悉的食材。</p></section>
-   <section class="food-story"><h2>奶茶店就在身边</h2><p>CoCo 开在城里，Chatime 更直接开进 Western 校园的 Weldon 图书馆——<b>复习间隙，楼下就能买杯奶茶。</b></p><button type="button" data-food="tea">校园位置、营业时间与门店 ›</button></section>
+   <section class="food-story"><h2>奶茶店就在身边</h2><p>CoCo 开在城里，Chatime 更直接开进 Western 校园的 Weldon 图书馆——复习间隙，楼下就能买杯奶茶。</p><button type="button" data-food="tea">校园位置、营业时间与门店 ›</button></section>
    <p class="food-note">出处：Western 校园餐饮官网、T&T 大统华官网、Costco 开市客加拿大官网、CoCo 官网（2026 年 9 月查阅）；Western 住宿与宿舍餐饮官网、IKEA 宜家加拿大官网（2026 年 10 月 6 日查阅）。</p>
    <button type="button" class="food-next western-page-next" onclick="go('sL9')">放心了，第 9 站 →</button>
   </section>
